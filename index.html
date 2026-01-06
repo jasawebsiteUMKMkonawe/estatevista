@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EstateVista — Premium Real Estate</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #1A365D;
+      --secondary: #D4AF37;
+      --accent: #2ECC71;
+      --light-bg: #F8F9FA;
+      --text-dark: #2D3748;
+      --text-light: #718096;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--light-bg);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .btn-secondary:hover {
+      background-color: #c19f2e;
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.7)), url('img/rumah 4.webp');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 120px 0;
+    }
+
+    .hero .btn {
+      background-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+      padding: 10px 25px;
+      border-radius: 30px;
+    }
+
+    .hero .btn:hover {
+      background-color: #c19f2e;
+      color: var(--primary);
+    }
+
+    /* Stats */
+    .stats-section {
+      background-color: var(--white);
+      padding: 60px 0;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .stat-label {
+      color: var(--text-light);
+    }
+
+    /* Properties */
+    .property-card {
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--white);
+    }
+
+    .property-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .property-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: var(--secondary);
+      color: var(--primary);
+      padding: 5px 10px;
+      font-weight: 700;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .property-price {
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    /* Services */
+    .service-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      border-top: 4px solid var(--secondary);
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text-dark);
+    }
+
+    .rating {
+      color: var(--secondary);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('img/rumah 1.webp');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .cta-section .btn {
+      margin: 10px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 60px 0 20px;
+    }
+
+    .footer a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--secondary);
+    }
+
+    .social-icon {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      margin-right: 8px;
+      color: var(--white);
+      transition: background 0.3s;
+    }
+
+    .social-icon:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 0;
+      }
+      .btn-mobile {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">EstateVista</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        </ul>
+        <div class="ms-lg-3 mt-2 mt-lg-0">
+          <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
+            <i class="fas fa-phone me-1"></i> +1 5589 55488 55
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container text-center text-white">
+      <h1 class="display-4 fw-bold">Find Your Dream Home with Trusted Expertise</h1>
+      <p class="lead mt-3 mb-4">We help you discover the perfect property tailored to your lifestyle — from luxury villas to cozy family homes.</p>
+      
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-8">
+          <div class="bg-white p-4 rounded shadow">
+            <form class="row g-3">
+              <div class="col-md-4">
+                <input type="text" class="form-control" placeholder="Location">
+              </div>
+              <div class="col-md-3">
+                <select class="form-select">
+                  <option selected>Type</option>
+                  <option>Villa</option>
+                  <option>Apartment</option>
+                  <option>House</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" placeholder="Budget">
+              </div>
+              <div class="col-md-2">
+                <button type="submit" class="btn btn-secondary w-100">Search</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-number">2,500+</div>
+            <div class="stat-label">Homes Sold</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card">
+            <div class="stat-number">20+ Years</div>
+            <div class="stat-label">Experience</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="#" class="btn btn-outline-primary">Discover Our Legacy</a>
+      </div>
+    </div>
+  </section>
+
+<!-- Featured Properties -->
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h2>Handpicked Luxury Residences</h2>
+      <p class="text-muted">Discover properties curated for elegance, comfort, and value.</p>
+    </div>
+    <div class="row">
+      <!-- Property 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 1.webp" class="img-fluid" alt="Luxury Home">
+            <span class="property-badge">PREMIUM</span>
+          </div>
+          <div class="p-4">
+            <div class="property-price">$4,850,000</div>
+            <h5 class="mt-2">Magnificent Estate with Ocean Views</h5>
+            <p class="text-muted small">
+              <i class="fas fa-map-marker-alt me-2"></i>Malibu, CA
+            </p>
+            <div class="d-flex justify-content-between text-muted small">
+              <span><i class="fas fa-bed me-1"></i> 5 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 4 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 4,200 sqft</span>
+            </div>
+            <a href="detail1.html" class="btn btn-primary mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      <!-- Property 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 2.webp" class="img-fluid" alt="Modern Condo">
+            <span class="property-badge">NEW</span>
+          </div>
+          <div class="p-4">
+            <div class="property-price">$1,595,000</div>
+            <h5 class="mt-2">Contemporary Downtown Condo</h5>
+            <p class="text-muted small">
+              <i class="fas fa-map-marker-alt me-2"></i>Seattle, WA
+            </p>
+            <div class="d-flex justify-content-between text-muted small">
+              <span><i class="fas fa-bed me-1"></i> 3 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 2 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 2,100 sqft</span>
+            </div>
+            <a href="detail1.html" class="btn btn-primary mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+      <!-- Property 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 3.webp" class="img-fluid" alt="Architectural Home">
+          </div>
+          <div class="p-4">
+            <div class="property-price">$1,375,000</div>
+            <h5 class="mt-2">Modern Architectural Gem</h5>
+            <p class="text-muted small">
+              <i class="fas fa-map-marker-alt me-2"></i>Phoenix, AZ
+            </p>
+            <div class="d-flex justify-content-between text-muted small">
+              <span><i class="fas fa-bed me-1"></i> 4 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 3 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 2,800 sqft</span>
+            </div>
+            <a href="detail1.html" class="btn btn-primary mt-3">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ TOMBOL BARU: View All Properties -->
+    <div class="text-center mt-4">
+      <a href="properties.html" class="btn btn-secondary">View All Properties</a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- Services -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Our Premium Real Estate Services</h2>
+        <p class="text-muted">Tailored solutions for every real estate need.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-search"></i>
+            </div>
+            <h5>Property Search</h5>
+            <p>Comprehensive listings, advanced filters, and virtual tours to find your perfect match.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h5>Property Valuation</h5>
+            <p>Accurate market analysis, comparative reports, and investment insights.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h5>Property Rental</h5>
+            <p>Tenant matching, lease management, and full maintenance support.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h5>Investment Advisory</h5>
+            <p>Portfolio planning, risk assessment, and ROI forecasting for smart investors.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="#" class="btn btn-secondary">Explore All Services</a>
+      </div>
+    </div>
+  </section>
+<!-- CTA Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Need Help Finding Your Dream Property?</h2>
+      <p class="lead mb-4">Let our experts guide you through every step — from search to closing.</p>
+      <a href="#" class="btn btn-secondary btn-lg">Schedule a Free Consultation</a>
+      <a href="tel:+155895548855" class="btn btn-outline-light btn-lg">Call Us Now</a>
+
+      <div class="mt-5 d-flex justify-content-center flex-wrap">
+        <div class="d-flex align-items-center mx-3 my-2 text-white">
+          <i class="fas fa-phone me-2"></i> Free Consultation
+        </div>
+        <div class="d-flex align-items-center mx-3 my-2 text-white">
+          <i class="fas fa-clock me-2"></i> 24/7 Support
+        </div>
+        <div class="d-flex align-items-center mx-3 my-2 text-white">
+          <i class="fas fa-shield-alt me-2"></i> Trusted Experts
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Testimonials -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>What Our Clients Say</h2>
+        <p class="text-muted">Real stories from satisfied homeowners.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="testimonial-card">
+            <p class="testimonial-text">“Working with EstateVista made buying our first home seamless. Their local market knowledge exceeded expectations.”</p>
+            <div class="d-flex align-items-center mt-3">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="50" alt="Client">
+              <div>
+                <strong>Sarah Martinez</strong><br>
+                <small class="text-muted">First-time Homebuyer</small>
+              </div>
+              <div class="rating ms-auto">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="testimonial-card">
+            <p class="testimonial-text">“Sold my property in just 7 days at 10% above asking price. Their marketing strategy is unmatched.”</p>
+            <div class="d-flex align-items-center mt-3">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="50" alt="Client">
+              <div>
+                <strong>James Wilson</strong><br>
+                <small class="text-muted">Property Investor</small>
+              </div>
+              <div class="rating ms-auto">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4 class="text-white">EstateVista</h4>
+          <p class="text-white-50">Where dreams meet reality.</p>
+          <div>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h6 class="text-white">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Properties</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h6 class="text-white">Our Services</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Property Search</a></li>
+            <li><a href="#">Property Valuation</a></li>
+            <li><a href="#">Property Rental</a></li>
+            <li><a href="#">Investment Advisory</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h6 class="text-white">Contact Us</h6>
+          <p class="text-white-50">
+            <i class="fas fa-map-marker-alt me-2"></i> 108 Adam Street, New York, NY 535022
+          </p>
+          <p class="text-white-50">
+            <i class="fas fa-phone me-2"></i> +1 5589 55488 55
+          </p>
+          <p class="text-white-50">
+            <i class="fas fa-envelope me-2"></i> info@estatevista.com
+          </p>
+        </div>
+      </div>
+      <div class="copyright text-center text-white-50">
+        &copy; 2026 EstateVista. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (optional for mobile nav) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

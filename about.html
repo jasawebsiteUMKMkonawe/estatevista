@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — EstateVista</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #1A365D;
+      --secondary: #D4AF37;
+      --accent: #2ECC71;
+      --light-bg: #F8F9FA;
+      --text-dark: #2D3748;
+      --text-light: #718096;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--light-bg);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--secondary);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .btn-secondary:hover {
+      background-color: #c19f2e;
+      color: var(--primary);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      background-color: transparent;
+      padding: 1rem 0;
+    }
+
+    .breadcrumb-item a {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-item.active {
+      color: var(--text-dark);
+    }
+
+    /* Breadcrumb */
+.breadcrumb-container {
+  padding: 10px 0;
+  margin-bottom: 5px; /* lebih rapat dari default mt-4 */
+}
+
+
+
+    /* Hero Section */
+    .hero-about {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero-about h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-about p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+ 
+    /* Our Story */
+    .our-story {
+      padding: 10px 0;
+    }
+
+    .story-title {
+      color: var(--secondary);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .story-content p {
+      line-height: 1.8;
+    }
+
+    .btn-gold {
+      background-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+      padding: 10px 25px;
+      border-radius: 30px;
+      border: none;
+    }
+
+    .btn-gold:hover {
+      background-color: #c19f2e;
+      color: var(--primary);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background-color: var(--white);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .stat-box {
+      padding: 20px;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .stat-label {
+      color: var(--text-light);
+    }
+
+    /* Team Section */
+    .team-section {
+      padding: 80px 0;
+      background-color: var(--light-bg);
+    }
+
+    .section-title {
+      color: var(--secondary);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .team-info {
+      padding: 20px;
+    }
+
+    .team-name {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .team-role {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .team-contact {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 10px;
+    }
+
+    .team-contact i {
+      color: var(--secondary);
+      margin-right: 5px;
+    }
+
+    /* Why Choose Us */
+    .why-choose-us {
+      padding: 80px 0;
+    }
+
+    .why-box {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .why-icon {
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+    }
+
+    .why-title {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 60px 0 20px;
+    }
+
+    .footer a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--secondary);
+    }
+
+    .social-icon {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      margin-right: 8px;
+      color: var(--white);
+      transition: background 0.3s;
+    }
+
+    .social-icon:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-about h1 {
+        font-size: 2.2rem;
+      }
+      .team-photo {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">EstateVista</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="properties.html">Properties</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="ms-lg-3 mt-2 mt-lg-0">
+          <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
+            <i class="fas fa-phone me-1"></i> +1 5589 55488 55
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-about">
+    <div class="container">
+      <h1>Turning Dreams into Reality</h1>
+      <p>Dedicated to providing exceptional real estate experiences</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+<div class="container breadcrumb-container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">About</li>
+    </ol>
+  </nav>
+</div>
+
+  <!-- Our Story -->
+  <section class="our-story">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div class="story-title">OUR STORY</div>
+          <h2>Building a Legacy of Trust</h2>
+          <div class="story-content">
+            <p>As a reminder of our client-first approach, we founded EstateVista with the mission to redefine real estate experiences. Over 20 years, we’ve cultivated deep relationships, developed systems, and refined every detail to ensure your journey from search to closing is seamless, joyful, and successful.</p>
+            <p>We are not just agents — we are advisors, partners, and advocates who care deeply about your dreams becoming reality.</p>
+          </div>
+          <a href="properties.html" class="btn btn-gold mt-3">Find Your Dream Home</a>
+        </div>
+        <div class="col-lg-6">
+          <img src="img/rumah 1.webp" class="img-fluid rounded" alt="Team handshake">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="stat-box">
+            <div class="stat-number">2,500+</div>
+            <div class="stat-label">Homes Sold</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stat-box">
+            <div class="stat-number">98%</div>
+            <div class="stat-label">Client Satisfaction</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stat-box">
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Years in Business</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="stat-box">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Expert Agents</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet Our Team -->
+  <section class="team-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-title">MEET OUR TEAM</div>
+        <h2>The Experts Behind EstateVista</h2>
+      </div>
+      <div class="row">
+        <!-- Team Member 1 -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="team-card">
+            <img src="img/sarah.webp" class="team-photo" alt="Sarah Miller">
+            <div class="team-info">
+              <h5 class="team-name">Sarah Miller</h5>
+              <div class="team-role">CEO & Founder</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> sarah.miller@estatevista.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 569-999-554855
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="team-card">
+            <img src="img/michael.webp" class="team-photo" alt="David Anderson">
+            <div class="team-info">
+              <h5 class="team-name">David Anderson</h5>
+              <div class="team-role">Operations Manager</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> david.anderson@estatevista.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 5899 554855
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="team-card">
+            <img src="img/emma.webp" class="team-photo" alt="Emma Johnson">
+            <div class="team-info">
+              <h5 class="team-name">Emma Johnson</h5>
+              <div class="team-role">Senior Agent</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> emma.johnson@estatevista.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 5899 534855
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="col-md-3 col-sm-6 mb-4">
+          <div class="team-card">
+            <img src="img/james.webp" class="team-photo" alt="James Wilson">
+            <div class="team-info">
+              <h5 class="team-name">James Wilson</h5>
+              <div class="team-role">Property Specialist</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> james.wilson@estatevista.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 5699 554855
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose-us">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Why Choose EstateVista?</h2>
+        <p class="text-muted">We give you a caring people of our services.</p>
+      </div>
+      <div class="row">
+        <!-- Why 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="why-box">
+            <div class="why-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h4 class="why-title">Experienced & Trusted</h4>
+            <p>Two decades of expertise with passionate professionals dedicated to your success. We’ve guided thousands of clients through their most important financial decisions.</p>
+          </div>
+        </div>
+        <!-- Why 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="why-box">
+            <div class="why-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4 class="why-title">Client-Centric Approach</h4>
+            <p>Your goals come first. From personalized service to tailored solutions, we listen, adapt, and deliver results that exceed expectations.</p>
+          </div>
+        </div>
+        <!-- Why 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="why-box">
+            <div class="why-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h4 class="why-title">Comprehensive Services</h4>
+            <p>From property search to valuation, rental, and investment advisory — we offer end-to-end solutions for all types of buyers, sellers, and investors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4 class="text-white">EstateVista</h4>
+          <p class="text-white-50">Where dreams meet reality.</p>
+          <div>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h6 class="text-white">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properties.html">Properties</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h6 class="text-white">Our Services</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Property Search</a></li>
+            <li><a href="#">Property Valuation</a></li>
+            <li><a href="#">Property Rental</a></li>
+            <li><a href="#">Investment Advisory</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h6 class="text-white">Contact Us</h6>
+          <p class="text-white-50">
+            <i class="fas fa-map-marker-alt me-2"></i> 108 Adam Street, New York, NY 535022
+          </p>
+          <p class="text-white-50">
+            <i class="fas fa-phone me-2"></i> +1 5589 55488 55
+          </p>
+          <p class="text-white-50">
+            <i class="fas fa-envelope me-2"></i> info@estatevista.com
+          </p>
+        </div>
+      </div>
+      <div class="copyright text-center text-white-50">
+        &copy; 2026 EstateVista. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

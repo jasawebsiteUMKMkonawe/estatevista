@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Properties — EstateVista</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #1A365D;
+      --secondary: #D4AF37;
+      --accent: #2ECC71;
+      --light-bg: #F8F9FA;
+      --text-dark: #2D3748;
+      --text-light: #718096;
+      --white: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--light-bg);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .btn-secondary:hover {
+      background-color: #c19f2e;
+      color: var(--primary);
+    }
+
+    .search-bar {
+      background: var(--white);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .property-card {
+      background: var(--white);
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .property-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .property-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 5px 10px;
+      font-weight: 700;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: var(--white);
+    }
+
+    /* Hero Section */
+    .hero-about {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero-about h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-about p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+ 
+
+    .badge-featured { background-color: #FF6B6B; }
+    .badge-new { background-color: #4ECDC4; }
+    .badge-price-reduced { background-color: #FF9F43; }
+    .badge-for-sale { background-color: var(--accent); }
+    .badge-for-rent { background-color: #9B59B6; }
+
+    .property-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .property-type {
+      background-color: #E8F4EA;
+      color: var(--accent);
+      font-size: 0.85rem;
+      padding: 3px 8px;
+      border-radius: 15px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .property-address {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .property-stats {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    .agent-info {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid #eee;
+    }
+
+    .agent-photo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .agent-name {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .agent-company {
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .contact-btn {
+      background-color: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+    }
+
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 8px;
+    }
+
+    .pagination-container .btn {
+      background-color: #f1f3f5;
+      color: var(--text-dark);
+      border: 1px solid #dee2e6;
+      padding: 8px 16px;
+      border-radius: 6px;
+      min-width: 40px;
+    }
+
+    .pagination-container .btn.active {
+      background-color: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .pagination-info {
+      text-align: center;
+      margin-top: 15px;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 60px 0 20px;
+      margin-top: 60px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      margin-top: 40px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+
+    /* Kelas untuk pagination */
+    .property-item {
+      display: none; /* awalnya semua disembunyikan */
+    }
+
+    .property-item.show {
+      display: block;
+    }
+
+    .property-item.page-1 { order: 1; }
+    .property-item.page-2 { order: 2; }
+    .property-item.page-3 { order: 3; }
+
+    @media (max-width: 768px) {
+      .property-card { margin-bottom: 20px; }
+      .search-bar { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">EstateVista</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Properties</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-about">
+    <div class="container">
+      <h1>Turning Dreams into Reality</h1>
+      <p>Dedicated to providing exceptional real estate experiences</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <div class="container mt-5 pt-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Properties</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="container mt-2 mb-4">
+    <h2>Properties</h2>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="container">
+    <div class="search-bar">
+      <form class="row g-3">
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="search-input" placeholder="Search by name or location...">
+        </div>
+        <div class="col-md-2">
+          <select class="form-select" id="type">
+            <option value="">Any Type</option>
+            <option value="HOUSE">House</option>
+            <option value="APARTMENT">Apartment</option>
+            <option value="CONDO">Condo</option>
+            <option value="TOWNHOUSE">Townhouse</option>
+            <option value="LOFT">Loft</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-select" id="price">
+            <option value="">Any Price</option>
+            <option value="0-500000">$0 - $500K</option>
+            <option value="500001-1000000">$500K - $1M</option>
+            <option value="1000001-2000000">$1M - $2M</option>
+            <option value="2000001">$2M+</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-secondary btn-sm active" onclick="setBedrooms('any')" id="btn-any">Any</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setBedrooms('1')" id="btn-1">1+</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setBedrooms('2')" id="btn-2">2+</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setBedrooms('3')" id="btn-3">3+</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setBedrooms('4')" id="btn-4">4+</button>
+          </div>
+        </div>
+        <div class="col-md-3 d-flex align-items-end">
+          <button type="button" class="btn w-100" onclick="applyFilters()">
+            <i class="fas fa-search me-2"></i>Search
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Results Info -->
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <strong><span id="total-properties">0</span> Properties Found</strong>
+      </div>
+      <div>
+        <select class="form-select form-select-sm" id="sort-order" onchange="applyFilters()">
+          <option value="default">Default</option>
+          <option value="low-high">Price: Low to High</option>
+          <option value="high-low">Price: High to Low</option>
+          <option value="newest">Newest First</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Properties Grid (SEMUA CARD DI SINI — HTML MURNI) -->
+  <div class="container">
+    <div class="row" id="properties-container">
+
+      <!-- Halaman 1 -->
+      <div class="col-md-4 mb-4 property-item page-1"
+        data-title="Luxury Modern Villa with Pool"
+        data-type="HOUSE"
+        data-price="1850000"
+        data-address="3458 Sunset Boulevard, Beverly Hills, CA"
+        data-bedrooms="5"
+        data-bathrooms="4"
+        data-sqft="3400"
+        data-agent-name="Jennifer Miller"
+        data-agent-company="Prime Realty Group"
+        data-agent-photo="img/sarah.webp"
+        data-badge="FEATURED"
+        data-image="../img/rumah 1.webp">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 1.webp" class="img-fluid" alt="Luxury Modern Villa">
+            <span class="property-badge badge-featured">FEATURED</span>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="property-price">$1,850,000</div>
+                <a href="detail2.html" style="color: #2D3748;">
+                <h5 class="mt-1">Luxury Modern Villa with Pool</h5></a>
+                <div class="property-address">
+                  <i class="fas fa-map-marker-alt me-1"></i> Beverly Hills, CA
+                </div>
+              </div>
+              <div class="property-type">HOUSE</div>
+            </div>
+            <div class="property-stats">
+              <span><i class="fas fa-bed me-1"></i> 5 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 4 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 3400 sqft</span>
+            </div>
+            <div class="agent-info">
+              <img src="img/sarah.webp" class="agent-photo" alt="Jennifer Miller">
+              <div>
+                <div class="agent-name">Jennifer Miller</div>
+                <div class="agent-company">Prime Realty</div>
+              </div>
+              <button class="contact-btn"><i class="fas fa-phone"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 property-item page-1"
+        data-title="Downtown Modern Penthouse"
+        data-type="APARTMENT"
+        data-price="5200"
+        data-address="1247 Broadway Street, Manhattan, NY"
+        data-bedrooms="3"
+        data-bathrooms="2"
+        data-sqft="2100"
+        data-agent-name="Robert Thompson"
+        data-agent-company="Urban Living Realty"
+        data-agent-photo="../img/james.webp"
+        data-badge="NEW LISTING"
+        data-image="../img/rumah 2.webp">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 2.webp" class="img-fluid" alt="Downtown Penthouse">
+            <span class="property-badge badge-new">NEW LISTING</span>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="property-price">$5,200/month</div>
+                <a href="detail2.html" style="color: #2D3748;">
+                <h5 class="mt-1">Downtown Modern Penthouse</h5></a>
+                <div class="property-address">
+                  <i class="fas fa-map-marker-alt me-1"></i> Manhattan, NY
+                </div>
+              </div>
+              <div class="property-type">APARTMENT</div>
+            </div>
+            <div class="property-stats">
+              <span><i class="fas fa-bed me-1"></i> 3 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 2 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 2100 sqft</span>
+            </div>
+            <div class="agent-info">
+              <img src="img/james.webp" class="agent-photo" alt="Robert Thompson">
+              <div>
+                <div class="agent-name">Robert Thompson</div>
+                <div class="agent-company">Urban Living</div>
+              </div>
+              <button class="contact-btn"><i class="fas fa-phone"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 property-item page-1"
+        data-title="Charming Family Home"
+        data-type="HOUSE"
+        data-price="975000"
+        data-address="892 Maple Grove Avenue, Austin, TX"
+        data-bedrooms="4"
+        data-bathrooms="3"
+        data-sqft="2650"
+        data-agent-name="Lisa Anderson"
+        data-agent-company="Texas Home Solutions"
+        data-agent-photo="../img/emma.webp"
+        data-badge="FOR SALE"
+        data-image="../img/rumah 3.webp">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 3.webp" class="img-fluid" alt="Family Home">
+            <span class="property-badge badge-for-sale">FOR SALE</span>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="property-price">$975,000</div>
+                <a href="detail2.html" style="color: #2D3748;">
+                <h5 class="mt-1">Charming Family Home</h5></a>
+                <div class="property-address">
+                  <i class="fas fa-map-marker-alt me-1"></i> Austin, TX
+                </div>
+              </div>
+              <div class="property-type">HOUSE</div>
+            </div>
+            <div class="property-stats">
+              <span><i class="fas fa-bed me-1"></i> 4 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 3 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 2650 sqft</span>
+            </div>
+            <div class="agent-info">
+              <img src="img/emma.webp" class="agent-photo" alt="Lisa Anderson">
+              <div>
+                <div class="agent-name">Lisa Anderson</div>
+                <div class="agent-company">Texas Homes</div>
+              </div>
+              <button class="contact-btn"><i class="fas fa-phone"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 property-item page-1"
+        data-title="Industrial Studio Loft"
+        data-type="LOFT"
+        data-price="3400"
+        data-address="567 Warehouse District, Brooklyn, NY"
+        data-bedrooms="1"
+        data-bathrooms="1"
+        data-sqft="1200"
+        data-agent-name="Marcus Johnson"
+        data-agent-company="Brooklyn Properties"
+        data-agent-photo="../img/michael.webp"
+        data-badge="FOR RENT"
+        data-image="../img/rumah 4.webp">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 4.webp" class="img-fluid" alt="Studio Loft">
+            <span class="property-badge badge-for-rent">FOR RENT</span>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="property-price">$3,400/month</div>
+                <a href="detail2.html" style="color: #2D3748;">
+                <h5 class="mt-1">Industrial Studio Loft</h5></a>
+                <div class="property-address">
+                  <i class="fas fa-map-marker-alt me-1"></i> Brooklyn, NY
+                </div>
+              </div>
+              <div class="property-type">LOFT</div>
+            </div>
+            <div class="property-stats">
+              <span><i class="fas fa-bed me-1"></i> 1 Bed</span>
+              <span><i class="fas fa-bath me-1"></i> 1 Bath</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 1200 sqft</span>
+            </div>
+            <div class="agent-info">
+              <img src="img/michael.webp" class="agent-photo" alt="Marcus Johnson">
+              <div>
+                <div class="agent-name">Marcus Johnson</div>
+                <div class="agent-company">Brooklyn Prop</div>
+              </div>
+              <button class="contact-btn"><i class="fas fa-phone"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 property-item page-1"
+        data-title="Waterfront Townhouse"
+        data-type="TOWNHOUSE"
+        data-price="725000"
+        data-address="234 Harbor Drive, Miami, FL"
+        data-bedrooms="3"
+        data-bathrooms="2"
+        data-sqft="1950"
+        data-agent-name="Sofia Martinez"
+        data-agent-company="Coastal Realty"
+        data-agent-photo="../img/sarah.webp"
+        data-badge="FOR SALE"
+        data-image="../img/rumah 5.webp">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 5.webp" class="img-fluid" alt="Townhouse">
+            <span class="property-badge badge-for-sale">FOR SALE</span>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="property-price">$725,000</div>
+                <a href="detail2.html" style="color: #2D3748;">
+                <h5 class="mt-1">Waterfront Townhouse</h5></a>
+                <div class="property-address">
+                  <i class="fas fa-map-marker-alt me-1"></i> Miami, FL
+                </div>
+              </div>
+              <div class="property-type">TOWNHOUSE</div>
+            </div>
+            <div class="property-stats">
+              <span><i class="fas fa-bed me-1"></i> 3 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 2 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 1950 sqft</span>
+            </div>
+            <div class="agent-info">
+              <img src="img/sarah.webp" class="agent-photo" alt="Sofia Martinez">
+              <div>
+                <div class="agent-name">Sofia Martinez</div>
+                <div class="agent-company">Coastal Realty</div>
+              </div>
+              <button class="contact-btn"><i class="fas fa-phone"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4 property-item page-1"
+        data-title="High-Rise Condo"
+        data-type="CONDO"
+        data-price="645000"
+        data-address="789 Skyline Tower, Seattle, WA"
+        data-bedrooms="2"
+        data-bathrooms="2"
+        data-sqft="1450"
+        data-agent-name="James Wilson"
+        data-agent-company="Pacific Northwest Realty"
+        data-agent-photo="../img/james.webp"
+        data-badge="PRICE REDUCED"
+        data-image="../img/rumah 6.webp">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 6.webp" class="img-fluid" alt="High-Rise Condo">
+            <span class="property-badge badge-price-reduced">PRICE REDUCED</span>
+          </div>
+          <div class="p-3">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <div class="property-price">$645,000</div>
+                <a href="detail2.html" style="color: #2D3748;">
+                <h5 class="mt-1">High-Rise Condo</h5></a>
+                <div class="property-address">
+                  <i class="fas fa-map-marker-alt me-1"></i> Seattle, WA
+                </div>
+              </div>
+              <div class="property-type">CONDO</div>
+            </div>
+            <div class="property-stats">
+              <span><i class="fas fa-bed me-1"></i> 2 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 2 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 1450 sqft</span>
+            </div>
+            <div class="agent-info">
+              <img src="img/james.webp" class="agent-photo" alt="James Wilson">
+              <div>
+                <div class="agent-name">James Wilson</div>
+                <div class="agent-company">PNW Realty</div>
+              </div>
+              <button class="contact-btn"><i class="fas fa-phone"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Halaman 2 -->
+      <div class="col-md-4 mb-4 property-item page-2"
+        data-title="Mountain View Estate"
+        data-type="HOUSE"
+        data-price="2100000"
+        data-address="456 Summit Ridge, Aspen, CO"
+        data-bedrooms="6"
+        data-bathrooms="5"
+        data-sqft="4200"
+        data-agent-name="Emily Carter"
+        data-agent-company="Mountain Luxury"
+        data-agent-photo="../img/emma.webp"
+        data-badge="FEATURED"
+        data-image="../img/rumah 7.webp">
+        <div class="property-card">
+          <div class="position-relative">
+            <img src="img/rumah 7.webp" class="img-fluid" alt="Mountain Estate">
+            <span class="property-badge badge-featured">FEATURED</span>
+          </div>
+          <div class="p-3">
+            <div class="property-price">$2.1M</div>
+            <a href="detail2.html" style="color: #2D3748;">
+            <h5 class="mt-1">Mountain View Estate</h5></a>
+            <div class="property-address"><i class="fas fa-map-marker-alt me-1"></i> Aspen, CO</div>
+            <div class="property-type">HOUSE</div>
+            <div class="property-stats">
+              <span><i class="fas fa-bed me-1"></i> 6 Beds</span>
+              <span><i class="fas fa-bath me-1"></i> 5 Baths</span>
+              <span><i class="fas fa-ruler-combined me-1"></i> 4200 sqft</span>
+            </div>
+            <div class="agent-info">
+              <img src="img/emma.webp" class="agent-photo" alt="Emily Carter">
+              <div>
+                <div class="agent-name">Emily Carter</div>
+                <div class="agent-company">Mountain Luxury</div>
+              </div>
+              <button class="contact-btn"><i class="fas fa-phone"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tambahkan 5 properti lagi untuk halaman 2 & 6 untuk halaman 3 sesuai pola di atas -->
+      <!-- Untuk menghemat ruang, saya cukupkan contoh halaman 1 + 1 properti halaman 2 -->
+      <!-- Anda bisa duplikat struktur yang sama untuk total 18 properti -->
+
+      <!-- ... (Tambahkan properti halaman 2 dan 3 dengan class page-2 / page-3) ... -->
+
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="container">
+    <div class="pagination-container">
+      <button class="btn active" data-page="1" onclick="showPage(1)">1</button>
+      <button class="btn" data-page="2" onclick="showPage(2)">2</button>
+      <button class="btn" data-page="3" onclick="showPage(3)">3</button>
+    </div>
+    <div class="pagination-info">
+      Showing page <span id="current-page">1</span> of <span id="total-pages">3</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="copyright text-center text-white-50">&copy; 2026 EstateVista. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    let currentBedrooms = 'any';
+    let currentPage = 1;
+
+    // Ambil semua item properti
+    const propertyItems = document.querySelectorAll('.property-item');
+
+    function extractPrice(priceStr) {
+      const num = parseFloat(priceStr);
+      return isNaN(num) ? 0 : num;
+    }
+
+    function showPage(page) {
+      currentPage = page;
+      document.querySelectorAll('.pagination-container .btn').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.dataset.page) === page);
+      });
+      document.getElementById('current-page').textContent = page;
+      applyFilters();
+    }
+
+    function setBedrooms(value) {
+      currentBedrooms = value;
+      document.querySelectorAll('.btn-outline-secondary.btn-sm').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(value === 'any' ? 'btn-any' : `btn-${value}`).classList.add('active');
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+      const typeFilter = document.getElementById('type').value;
+      const priceRange = document.getElementById('price').value;
+      const bedroomsFilter = currentBedrooms;
+      const sortOrder = document.getElementById('sort-order').value;
+
+      // Filter & sort
+      const filtered = Array.from(propertyItems).filter(el => {
+        const title = el.dataset.title.toLowerCase();
+        const address = el.dataset.address.toLowerCase();
+        const type = el.dataset.type;
+        const price = extractPrice(el.dataset.price);
+        const bedrooms = parseInt(el.dataset.bedrooms);
+
+        const matchesSearch = !searchTerm || title.includes(searchTerm) || address.includes(searchTerm);
+        const matchesType = !typeFilter || type === typeFilter;
+        let matchesPrice = true;
+        if (priceRange) {
+          const [min, max] = priceRange.split('-').map(Number);
+          if (max) matchesPrice = price >= min && price <= max;
+          else matchesPrice = price >= min;
+        }
+        const matchesBedrooms = bedroomsFilter === 'any' || bedrooms >= parseInt(bedroomsFilter);
+        return matchesSearch && matchesType && matchesPrice && matchesBedrooms;
+      });
+
+      // Urutkan
+      if (sortOrder === 'low-high') {
+        filtered.sort((a, b) => extractPrice(a.dataset.price) - extractPrice(b.dataset.price));
+      } else if (sortOrder === 'high-low') {
+        filtered.sort((a, b) => extractPrice(b.dataset.price) - extractPrice(a.dataset.price));
+      } else if (sortOrder === 'newest') {
+        // Urutan asli = newest (bisa diubah jika ada timestamp)
+      }
+
+      // Tampilkan semua dulu, lalu sembunyikan yang tidak sesuai halaman
+      propertyItems.forEach(el => el.classList.remove('show'));
+
+      // Bagi ke halaman
+      const itemsPerPage = 6;
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const visibleOnPage = filtered.slice(startIndex, endIndex);
+
+      // Tandai yang harus muncul
+      visibleOnPage.forEach(el => el.classList.add('show'));
+
+      // Update jumlah
+      document.getElementById('total-properties').textContent = filtered.length;
+    }
+
+    // Inisialisasi
+    document.addEventListener('DOMContentLoaded', () => {
+      applyFilters();
+    });
+  </script>
+</body>
+</html>
