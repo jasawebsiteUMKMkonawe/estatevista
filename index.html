@@ -108,11 +108,20 @@
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
       background: var(--white);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
 
     .property-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .property-img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
     }
 
     .property-badge {
@@ -127,10 +136,21 @@
       font-size: 0.85rem;
     }
 
+    .property-body {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
     .property-price {
       color: var(--secondary);
       font-weight: 700;
       font-size: 1.3rem;
+    }
+
+    .property-body .btn {
+        margin-top: auto; 
     }
 
     /* Services */
@@ -141,6 +161,7 @@
       text-align: center;
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       transition: all 0.3s;
+      height: 100%;
     }
 
     .service-card:hover {
@@ -159,6 +180,7 @@
       padding: 25px;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      height: 100%;
     }
 
     .testimonial-text {
@@ -170,13 +192,13 @@
       color: var(--secondary);
     }
 
-    /* CTA Section */
+    /* CTA Section - Updated Padding */
     .cta-section {
       background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.85)), url('img/rumah 1.webp');
       background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 80px 0;
+      padding: 50px 0; /* Padding atas-bawah dikurangi dari 80px menjadi 50px */
       text-align: center;
     }
 
@@ -203,31 +225,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    .ad-banner-section .bg-danger {
-      height: auto;
-      min-height: 50px;
-      font-size: 0.9rem;
-      padding: 12px 24px;
-      backdrop-filter: blur(5px);
-    }
-
-    .ad-banner-section .bg-danger strong,
-    .ad-banner-section .bg-danger span {
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    .ad-banner-section .bg-danger button {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
     }
 
     /* Footer */
@@ -295,7 +292,7 @@
         </ul>
         <div class="ms-lg-3 mt-2 mt-lg-0">
           <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-            <i class="fas fa-phone me-1"></i> +1 5589 55488 55
+            <i class="fas fa-phone me-1"></i> Contact
           </a>
         </div>
       </div>
@@ -311,11 +308,8 @@
         <div class="col-md-10">
           <div class="bg-white p-4 rounded shadow">
             <form class="row g-3" action="properti.html" method="GET">
-              <div class="col-md-4">
-                <input type="text" name="q" class="form-control" placeholder="Location or Keyword">
-              </div>
-
-              <div class="col-md-3">
+              
+              <div class="col-md-5">
                 <select name="type" class="form-select">
                   <option value="" selected>Type</option>
                   <option value="HOUSE">House</option>
@@ -327,7 +321,7 @@
                 </select>
               </div>
 
-              <div class="col-md-3">
+              <div class="col-md-5">
                 <select name="price" class="form-select">
                   <option value="" selected>Max Budget</option>
                   <option value="0-500000">Up to $500K</option>
@@ -351,16 +345,6 @@
     <div class="container">
       <div class="position-relative rounded overflow-hidden shadow-sm">
         <img src="img/rumah 5.webp" alt="The Armont Residences" class="img-fluid w-100" style="max-height: 400px; object-fit: cover;">
-        <div class="position-absolute bottom-0 start-0 w-100 bg-danger text-white d-flex justify-content-between align-items-center p-3" style="font-size: 0.85rem;">
-          <div>
-            <strong>www.sinarmasland.com</strong><br>
-            <span class="me-3"><i class="fab fa-facebook-f me-1"></i>Sinar Mas Land</span>
-            <span class="me-3"><i class="fab fa-twitter me-1"></i>@sinarmas_land</span>
-            <span class="me-3"><i class="fab fa-instagram me-1"></i>@sinarmas_land</span>
-          </div>
-          <div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -399,69 +383,74 @@
         <h2>Handpicked Luxury Residences</h2>
         <p class="text-muted">Discover properties curated for elegance, comfort, and value.</p>
       </div>
-      <div class="row">
+      
+      <div class="row align-items-stretch">
+        
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="position-relative">
-              <img src="img/rumah 1.webp" class="img-fluid" alt="Luxury Home">
+              <img src="img/rumah 1.webp" class="property-img" alt="Luxury Home">
               <span class="property-badge">PREMIUM</span>
             </div>
-            <div class="p-4">
+            <div class="property-body">
               <div class="property-price">$4,850,000</div>
-              <h5 class="mt-2">Magnificent Estate with Ocean Views</h5>
+              <h5 class="mt-2">Magnificent Estate</h5>
               <p class="text-muted small">
                 <i class="fas fa-map-marker-alt me-2"></i>Malibu, CA
               </p>
-              <div class="d-flex justify-content-between text-muted small">
+              <div class="d-flex justify-content-between text-muted small mb-3">
                 <span><i class="fas fa-bed me-1"></i> 5 Beds</span>
                 <span><i class="fas fa-bath me-1"></i> 4 Baths</span>
                 <span><i class="fas fa-ruler-combined me-1"></i> 4,200 sqft</span>
               </div>
-              <a href="detail2.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="detail2.html" class="btn btn-primary w-100">View Details</a>
             </div>
           </div>
         </div>
+
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="position-relative">
-              <img src="img/rumah 2.webp" class="img-fluid" alt="Modern Condo">
+              <img src="img/rumah 2.webp" class="property-img" alt="Modern Condo">
               <span class="property-badge">NEW</span>
             </div>
-            <div class="p-4">
+            <div class="property-body">
               <div class="property-price">$1,595,000</div>
               <h5 class="mt-2">Contemporary Downtown Condo</h5>
               <p class="text-muted small">
                 <i class="fas fa-map-marker-alt me-2"></i>Seattle, WA
               </p>
-              <div class="d-flex justify-content-between text-muted small">
+              <div class="d-flex justify-content-between text-muted small mb-3">
                 <span><i class="fas fa-bed me-1"></i> 3 Beds</span>
                 <span><i class="fas fa-bath me-1"></i> 2 Baths</span>
                 <span><i class="fas fa-ruler-combined me-1"></i> 2,100 sqft</span>
               </div>
-              <a href="detail2.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="detail2.html" class="btn btn-primary w-100">View Details</a>
             </div>
           </div>
         </div>
+
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="position-relative">
-              <img src="img/rumah 3.webp" class="img-fluid" alt="Architectural Home">
+              <img src="img/rumah 3.webp" class="property-img" alt="Architectural Home">
             </div>
-            <div class="p-4">
+            <div class="property-body">
               <div class="property-price">$1,375,000</div>
               <h5 class="mt-2">Modern Architectural Gem</h5>
               <p class="text-muted small">
                 <i class="fas fa-map-marker-alt me-2"></i>Phoenix, AZ
               </p>
-              <div class="d-flex justify-content-between text-muted small">
+              <div class="d-flex justify-content-between text-muted small mb-3">
                 <span><i class="fas fa-bed me-1"></i> 4 Beds</span>
                 <span><i class="fas fa-bath me-1"></i> 3 Baths</span>
                 <span><i class="fas fa-ruler-combined me-1"></i> 2,800 sqft</span>
               </div>
-              <a href="detail2.html" class="btn btn-primary mt-3">View Details</a>
+              <a href="detail2.html" class="btn btn-primary w-100">View Details</a>
             </div>
           </div>
         </div>
+
       </div>
 
       <div class="text-center mt-4">
@@ -514,34 +503,34 @@
   </section>
 
   <section class="cta-section">
-  <div class="container">
-    <h2>Need Help Finding Your Dream Property?</h2>
-    <p class="lead mb-4">Let our experts guide you through every step — from search to closing.</p>
-    
-    <a 
-      href="https://wa.me/155895548855?text=Hi%20EstateVista%21%20I%E2%80%99d%20like%20to%20schedule%20a%20free%20consultation%20for%20property%20viewing.%20Please%20assist%20me." 
-      class="btn btn-secondary btn-lg"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Schedule a Free Consultation
-    </a>
-    
-    <a href="tel:+155895548855" class="btn btn-outline-light btn-lg">Call Us Now</a>
+    <div class="container">
+      <h2>Need Help Finding Your Dream Property?</h2>
+      <p class="lead mb-4">Let our experts guide you through every step — from search to closing.</p>
+      
+      <a 
+        href="https://wa.me/155895548855?text=Hi%20EstateVista%21%20I%E2%80%99d%20like%20to%20schedule%20a%20free%20consultation%20for%20property%20viewing.%20Please%20assist%20me." 
+        class="btn btn-secondary btn-lg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Schedule a Free Consultation
+      </a>
+      
+      <a href="tel:+155895548855" class="btn btn-outline-light btn-lg">Call Us Now</a>
 
-    <div class="mt-5 d-flex justify-content-center flex-wrap">
-      <div class="d-flex align-items-center mx-3 my-2 text-white">
-        <i class="fas fa-phone me-2"></i> Free Consultation
-      </div>
-      <div class="d-flex align-items-center mx-3 my-2 text-white">
-        <i class="fas fa-clock me-2"></i> 24/7 Support
-      </div>
-      <div class="d-flex align-items-center mx-3 my-2 text-white">
-        <i class="fas fa-shield-alt me-2"></i> Trusted Experts
+      <div class="mt-4 d-flex justify-content-center flex-wrap">
+        <div class="d-flex align-items-center mx-3 my-2 text-white">
+          <i class="fas fa-phone me-2"></i> Free Consultation
+        </div>
+        <div class="d-flex align-items-center mx-3 my-2 text-white">
+          <i class="fas fa-clock me-2"></i> 24/7 Support
+        </div>
+        <div class="d-flex align-items-center mx-3 my-2 text-white">
+          <i class="fas fa-shield-alt me-2"></i> Trusted Experts
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="py-5">
     <div class="container">
@@ -549,7 +538,7 @@
         <h2>What Our Clients Say</h2>
         <p class="text-muted">Real stories from satisfied homeowners.</p>
       </div>
-      <div class="row">
+      <div class="row align-items-stretch">
         <div class="col-md-6 mb-4">
           <div class="testimonial-card">
             <p class="testimonial-text">“Working with EstateVista made buying our first home seamless. Their local market knowledge exceeded expectations.”</p>

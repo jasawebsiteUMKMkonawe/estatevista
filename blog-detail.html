@@ -12,9 +12,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
     <style>
         /* --- CSS VARIABLES --- */
         :root {
+            /* Variabel asli blog-detail */
             --primary-navy: #1a2b49;
             --accent-gold: #d4af37;
             --accent-gold-hover: #b5952f;
@@ -23,6 +26,10 @@
             --bg-light: #f9f9f9;
             --white: #ffffff;
             --border-color: #e0e0e0;
+
+            /* Variabel tambahan dari index.html untuk Navbar */
+            --primary: #1A365D;
+            --secondary: #D4AF37;
         }
 
         * {
@@ -39,6 +46,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding-top: 80px; /* Padding agar konten tidak tertutup navbar fixed */
         }
 
         h1, h2, h3, h4, h5 {
@@ -54,6 +62,7 @@
 
         ul {
             list-style: none;
+            padding-left: 0;
         }
 
         img {
@@ -61,62 +70,44 @@
             display: block;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- NAVBAR (SAMA SEPERTI SEBELUMNYA) --- */
-        .custom-navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
+        /* --- NAVBAR STYLES --- */
+        .navbar {
             background-color: var(--white);
-            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .navbar-brand {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 1.8rem;
-            color: var(--primary-navy);
+            color: var(--primary);
         }
 
-        .nav-and-contact {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .phone-link {
-            color: #1a365d;
+        .navbar-nav .nav-link {
+            color: var(--text-dark);
             font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            font-size: 16px;
         }
 
-        @media (max-width: 900px) {
-            .custom-navbar { flex-direction: column; gap: 15px; }
-            .nav-links { display: none; } /* Hide menu on mobile for simplicity in this demo */
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        /* --- CONTAINER UTAMA --- */
+        .container-custom {
+            max-width: 90%; 
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         /* --- ARTICLE HEADER --- */
         .article-header {
-            padding: 60px 0 30px;
+            padding: 60px 0 40px;
             text-align: center;
-            max-width: 800px;
             margin: 0 auto;
         }
 
@@ -131,85 +122,101 @@
         }
 
         .article-title {
-            font-size: 42px;
+            font-size: 48px;
             line-height: 1.2;
             margin-bottom: 20px;
         }
 
-        .article-meta {
-            color: var(--text-light);
-            font-size: 14px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .article-meta img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* --- LAYOUT --- */
+        /* --- CONTENT LAYOUT --- */
         .content-layout {
-            display: grid;
-            grid-template-columns: 2.5fr 1fr;
-            gap: 50px;
-            margin-top: 40px;
+            width: 100%;
             margin-bottom: 60px;
         }
 
-        /* --- ARTICLE BODY STYLES --- */
+        /* --- ARTICLE ELEMENTS --- */
+        /* Default Desktop Styles */
         .article-featured-img {
             width: 100%;
-            height: 500px;
+            height: 600px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 40px;
         }
 
+        .secondary-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 50px 0;
+        }
+
         .article-content {
             background: var(--white);
-            padding: 40px;
+            padding: 60px;
             border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
         }
 
         .article-text p {
-            margin-bottom: 20px;
-            font-size: 17px;
-            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 19px; 
+            line-height: 1.9;
             color: #444;
         }
 
         .article-text h2 {
-            font-size: 26px;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-top: 50px;
+            margin-bottom: 25px;
         }
 
-        /* --- TABLE OF CONTENTS --- */
+        /* --- COLLAPSIBLE TABLE OF CONTENTS --- */
         .toc-box {
             background-color: #f4f6f8;
-            padding: 25px;
+            padding: 25px 40px;
             border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 4px solid var(--primary-navy);
+            margin-bottom: 50px;
+            border-left: 5px solid var(--primary-navy);
+        }
+
+        .toc-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
         }
 
         .toc-title {
             font-weight: 700;
-            margin-bottom: 15px;
-            font-size: 18px;
+            font-size: 20px;
             font-family: 'Playfair Display', serif;
+            margin: 0;
+        }
+
+        .toc-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .toc-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        .toc-list {
+            margin-top: 20px;
+            display: block;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .toc-list.hidden {
+            display: none;
         }
 
         .toc-list li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             border-bottom: 1px dashed #ddd;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
         
         .toc-list li:last-child {
@@ -218,7 +225,7 @@
 
         .toc-list a {
             color: var(--primary-navy);
-            font-size: 15px;
+            font-size: 16px;
         }
 
         .toc-list a:hover {
@@ -228,30 +235,30 @@
 
         /* --- QUOTE BLOCK --- */
         .blockquote-custom {
-            margin: 40px 0;
-            padding: 30px;
+            margin: 60px 0;
+            padding: 50px;
             background-color: #fafafa;
-            border-left: 5px solid var(--accent-gold);
+            border-left: 6px solid var(--accent-gold);
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 22px;
+            font-size: 28px;
             color: var(--primary-navy);
             position: relative;
         }
 
         .blockquote-custom::before {
-            content: '\201C'; /* Unicode for Left Double Quote */
-            font-size: 60px;
+            content: '\201C'; 
+            font-size: 80px;
             color: #e0e0e0;
             position: absolute;
-            top: -10px;
-            left: 10px;
+            top: -20px;
+            left: 20px;
             z-index: 0;
         }
 
         .blockquote-footer {
-            margin-top: 15px;
-            font-size: 14px;
+            margin-top: 20px;
+            font-size: 16px;
             font-family: 'Lato', sans-serif;
             font-style: normal;
             font-weight: 700;
@@ -259,151 +266,283 @@
             text-align: right;
         }
 
-        /* --- READ ALSO / BACA JUGA --- */
-        .read-also-box {
-            margin: 30px 0;
-            padding: 20px;
-            border: 2px solid #eee;
-            border-left: 5px solid var(--primary-navy);
+        /* --- AUTHOR PROFILE SECTION --- */
+        .author-bio-box {
+            margin-top: 80px;
+            margin-bottom: 40px;
+            padding: 40px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 15px;
-            background: #fff;
+            gap: 30px;
+            border: 1px solid #eee;
         }
 
-        .read-also-label {
-            font-weight: 700;
+        .author-bio-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .author-bio-content h4 {
+            margin-bottom: 5px;
+            font-size: 22px;
+        }
+
+        .author-role {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: var(--accent-gold);
-            white-space: nowrap;
-        }
-
-        .read-also-link {
             font-weight: 700;
-            color: var(--primary-navy);
-            font-size: 16px;
+            margin-bottom: 15px;
+            display: block;
         }
 
-        .read-also-link:hover {
-            text-decoration: underline;
+        .author-bio-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .publish-date {
+            font-size: 14px;
+            color: #999;
+            font-style: italic;
         }
 
         /* --- SHARE BUTTONS --- */
         .share-section {
-            margin: 30px 0;
-            padding-top: 20px;
+            padding-top: 30px;
             border-top: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .share-title {
-            font-size: 14px;
+            font-size: 18px;
             font-weight: 700;
-            margin-bottom: 10px;
-            display: block;
+            color: var(--primary-navy);
         }
 
         .share-icons {
             display: flex;
-            gap: 10px;
+            gap: 15px;
         }
 
         .share-btn {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             color: white;
-            font-size: 14px;
+            font-size: 18px;
             transition: transform 0.2s;
         }
 
-        .share-btn:hover {
-            transform: translateY(-3px);
-        }
-
+        .share-btn:hover { transform: translateY(-3px); }
         .bg-fb { background-color: #3b5998; }
         .bg-tw { background-color: #1da1f2; }
         .bg-in { background-color: #0077b5; }
         .bg-wa { background-color: #25d366; }
 
-        /* --- SIDEBAR (SAMA SEPERTI SEBELUMNYA) --- */
-        .sidebar-widget {
+        /* --- RELATED POSTS SECTION --- */
+        .related-posts {
+            background-color: #fff;
+            padding: 80px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .related-card {
             background: var(--white);
-            padding: 30px;
             border-radius: 8px;
-            border: 1px solid var(--border-color);
-            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
 
-        .widget-title {
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .related-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .related-body {
+            padding: 25px;
+        }
+
+        .related-title {
             font-size: 20px;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-        }
-        
-        .widget-title::after {
-            content: '';
-            position: absolute; left: 0; bottom: -2px; width: 50px; height: 2px; background: var(--accent-gold);
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
 
-        /* --- FOOTER 4 KOLOM (UPDATE TERBARU) --- */
+        .related-date {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* --- FOOTER --- */
         footer {
             background-color: #152238;
             color: #b0b0b0;
-            padding-top: 70px;
-            font-size: 14px;
-            margin-top: auto;
+            padding-top: 80px;
+            font-size: 15px;
         }
 
         .footer-content {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
         .footer-widget h3 {
             color: var(--white);
-            font-size: 18px;
-            margin-bottom: 25px;
+            font-size: 20px;
+            margin-bottom: 30px;
             font-weight: 700;
         }
 
-        .footer-brand h2 { color: var(--white); font-size: 28px; margin-bottom: 10px; }
-        .footer-brand p { margin-bottom: 20px; color: #a4b0c5; }
+        .footer-brand h2 { color: var(--white); font-size: 32px; margin-bottom: 15px; }
+        .footer-brand p { margin-bottom: 25px; color: #a4b0c5; font-size: 16px; }
 
-        .social-links { display: flex; gap: 10px; }
+        .social-links { display: flex; gap: 15px; }
         .social-links a {
             display: flex; align-items: center; justify-content: center;
-            width: 36px; height: 36px; background-color: rgba(255, 255, 255, 0.1);
+            width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1);
             color: var(--white); border-radius: 50%; transition: 0.3s;
         }
         .social-links a:hover { background-color: var(--accent-gold); }
 
         .footer-links ul { padding: 0; }
-        .footer-links li { margin-bottom: 12px; }
+        .footer-links li { margin-bottom: 15px; }
         .footer-links a { color: #b0b0b0; transition: 0.3s; }
         .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
 
-        .contact-info li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; }
-        .contact-info i { color: #7b8ba5; margin-top: 4px; }
+        .contact-info li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .contact-info i { color: #7b8ba5; margin-top: 5px; }
 
         .copyright {
-            text-align: center; padding: 25px 0;
+            text-align: center; padding: 30px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1); color: #7b8ba5;
         }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .content-layout { grid-template-columns: 1fr; }
-            .article-title { font-size: 32px; }
+        /* --- RESPONSIVE MEDIA QUERIES (UPDATED) --- */
+        
+        /* Tablet & Mobile Header/Footer Adjustment */
+        @media (max-width: 991px) {
+            .article-title { font-size: 36px; }
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-content { grid-template-columns: repeat(2, 1fr); }
+            .container-custom { max-width: 95%; } 
         }
-        @media (max-width: 600px) {
-            .footer-content { grid-template-columns: 1fr; }
+
+        /* Specific Mobile Styling */
+        @media (max-width: 768px) {
+            .container-custom {
+                max-width: 100%;
+                padding: 0 15px;
+            }
+
+            /* Header */
+            .article-header {
+                padding: 40px 0 20px;
+            }
+            .article-title {
+                font-size: 28px; /* Judul lebih pas di mobile */
+            }
+
+            /* Content Layout */
+            .article-content {
+                padding: 30px 20px; /* Padding dikurangi agar tidak terlalu sempit */
+            }
+
+            /* --- GAMBAR TETAP LANDSCAPE --- */
+            /* Menggunakan aspect-ratio agar proporsi tetap terjaga (tidak gepeng/tinggi) */
+            .article-featured-img, 
+            .secondary-img {
+                height: auto !important; /* Reset tinggi statis */
+                aspect-ratio: 16/9;      /* Memaksa rasio landscape */
+                object-fit: cover;
+                margin-bottom: 20px;
+            }
+            .secondary-img {
+                margin: 30px 0;
+            }
+
+            /* --- QUOTE BOX TETAP PROPOSIONAL --- */
+            .blockquote-custom {
+                padding: 30px 20px; /* Padding dikurangi */
+                margin: 30px 0;
+                font-size: 20px; /* Font diperkecil sedikit */
+                border-left-width: 4px;
+            }
+            .blockquote-custom::before {
+                font-size: 60px; /* Ikon kutip diperkecil */
+                top: -15px;
+                left: 10px;
+            }
+
+            /* Text Readability */
+            .article-text p {
+                font-size: 17px;
+            }
+            .article-text h2 {
+                font-size: 24px;
+                margin-top: 30px;
+            }
+
+            /* Author Box Mobile */
+            .author-bio-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+                margin-top: 40px;
+            }
+            .author-bio-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            /* Share Section */
+            .share-section {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            .share-icons {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            /* Related & Footer Columns to 1 */
+            .related-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; gap: 30px; }
         }
 
     </style>
@@ -411,58 +550,49 @@
 
 <body>
 
-    <header>
-        <div class="custom-navbar">
-            <a class="navbar-brand" href="index.html">EstateVista</a>
-            <div class="nav-and-contact">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="properti.html">Properties</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-                <a href="tel:+155895548855" class="phone-link">
-                    <i class="fas fa-phone"></i> +1 5589 55488 55
-                </a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">EstateVista</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
+              <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+            </ul>
+            <div class="ms-lg-3 mt-2 mt-lg-0">
+              <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
+                <i class="fas fa-phone me-1"></i> Contact
+              </a>
             </div>
+          </div>
         </div>
-    </header>
+    </nav>
 
-    <div class="container">
+    <div class="container-custom">
         
         <div class="article-header">
             <span class="article-category">Market Analysis</span>
             <h1 class="article-title">The Future of Luxury Real Estate: Trends to Watch in 2026</h1>
-            <div class="article-meta">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author">
-                <div>
-                    <strong>Sarah Martinez</strong><br>
-                    <span>Jan 05, 2026 &bull; 5 min read</span>
-                </div>
-            </div>
         </div>
-
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-             alt="Luxury Real Estate" class="article-featured-img">
 
         <div class="content-layout">
 
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                 alt="Luxury Real Estate" class="article-featured-img">
+
             <article class="article-content">
                 
-                <div class="share-section" style="margin-top: 0; border-top: none; margin-bottom: 20px;">
-                    <span class="share-title">Share this article:</span>
-                    <div class="share-icons">
-                        <a href="#" class="share-btn bg-fb"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="share-btn bg-tw"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="share-btn bg-in"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="share-btn bg-wa"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-
                 <div class="toc-box">
-                    <div class="toc-title">Table of Contents</div>
-                    <ul class="toc-list">
+                    <div class="toc-header" onclick="toggleTOC()">
+                        <div class="toc-title">Table of Contents</div>
+                        <i class="fas fa-chevron-down toc-icon" id="tocIcon"></i>
+                    </div>
+                    <ul class="toc-list" id="tocList">
                         <li><a href="#intro">Introduction</a></li>
                         <li><a href="#sustainability">1. Sustainability as the New Standard</a></li>
                         <li><a href="#wellness">2. Wellness-Centric Architecture</a></li>
@@ -473,41 +603,51 @@
                 </div>
 
                 <div class="article-text">
-                    <p id="intro">As we step into a new year, the landscape of high-end property is shifting. The definition of luxury is evolving from simple opulence to a more sophisticated blend of technology, sustainability, and personal well-being. From sustainable smart homes to the resurgence of suburban estates, high-net-worth individuals are prioritizing different assets in 2026.</p>
+                    <p id="intro">As we step into a new year, the landscape of high-end property is shifting. The definition of luxury is evolving from simple opulence to a more sophisticated blend of technology, sustainability, and personal well-being. From sustainable smart homes to the resurgence of suburban estates, high-net-worth individuals are prioritizing different assets in 2026. The shift isn't just about what the home looks like, but how it functions as a complete ecosystem for living.</p>
                     
-                    <p>In this analysis, we explore the key drivers changing the luxury market and what buyers need to look for to ensure their investments hold value for decades to come.</p>
+                    <p>In this analysis, we explore the key drivers changing the luxury market and what buyers need to look for to ensure their investments hold value for decades to come. The market has shown resilience despite global economic fluctuations, proving that real estate remains a top tier asset class for capital preservation and growth.</p>
 
                     <h2 id="sustainability">1. Sustainability as the New Standard</h2>
-                    <p>Gone are the days when eco-friendly meant a compromise on style. In 2026, sustainability is the ultimate luxury. Buyers are looking for homes with LEED certification, solar integration, and passive design that reduces the carbon footprint without sacrificing comfort.</p>
+                    <p>Gone are the days when eco-friendly meant a compromise on style. In 2026, sustainability is the ultimate luxury. Buyers are looking for homes with LEED certification, solar integration, and passive design that reduces the carbon footprint without sacrificing comfort. Energy independence is no longer just a perk; it's a primary demand from discerning buyers.</p>
 
                     <blockquote class="blockquote-custom">
                         "True luxury in 2026 is no longer just about golden taps and marble floors; it's about the seamless integration of health, technology, and environmental responsibility."
                         <div class="blockquote-footer">— James Sterling, Chief Analyst at EstateVista</div>
                     </blockquote>
 
-                    <p>Materials like reclaimed wood, low-VOC paints, and energy-efficient glass are now standard expectations in the top-tier market. It's not just about saving the planet; it's about the quality of the air you breathe inside your home.</p>
-
-                    <div class="read-also-box">
-                        <span class="read-also-label">Read Also:</span>
-                        <a href="blog-detail2.html" class="read-also-link">Maximizing ROI: A Guide for Property Investors in 2026</a>
-                    </div>
+                    <p>Materials like reclaimed wood, low-VOC paints, and energy-efficient glass are now standard expectations in the top-tier market. It's not just about saving the planet; it's about the quality of the air you breathe inside your home. Biophilic design elements that bring the outdoors in are becoming standard in high-end developments.</p>
 
                     <h2 id="wellness">2. Wellness-Centric Architecture</h2>
-                    <p>Following the global health shifts of the last decade, the home has become a sanctuary. We are seeing a massive spike in demand for properties that feature dedicated wellness spaces. This goes beyond a simple home gym.</p>
-                    <p>Think meditation gardens, circadian lighting systems that adjust to your sleep cycle, and advanced water filtration systems. Real estate developers are now consulting with health experts to design spaces that actively lower stress levels.</p>
+                    <p>Following the global health shifts of the last decade, the home has become a sanctuary. We are seeing a massive spike in demand for properties that feature dedicated wellness spaces. This goes beyond a simple home gym; we are talking about full-scale spa facilities, cryotherapy chambers, and yoga studios integrated directly into the home.</p>
+                    
+                    <img src="img/rumah 3.webp" 
+                         alt="Wellness Spa in Luxury Home" class="secondary-img">
+
+                    <p>Think meditation gardens, circadian lighting systems that adjust to your sleep cycle, and advanced water filtration systems. Real estate developers are now consulting with health experts to design spaces that actively lower stress levels and promote longevity. The home is now seen as a tool for health optimization.</p>
 
                     <h2 id="suburban">3. The Suburban Renaissance</h2>
-                    <p>While city penthouses remain desirable, there is a clear trend toward the suburbs. However, this isn't the suburbia of the past. Luxury buyers are seeking "commuter estates"—large properties with ample land, privacy, and high-speed connectivity, located within an hour of major metropolitan hubs.</p>
+                    <p>While city penthouses remain desirable, there is a clear trend toward the suburbs. However, this isn't the suburbia of the past. Luxury buyers are seeking "commuter estates"—large properties with ample land, privacy, and high-speed connectivity, located within an hour of major metropolitan hubs. Space is the new currency.</p>
 
                     <h2 id="tech">4. Smart Homes 2.0</h2>
-                    <p>Smart home technology has matured. It's no longer about flashy gadgets, but about intuitive systems. In 2026, AI-driven home management systems can predict heating needs, manage security autonomously, and even order groceries.</p>
+                    <p>Smart home technology has matured. It's no longer about flashy gadgets, but about intuitive systems. In 2026, AI-driven home management systems can predict heating needs, manage security autonomously, and even order groceries based on your consumption patterns. The technology is invisible but omnipresent.</p>
 
                     <h2 id="conclusion">Conclusion</h2>
-                    <p>The luxury real estate market in 2026 is dynamic and exciting. For investors and homebuyers alike, the focus should remain on quality, location, and the adaptability of the property to future technologies and environmental standards.</p>
+                    <p>The luxury real estate market in 2026 is dynamic and exciting. For investors and homebuyers alike, the focus should remain on quality, location, and the adaptability of the property to future technologies and environmental standards. Those who adapt to these trends will see significant returns on their investments.</p>
+                </div>
+
+                <div class="author-bio-box">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
+                         alt="Sarah Martinez" class="author-bio-img">
+                    <div class="author-bio-content">
+                        <h4>Sarah Martinez</h4>
+                        <span class="author-role">Senior Market Analyst</span>
+                        <p class="author-bio-text">Sarah is a veteran real estate analyst with over 15 years of experience in the luxury market. She specializes in emerging trends and sustainable property development.</p>
+                        <span class="publish-date">Posted on January 05, 2026</span>
+                    </div>
                 </div>
 
                 <div class="share-section">
-                    <span class="share-title">Did you find this article helpful? Share it:</span>
+                    <span class="share-title">Share this article:</span>
                     <div class="share-icons">
                         <a href="#" class="share-btn bg-fb"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="share-btn bg-tw"><i class="fab fa-twitter"></i></a>
@@ -518,60 +658,50 @@
 
             </article>
 
-            <aside class="sidebar">
-                
-                <div class="sidebar-widget">
-                    <h4 class="widget-title">Search</h4>
-                    <form class="search-form">
-                        <input type="text" placeholder="Search articles...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-
-                <div class="sidebar-widget">
-                    <h4 class="widget-title">Categories</h4>
-                    <ul class="categories-list">
-                        <li><a href="#">Market Trends</a> <span class="cat-count">12</span></li>
-                        <li><a href="#">Interior Design</a> <span class="cat-count">8</span></li>
-                        <li><a href="#">Investment Tips</a> <span class="cat-count">15</span></li>
-                        <li><a href="#">Luxury Lifestyle</a> <span class="cat-count">6</span></li>
-                    </ul>
-                </div>
-
-                <div class="sidebar-widget">
-                    <h4 class="widget-title">Trending Now</h4>
-                    <div class="trending-item">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="trending-img">
-                        <div class="trending-info">
-                            <h5><a href="#">The Rise of Eco-Friendly Smart Homes</a></h5>
-                            <span>Jan 04, 2026</span>
-                        </div>
-                    </div>
-                    <div class="trending-item">
-                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="trending-img">
-                        <div class="trending-info">
-                            <h5><a href="#">Is 2026 the Right Time to Refinance?</a></h5>
-                            <span>Dec 18, 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar-widget newsletter-box">
-                    <h4 class="widget-title">Subscribe</h4>
-                    <p>Get the latest property news delivered to your inbox.</p>
-                    <form>
-                        <input type="email" placeholder="Your email address">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
-                    </form>
-                </div>
-
-            </aside>
-
         </div>
     </div>
 
+    <section class="related-posts">
+        <div class="container-custom">
+            <h2 class="section-title">Related Articles</h2>
+            <div class="related-grid">
+                
+                <div class="related-card">
+                    <a href="blog-detail2.html">
+                        <img src="img/rumah 1.webp" class="related-img" alt="Investment">
+                        <div class="related-body">
+                            <h3 class="related-title">Maximizing ROI: A Guide for Property Investors</h3>
+                            <span class="related-date">Jan 03, 2026</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="related-card">
+                    <a href="blog-detail3.html">
+                        <img src="img/rumah 3.webp" class="related-img" alt="Design">
+                        <div class="related-body">
+                            <h3 class="related-title">Minimalist Interiors: Less is More in Modern Villas</h3>
+                            <span class="related-date">Dec 28, 2025</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="related-card">
+                    <a href="blog-detail5.html">
+                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="related-img" alt="Lifestyle">
+                        <div class="related-body">
+                            <h3 class="related-title">Top 5 Neighborhoods for Families in 2026</h3>
+                            <span class="related-date">Dec 15, 2025</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <div class="container">
+        <div class="container-custom">
             <div class="footer-content">
                 
                 <div class="footer-widget footer-brand">
@@ -631,6 +761,23 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleTOC() {
+            var list = document.getElementById("tocList");
+            var icon = document.getElementById("tocIcon");
+            
+            if (list.style.display === "none") {
+                list.style.display = "block";
+                icon.classList.remove("rotate");
+            } else {
+                list.style.display = "none";
+                icon.classList.add("rotate");
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
