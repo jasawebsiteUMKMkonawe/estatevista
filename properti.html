@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Properties — EstateVista</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
   <style>
@@ -117,7 +114,6 @@
       max-width: 600px;
       margin: 0 auto;
     }
- 
 
     .badge-featured { background-color: #FF6B6B; }
     .badge-new { background-color: #4ECDC4; }
@@ -237,7 +233,7 @@
       font-size: 0.9rem;
     }
 
-    /* Kelas untuk pagination */
+    /* Kelas untuk pagination & filter */
     .property-item {
       display: none; /* awalnya semua disembunyikan */
     }
@@ -258,7 +254,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">EstateVista</a>
@@ -269,15 +264,19 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Properties</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="properti.html">Properties</a></li>
+          <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
         </ul>
+        <div class="ms-lg-3 mt-2 mt-lg-0">
+          <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
+            <i class="fas fa-phone me-1"></i> +1 5589 55488 55
+          </a>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero-about">
     <div class="container">
       <h1>Turning Dreams into Reality</h1>
@@ -285,7 +284,6 @@
     </div>
   </section>
 
-  <!-- Breadcrumb -->
   <div class="container mt-5 pt-4">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -299,10 +297,9 @@
     <h2>Properties</h2>
   </div>
 
-  <!-- Search Bar -->
   <div class="container">
     <div class="search-bar">
-      <form class="row g-3">
+      <form class="row g-3" onsubmit="event.preventDefault(); applyFilters();">
         <div class="col-md-3">
           <input type="text" class="form-control" id="search-input" placeholder="Search by name or location...">
         </div>
@@ -310,6 +307,7 @@
           <select class="form-select" id="type">
             <option value="">Any Type</option>
             <option value="HOUSE">House</option>
+            <option value="VILLA">Villa</option>
             <option value="APARTMENT">Apartment</option>
             <option value="CONDO">Condo</option>
             <option value="TOWNHOUSE">Townhouse</option>
@@ -335,7 +333,7 @@
           </div>
         </div>
         <div class="col-md-3 d-flex align-items-end">
-          <button type="button" class="btn w-100" onclick="applyFilters()">
+          <button type="button" class="btn btn-primary w-100" onclick="applyFilters()">
             <i class="fas fa-search me-2"></i>Search
           </button>
         </div>
@@ -343,7 +341,6 @@
     </div>
   </div>
 
-  <!-- Results Info -->
   <div class="container">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div>
@@ -354,17 +351,14 @@
           <option value="default">Default</option>
           <option value="low-high">Price: Low to High</option>
           <option value="high-low">Price: High to Low</option>
-          <option value="newest">Newest First</option>
         </select>
       </div>
     </div>
   </div>
 
-  <!-- Properties Grid (SEMUA CARD DI SINI — HTML MURNI) -->
   <div class="container">
     <div class="row" id="properties-container">
 
-      <!-- Halaman 1 -->
       <div class="col-md-4 mb-4 property-item page-1"
         data-title="Luxury Modern Villa with Pool"
         data-type="HOUSE"
@@ -647,7 +641,6 @@
         </div>
       </div>
 
-      <!-- Halaman 2 -->
       <div class="col-md-4 mb-4 property-item page-2"
         data-title="Mountain View Estate"
         data-type="HOUSE"
@@ -689,16 +682,9 @@
         </div>
       </div>
 
-      <!-- Tambahkan 5 properti lagi untuk halaman 2 & 6 untuk halaman 3 sesuai pola di atas -->
-      <!-- Untuk menghemat ruang, saya cukupkan contoh halaman 1 + 1 properti halaman 2 -->
-      <!-- Anda bisa duplikat struktur yang sama untuk total 18 properti -->
-
-      <!-- ... (Tambahkan properti halaman 2 dan 3 dengan class page-2 / page-3) ... -->
-
     </div>
   </div>
 
-  <!-- Pagination -->
   <div class="container">
     <div class="pagination-container">
       <button class="btn active" data-page="1" onclick="showPage(1)">1</button>
@@ -710,7 +696,6 @@
     </div>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="copyright text-center text-white-50">&copy; 2026 EstateVista. All Rights Reserved.</div>
@@ -722,8 +707,6 @@
   <script>
     let currentBedrooms = 'any';
     let currentPage = 1;
-
-    // Ambil semua item properti
     const propertyItems = document.querySelectorAll('.property-item');
 
     function extractPrice(priceStr) {
@@ -754,54 +737,101 @@
       const bedroomsFilter = currentBedrooms;
       const sortOrder = document.getElementById('sort-order').value;
 
-      // Filter & sort
       const filtered = Array.from(propertyItems).filter(el => {
         const title = el.dataset.title.toLowerCase();
         const address = el.dataset.address.toLowerCase();
-        const type = el.dataset.type;
+        const type = el.dataset.type; // Data type asli (misal: HOUSE)
         const price = extractPrice(el.dataset.price);
         const bedrooms = parseInt(el.dataset.bedrooms);
 
+        // LOGIKA SEARCH
         const matchesSearch = !searchTerm || title.includes(searchTerm) || address.includes(searchTerm);
-        const matchesType = !typeFilter || type === typeFilter;
+
+        // LOGIKA TIPE (Handling khusus untuk VILLA)
+        let matchesType = true;
+        if (typeFilter) {
+            if (typeFilter === 'VILLA') {
+                // Jika user cari Villa, cari yang Type=HOUSE TAPI judul mengandung Villa
+                matchesType = (type === 'HOUSE' && title.includes('villa'));
+            } else {
+                matchesType = type === typeFilter;
+            }
+        }
+
+        // LOGIKA HARGA
         let matchesPrice = true;
         if (priceRange) {
           const [min, max] = priceRange.split('-').map(Number);
           if (max) matchesPrice = price >= min && price <= max;
           else matchesPrice = price >= min;
         }
+
         const matchesBedrooms = bedroomsFilter === 'any' || bedrooms >= parseInt(bedroomsFilter);
+
         return matchesSearch && matchesType && matchesPrice && matchesBedrooms;
       });
 
-      // Urutkan
+      // SORTING
       if (sortOrder === 'low-high') {
         filtered.sort((a, b) => extractPrice(a.dataset.price) - extractPrice(b.dataset.price));
       } else if (sortOrder === 'high-low') {
         filtered.sort((a, b) => extractPrice(b.dataset.price) - extractPrice(a.dataset.price));
-      } else if (sortOrder === 'newest') {
-        // Urutan asli = newest (bisa diubah jika ada timestamp)
       }
 
-      // Tampilkan semua dulu, lalu sembunyikan yang tidak sesuai halaman
+      // RESET TAMPILAN
       propertyItems.forEach(el => el.classList.remove('show'));
 
-      // Bagi ke halaman
+      // PAGINATION LOGIC
       const itemsPerPage = 6;
       const startIndex = (currentPage - 1) * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
       const visibleOnPage = filtered.slice(startIndex, endIndex);
 
-      // Tandai yang harus muncul
       visibleOnPage.forEach(el => el.classList.add('show'));
-
-      // Update jumlah
       document.getElementById('total-properties').textContent = filtered.length;
+      
+      // Update pagination info jika hasil kosong
+      if (filtered.length === 0) {
+         document.getElementById('total-properties').textContent = "0";
+      }
+    }
+
+    // FUNGSI BARU: BACA URL DARI HALAMAN INDEX
+    function loadParamsFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        
+        // 1. Ambil Keyword (q) -> Masukkan ke search input
+        if (params.has('q')) {
+            document.getElementById('search-input').value = params.get('q');
+        }
+
+        // 2. Ambil Type -> Masukkan ke dropdown Type
+        if (params.has('type')) {
+            const typeVal = params.get('type');
+            const typeSelect = document.getElementById('type');
+            
+             // Cek jika option ada, select. Jika tidak (misal VILLA), handle manual
+             if (typeSelect.querySelector(`option[value="${typeVal}"]`)) {
+                typeSelect.value = typeVal;
+             } else if (typeVal === 'VILLA') {
+                 // Jika VILLA dipilih dari index, tapi properti.html tidak punya opsi VILLA,
+                 // Kita inject keyword 'Villa' ke search bar agar user paham
+                 document.getElementById('search-input').value = "Villa " + document.getElementById('search-input').value;
+             }
+        }
+
+        // 3. Ambil Price -> Masukkan ke dropdown Price
+        if (params.has('price')) {
+            document.getElementById('price').value = params.get('price');
+        }
+
+        // Jalankan filter setelah nilai dimasukkan
+        applyFilters();
     }
 
     // Inisialisasi
     document.addEventListener('DOMContentLoaded', () => {
-      applyFilters();
+      loadParamsFromURL(); // Cek URL dulu
     });
   </script>
 </body>

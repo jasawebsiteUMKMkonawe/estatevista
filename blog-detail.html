@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Luxury Real Estate 2026 - EstateVista</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES --- */
+        :root {
+            --primary-navy: #1a2b49;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #b5952f;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-navy);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- NAVBAR (SAMA SEPERTI SEBELUMNYA) --- */
+        .custom-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary-navy);
+        }
+
+        .nav-and-contact {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .phone-link {
+            color: #1a365d;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 900px) {
+            .custom-navbar { flex-direction: column; gap: 15px; }
+            .nav-links { display: none; } /* Hide menu on mobile for simplicity in this demo */
+        }
+
+        /* --- ARTICLE HEADER --- */
+        .article-header {
+            padding: 60px 0 30px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-category {
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .article-title {
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            color: var(--text-light);
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .article-meta img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* --- LAYOUT --- */
+        .content-layout {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* --- ARTICLE BODY STYLES --- */
+        .article-featured-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .article-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .article-text p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .article-text h2 {
+            font-size: 26px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* --- TABLE OF CONTENTS --- */
+        .toc-box {
+            background-color: #f4f6f8;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-navy);
+        }
+
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .toc-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 5px;
+        }
+        
+        .toc-list li:last-child {
+            border-bottom: none;
+        }
+
+        .toc-list a {
+            color: var(--primary-navy);
+            font-size: 15px;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        /* --- QUOTE BLOCK --- */
+        .blockquote-custom {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #fafafa;
+            border-left: 5px solid var(--accent-gold);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--primary-navy);
+            position: relative;
+        }
+
+        .blockquote-custom::before {
+            content: '\201C'; /* Unicode for Left Double Quote */
+            font-size: 60px;
+            color: #e0e0e0;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            z-index: 0;
+        }
+
+        .blockquote-footer {
+            margin-top: 15px;
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--text-light);
+            text-align: right;
+        }
+
+        /* --- READ ALSO / BACA JUGA --- */
+        .read-also-box {
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #eee;
+            border-left: 5px solid var(--primary-navy);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #fff;
+        }
+
+        .read-also-label {
+            font-weight: 700;
+            color: var(--accent-gold);
+            white-space: nowrap;
+        }
+
+        .read-also-link {
+            font-weight: 700;
+            color: var(--primary-navy);
+            font-size: 16px;
+        }
+
+        .read-also-link:hover {
+            text-decoration: underline;
+        }
+
+        /* --- SHARE BUTTONS --- */
+        .share-section {
+            margin: 30px 0;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .share-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .share-icons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .bg-fb { background-color: #3b5998; }
+        .bg-tw { background-color: #1da1f2; }
+        .bg-in { background-color: #0077b5; }
+        .bg-wa { background-color: #25d366; }
+
+        /* --- SIDEBAR (SAMA SEPERTI SEBELUMNYA) --- */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .widget-title::after {
+            content: '';
+            position: absolute; left: 0; bottom: -2px; width: 50px; height: 2px; background: var(--accent-gold);
+        }
+
+        /* --- FOOTER 4 KOLOM (UPDATE TERBARU) --- */
+        footer {
+            background-color: #152238;
+            color: #b0b0b0;
+            padding-top: 70px;
+            font-size: 14px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .footer-widget h3 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .footer-brand h2 { color: var(--white); font-size: 28px; margin-bottom: 10px; }
+        .footer-brand p { margin-bottom: 20px; color: #a4b0c5; }
+
+        .social-links { display: flex; gap: 10px; }
+        .social-links a {
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white); border-radius: 50%; transition: 0.3s;
+        }
+        .social-links a:hover { background-color: var(--accent-gold); }
+
+        .footer-links ul { padding: 0; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: #b0b0b0; transition: 0.3s; }
+        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
+
+        .contact-info li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; }
+        .contact-info i { color: #7b8ba5; margin-top: 4px; }
+
+        .copyright {
+            text-align: center; padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1); color: #7b8ba5;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .content-layout { grid-template-columns: 1fr; }
+            .article-title { font-size: 32px; }
+            .footer-content { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .footer-content { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="custom-navbar">
+            <a class="navbar-brand" href="index.html">EstateVista</a>
+            <div class="nav-and-contact">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="properti.html">Properties</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <a href="tel:+155895548855" class="phone-link">
+                    <i class="fas fa-phone"></i> +1 5589 55488 55
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="article-header">
+            <span class="article-category">Market Analysis</span>
+            <h1 class="article-title">The Future of Luxury Real Estate: Trends to Watch in 2026</h1>
+            <div class="article-meta">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Author">
+                <div>
+                    <strong>Sarah Martinez</strong><br>
+                    <span>Jan 05, 2026 &bull; 5 min read</span>
+                </div>
+            </div>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+             alt="Luxury Real Estate" class="article-featured-img">
+
+        <div class="content-layout">
+
+            <article class="article-content">
+                
+                <div class="share-section" style="margin-top: 0; border-top: none; margin-bottom: 20px;">
+                    <span class="share-title">Share this article:</span>
+                    <div class="share-icons">
+                        <a href="#" class="share-btn bg-fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn bg-tw"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn bg-in"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-btn bg-wa"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="toc-box">
+                    <div class="toc-title">Table of Contents</div>
+                    <ul class="toc-list">
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#sustainability">1. Sustainability as the New Standard</a></li>
+                        <li><a href="#wellness">2. Wellness-Centric Architecture</a></li>
+                        <li><a href="#suburban">3. The Suburban Renaissance</a></li>
+                        <li><a href="#tech">4. Smart Homes 2.0</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                    </ul>
+                </div>
+
+                <div class="article-text">
+                    <p id="intro">As we step into a new year, the landscape of high-end property is shifting. The definition of luxury is evolving from simple opulence to a more sophisticated blend of technology, sustainability, and personal well-being. From sustainable smart homes to the resurgence of suburban estates, high-net-worth individuals are prioritizing different assets in 2026.</p>
+                    
+                    <p>In this analysis, we explore the key drivers changing the luxury market and what buyers need to look for to ensure their investments hold value for decades to come.</p>
+
+                    <h2 id="sustainability">1. Sustainability as the New Standard</h2>
+                    <p>Gone are the days when eco-friendly meant a compromise on style. In 2026, sustainability is the ultimate luxury. Buyers are looking for homes with LEED certification, solar integration, and passive design that reduces the carbon footprint without sacrificing comfort.</p>
+
+                    <blockquote class="blockquote-custom">
+                        "True luxury in 2026 is no longer just about golden taps and marble floors; it's about the seamless integration of health, technology, and environmental responsibility."
+                        <div class="blockquote-footer">— James Sterling, Chief Analyst at EstateVista</div>
+                    </blockquote>
+
+                    <p>Materials like reclaimed wood, low-VOC paints, and energy-efficient glass are now standard expectations in the top-tier market. It's not just about saving the planet; it's about the quality of the air you breathe inside your home.</p>
+
+                    <div class="read-also-box">
+                        <span class="read-also-label">Read Also:</span>
+                        <a href="blog-detail2.html" class="read-also-link">Maximizing ROI: A Guide for Property Investors in 2026</a>
+                    </div>
+
+                    <h2 id="wellness">2. Wellness-Centric Architecture</h2>
+                    <p>Following the global health shifts of the last decade, the home has become a sanctuary. We are seeing a massive spike in demand for properties that feature dedicated wellness spaces. This goes beyond a simple home gym.</p>
+                    <p>Think meditation gardens, circadian lighting systems that adjust to your sleep cycle, and advanced water filtration systems. Real estate developers are now consulting with health experts to design spaces that actively lower stress levels.</p>
+
+                    <h2 id="suburban">3. The Suburban Renaissance</h2>
+                    <p>While city penthouses remain desirable, there is a clear trend toward the suburbs. However, this isn't the suburbia of the past. Luxury buyers are seeking "commuter estates"—large properties with ample land, privacy, and high-speed connectivity, located within an hour of major metropolitan hubs.</p>
+
+                    <h2 id="tech">4. Smart Homes 2.0</h2>
+                    <p>Smart home technology has matured. It's no longer about flashy gadgets, but about intuitive systems. In 2026, AI-driven home management systems can predict heating needs, manage security autonomously, and even order groceries.</p>
+
+                    <h2 id="conclusion">Conclusion</h2>
+                    <p>The luxury real estate market in 2026 is dynamic and exciting. For investors and homebuyers alike, the focus should remain on quality, location, and the adaptability of the property to future technologies and environmental standards.</p>
+                </div>
+
+                <div class="share-section">
+                    <span class="share-title">Did you find this article helpful? Share it:</span>
+                    <div class="share-icons">
+                        <a href="#" class="share-btn bg-fb"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn bg-tw"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn bg-in"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-btn bg-wa"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+            </article>
+
+            <aside class="sidebar">
+                
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">Search</h4>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search articles...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">Categories</h4>
+                    <ul class="categories-list">
+                        <li><a href="#">Market Trends</a> <span class="cat-count">12</span></li>
+                        <li><a href="#">Interior Design</a> <span class="cat-count">8</span></li>
+                        <li><a href="#">Investment Tips</a> <span class="cat-count">15</span></li>
+                        <li><a href="#">Luxury Lifestyle</a> <span class="cat-count">6</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">Trending Now</h4>
+                    <div class="trending-item">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="trending-img">
+                        <div class="trending-info">
+                            <h5><a href="#">The Rise of Eco-Friendly Smart Homes</a></h5>
+                            <span>Jan 04, 2026</span>
+                        </div>
+                    </div>
+                    <div class="trending-item">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="trending-img">
+                        <div class="trending-info">
+                            <h5><a href="#">Is 2026 the Right Time to Refinance?</a></h5>
+                            <span>Dec 18, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget newsletter-box">
+                    <h4 class="widget-title">Subscribe</h4>
+                    <p>Get the latest property news delivered to your inbox.</p>
+                    <form>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-widget footer-brand">
+                    <h2>EstateVista</h2>
+                    <p>Where dreams meet reality.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-widget footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="properti.html">Properties</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget footer-links">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">otomagz</a></li>
+                        <li><a href="#">baturafting</a></li>
+                        <li><a href="#">souvenir</a></li>
+                        <li><a href="#">serbatau</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info list-unstyled">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>108 Adam Street, New York, NY 535022</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 5589 55488 55</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@estatevista.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 EstateVista. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Insights - EstateVista</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES (ESTATE VISTA THEME) --- */
+        :root {
+            --primary-navy: #1a2b49;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #b5952f;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --link-blue: #0d6efd;
+            /* Warna biru untuk nomor telepon sesuai gambar asli */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-navy);
+        }
+
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #2c4a7c;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid #ddd;
+            background: transparent;
+            color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-navy);
+            color: var(--primary-navy);
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        /* === CUSTOM NAVBAR (Logo Kiri, Menu + Phone Kanan) - Dengan Padding === */
+        .custom-navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .custom-navbar .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin: 0;
+        }
+
+        .nav-and-contact {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .custom-navbar .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-navbar .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .custom-navbar .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .custom-navbar .phone-link {
+            color: #1a365d;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+        }
+
+        .custom-navbar .phone-link i {
+            color: #1a365d;
+        }
+
+        /* --- RESPONSIVE: Mobile --- */
+        @media (max-width: 768px) {
+            .custom-navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 20px;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .nav-and-contact {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .custom-navbar .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .custom-navbar .phone-link {
+                font-size: 14px;
+            }
+        }
+        /* --- HERO SECTION --- */
+        .blog-hero {
+            background: linear-gradient(rgba(26, 43, 73, 0.8), rgba(26, 43, 73, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .blog-hero h1 {
+            color: var(--white);
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .blog-hero p {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* --- BLOG LAYOUT --- */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        /* --- LEFT COLUMN: ARTICLES --- */
+        .featured-post {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .featured-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 30px;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-meta span {
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .featured-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-gold);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-category {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 4px 10px;
+            font-size: 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .card-category.gold {
+            background-color: var(--accent-gold);
+        }
+
+        .card-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-title a:hover {
+            color: var(--accent-gold);
+        }
+
+        .card-text {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .author-img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .author-info {
+            font-size: 12px;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--primary-navy);
+            display: block;
+        }
+
+        .post-date {
+            color: #999;
+        }
+
+        /* --- RIGHT COLUMN: SIDEBAR --- */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        .search-form {
+            display: flex;
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-form button {
+            padding: 10px 15px;
+            background: var(--primary-navy);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .categories-list li {
+            border-bottom: 1px solid #eee;
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+
+        .categories-list li:last-child {
+            border-bottom: none;
+        }
+
+        .categories-list a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .cat-count {
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            color: #666;
+        }
+
+        .trending-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .trending-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .trending-info h5 {
+            font-size: 15px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+
+        .trending-info span {
+            font-size: 11px;
+            color: #999;
+        }
+
+        .newsletter-box {
+            text-align: center;
+        }
+
+        .newsletter-box p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-box input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 1px solid #ddd;
+            color: var(--primary-navy);
+            border-radius: 4px;
+        }
+
+        .page-link.active,
+        .page-link:hover {
+            background: var(--primary-navy);
+            color: var(--white);
+            border-color: var(--primary-navy);
+        }
+
+        /* --- FOOTER SECTION --- */
+        footer {
+            background-color: #152238; /* Warna Navy Gelap */
+            color: #b0b0b0;
+            padding-top: 70px;
+            font-size: 14px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 Kolom sama rata */
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .footer-widget h3 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* Widget 1: Brand & Social */
+        .footer-brand h2 {
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 20px;
+            color: #a4b0c5;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%; /* Membuat lingkaran */
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        /* Widget Links */
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px; /* Efek geser sedikit saat hover */
+        }
+
+        /* Widget Contact */
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-info i {
+            color: #7b8ba5;
+            margin-top: 4px;
+        }
+
+        .copyright {
+            text-align: left; /* Sesuai gambar rata kiri? Atau tengah bisa diubah */
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #7b8ba5;
+            display: flex;
+            justify-content: center; /* Teks copyright di tengah */
+        }
+
+        /* Responsif untuk Tablet/HP */
+        @media (max-width: 991px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr); /* Jadi 2 kolom */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-content {
+                grid-template-columns: 1fr; /* Jadi 1 kolom susun ke bawah */
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+
+            .contact-info li {
+                justify-content: center;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-img {
+                height: 250px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="custom-navbar">
+            <a class="navbar-brand" href="index.html">EstateVista</a>
+            <div class="nav-and-contact">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="properti.html">Properties</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+                <a href="tel:+155895548855" class="phone-link">
+                    <i class="fas fa-phone"></i> +1 5589 55488 55
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Market Insights & Trends</h1>
+            <p>Expert advice for buyers, sellers, and investors in the luxury market.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="blog-layout">
+
+            <div class="blog-content">
+
+                <article class="featured-post">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            alt="Luxury Living Room" class="featured-img">
+                    </div>
+                    <div class="featured-content">
+                        <div class="post-meta">
+                            <span>Market Analysis</span> / Jan 05, 2026
+                        </div>
+                        <h2 class="featured-title"><a href="blog-detail.html">The Future of Luxury Real Estate: Trends to Watch in
+                                2026</a></h2>
+                        <p class="featured-excerpt">As we step into a new year, the landscape of high-end property is
+                            shifting. From sustainable smart homes to the resurgence of suburban estates, discover what
+                            high-net-worth individuals are prioritizing this year.</p>
+                        <a href="blog-detail.html" class="btn btn-gold">Read Full Story</a>
+                    </div>
+                </article>
+
+                <div class="posts-grid">
+
+                    <div class="blog-card">
+                        <img src="img/rumah 1.webp" class="card-img-top" alt="Investment">
+                        <div class="card-body">
+                            <span class="card-category gold">Investment</span>
+                            <h3 class="card-title"><a href="blog-detail2.html">Maximizing ROI: A Guide for Property Investors</a></h3>
+                            <p class="card-text">Strategies to increase rental yield and capital appreciation in
+                                volatile markets.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img">
+                                <div class="author-info">
+                                    <span class="author-name">Sarah Martinez</span>
+                                    <span class="post-date">Jan 03, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <img src="img/rumah 3.webp" class="card-img-top" alt="Interior Design">
+                        <div class="card-body">
+                            <span class="card-category">Design</span>
+                            <h3 class="card-title"><a href="blog-detail3.html">Minimalist Interiors: Less is More in Modern Villas</a>
+                            </h3>
+                            <p class="card-text">How decluttering and open spaces are redefining luxury living
+                                environments.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img">
+                                <div class="author-info">
+                                    <span class="author-name">David Chen</span>
+                                    <span class="post-date">Dec 28, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Legal">
+                        <div class="card-body">
+                            <span class="card-category">Legal</span>
+                            <h3 class="card-title"><a href="blog-detail4.html">Navigating Property Taxes: Updates for Homeowners</a>
+                            </h3>
+                            <p class="card-text">Essential tax changes every property owner needs to know before filing
+                                this year.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img">
+                                <div class="author-info">
+                                    <span class="author-name">Emily Rose</span>
+                                    <span class="post-date">Dec 20, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Lifestyle">
+                        <div class="card-body">
+                            <span class="card-category gold">Lifestyle</span>
+                            <h3 class="card-title"><a href="blog-detail5.html">Top 5 Neighborhoods for Families in 2026</a></h3>
+                            <p class="card-text">Safe, green, and school-friendly communities that are trending right
+                                now.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img">
+                                <div class="author-info">
+                                    <span class="author-name">James Wilson</span>
+                                    <span class="post-date">Dec 15, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pagination">
+                    <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                </div>
+
+            </div>
+
+            <aside class="sidebar">
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">Search</h4>
+                    <form class="search-form">
+                        <input type="text" placeholder="Search articles...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">Categories</h4>
+                    <ul class="categories-list">
+                        <li><a href="#">Market Trends</a> <span class="cat-count">12</span></li>
+                        <li><a href="#">Interior Design</a> <span class="cat-count">8</span></li>
+                        <li><a href="#">Investment Tips</a> <span class="cat-count">15</span></li>
+                        <li><a href="#">Luxury Lifestyle</a> <span class="cat-count">6</span></li>
+                        <li><a href="#">Home Improvement</a> <span class="cat-count">10</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">Trending Now</h4>
+
+                    <div class="trending-item">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            class="trending-img">
+                        <div class="trending-info">
+                            <h5><a href="#">The Rise of Eco-Friendly Smart Homes</a></h5>
+                            <span>Jan 04, 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="trending-item">
+                        <img src="img/rumah 4.webp" class="trending-img">
+                        <div class="trending-info">
+                            <h5><a href="#">5 Mistakes First-Time Sellers Make</a></h5>
+                            <span>Dec 29, 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="trending-item">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            class="trending-img">
+                        <div class="trending-info">
+                            <h5><a href="#">Is 2026 the Right Time to Refinance?</a></h5>
+                            <span>Dec 18, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget newsletter-box">
+                    <h4 class="widget-title">Subscribe</h4>
+                    <p>Get the latest property news and exclusive listings delivered to your inbox.</p>
+                    <form>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h4 class="widget-title">Popular Tags</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+                        <a href="#" class="btn-outline"
+                            style="padding: 5px 10px; font-size: 12px; border-radius: 20px;">#Luxury</a>
+                        <a href="#" class="btn-outline"
+                            style="padding: 5px 10px; font-size: 12px; border-radius: 20px;">#Condo</a>
+                        <a href="#" class="btn-outline"
+                            style="padding: 5px 10px; font-size: 12px; border-radius: 20px;">#Malibu</a>
+                        <a href="#" class="btn-outline"
+                            style="padding: 5px 10px; font-size: 12px; border-radius: 20px;">#Finance</a>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+  <footer>
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-widget footer-brand">
+                    <h2>EstateVista</h2>
+                    <p>Where dreams meet reality.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-widget footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="properti.html">Properties</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget footer-links">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">otomagz</a></li>
+                        <li><a href="#">baturafting</a></li>
+                        <li><a href="#">souvenir</a></li>
+                        <li><a href="#">serbatau</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-widget footer-contact">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info list-unstyled">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>108 Adam Street, New York, NY 535022</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 5589 55488 55</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>info@estatevista.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 EstateVista. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
