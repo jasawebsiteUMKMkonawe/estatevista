@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maximizing ROI: A Guide for Property Investors - EstateVista</title>
+    <title>The Future of Luxury Real Estate 2026 - EstateVista</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -168,6 +168,42 @@
             font-size: 32px;
             margin-top: 50px;
             margin-bottom: 25px;
+        }
+
+        /* --- READ ALSO (BACA JUGA) --- */
+        .read-also-box {
+            margin: 40px 0;
+            padding: 20px 25px;
+            background-color: #f0f4f8; /* Background lembut */
+            border-left: 5px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .read-also-label {
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .read-also-link {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-style: italic;
+            color: var(--primary);
+            font-size: 18px;
+            text-decoration: underline;
+            text-decoration-color: rgba(26, 54, 93, 0.3);
+            transition: 0.3s;
+        }
+
+        .read-also-link:hover {
+            color: var(--accent-gold);
+            text-decoration-color: var(--accent-gold);
         }
 
         /* --- COLLAPSIBLE TABLE OF CONTENTS --- */
@@ -405,6 +441,53 @@
             color: #999;
         }
 
+        /* --- FLOATING BUTTONS CSS --- */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, opacity 0.3s;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px);
+            color: #fff;
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+        }
+
+        .scroll-top-btn {
+            background-color: var(--primary);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
         /* --- FOOTER --- */
         footer {
             background-color: #152238;
@@ -451,8 +534,7 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1); color: #7b8ba5;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
-        
+        /* --- RESPONSIVE --- */
         @media (max-width: 991px) {
             .article-title { font-size: 36px; }
             .related-grid { grid-template-columns: repeat(2, 1fr); }
@@ -460,64 +542,36 @@
             .container-custom { max-width: 95%; } 
         }
 
-        /* Specific Mobile Styling */
         @media (max-width: 768px) {
-            .container-custom {
-                max-width: 100%;
-                padding: 0 15px;
-            }
-
+            .container-custom { max-width: 100%; padding: 0 15px; }
             .article-header { padding: 40px 0 20px; }
             .article-title { font-size: 28px; }
             .article-content { padding: 30px 20px; }
 
-            /* Gambar Landscape di Mobile */
-            .article-featured-img, 
-            .secondary-img {
-                height: auto !important; 
-                aspect-ratio: 16/9;      
-                object-fit: cover;
-                margin-bottom: 20px;
+            /* Read Also di Mobile */
+            .read-also-box { flex-direction: column; align-items: flex-start; gap: 5px; }
+
+            .article-featured-img, .secondary-img {
+                height: auto !important; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 20px;
             }
             .secondary-img { margin: 30px 0; }
 
-            /* Quote Box Proporsional */
-            .blockquote-custom {
-                padding: 30px 20px; 
-                margin: 30px 0;
-                font-size: 20px; 
-                border-left-width: 4px;
-            }
-            .blockquote-custom::before {
-                font-size: 60px; 
-                top: -15px;
-                left: 10px;
-            }
+            .blockquote-custom { padding: 30px 20px; margin: 30px 0; font-size: 20px; border-left-width: 4px; }
+            .blockquote-custom::before { font-size: 60px; top: -15px; left: 10px; }
 
-            /* Readability */
             .article-text p { font-size: 17px; }
             .article-text h2 { font-size: 24px; margin-top: 30px; }
 
-            /* Components */
-            .author-bio-box {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px;
-                margin-top: 40px;
-            }
+            .author-bio-box { flex-direction: column; text-align: center; padding: 25px; margin-top: 40px; }
             .author-bio-img { width: 100px; height: 100px; }
 
-            .share-section {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
+            .share-section { flex-direction: column; gap: 15px; align-items: flex-start; }
             .share-icons { width: 100%; justify-content: space-between; }
 
             .related-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; gap: 30px; }
+            .floating-buttons { bottom: 20px; right: 20px; }
         }
-
     </style>
 </head>
 
@@ -539,7 +593,7 @@
             </ul>
             <div class="ms-lg-3 mt-2 mt-lg-0">
               <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-                 Contact
+                Contact
               </a>
             </div>
           </div>
@@ -549,15 +603,14 @@
     <div class="container-custom">
         
         <div class="article-header">
-            <span class="article-category">Investment</span>
-            <h1 class="article-title">Maximizing ROI: A Guide for Property Investors</h1>
+            <span class="article-category">Market Analysis</span>
+            <h1 class="article-title">The Future of Luxury Real Estate: Trends to Watch in 2026</h1>
         </div>
 
         <div class="content-layout">
 
-            <img src="img/rumah 1.webp" 
-                 onerror="this.src='https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'"
-                 alt="Property Investment Charts" class="article-featured-img">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                 alt="Luxury Real Estate" class="article-featured-img">
 
             <article class="article-content">
                 
@@ -567,54 +620,66 @@
                         <i class="fas fa-chevron-down toc-icon" id="tocIcon"></i>
                     </div>
                     <ul class="toc-list" id="tocList">
-                        <li><a href="#understanding-roi">1. Understanding ROI vs. Yield</a></li>
-                        <li><a href="#location">2. Location Analysis: Emerging Markets</a></li>
-                        <li><a href="#value-add">3. The "Value-Add" Strategy</a></li>
-                        <li><a href="#tenant">4. Tenant Retention & Management</a></li>
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#sustainability">1. Sustainability as the New Standard</a></li>
+                        <li><a href="#wellness">2. Wellness-Centric Architecture</a></li>
+                        <li><a href="#suburban">3. The Suburban Renaissance</a></li>
+                        <li><a href="#tech">4. Smart Homes 2.0</a></li>
                         <li><a href="#conclusion">Conclusion</a></li>
                     </ul>
                 </div>
 
                 <div class="article-text">
-                    <p>Strategies to increase rental yield and capital appreciation in volatile markets are more crucial now than ever. The real estate landscape of 2026 presents both unique challenges and unprecedented opportunities for the savvy investor. Whether you are a seasoned portfolio manager or buying your first investment property, understanding how to squeeze every percentage point of Return on Investment (ROI) is the key to building long-term wealth.</p>
+                    <p id="intro">As we step into a new year, the landscape of high-end property is shifting. The definition of luxury is evolving from simple opulence to a more sophisticated blend of technology, sustainability, and personal well-being. From sustainable smart homes to the resurgence of suburban estates, high-net-worth individuals are prioritizing different assets in 2026. The shift isn't just about what the home looks like, but how it functions as a complete ecosystem for living.</p>
+                    
+                    <p>In this analysis, we explore the key drivers changing the luxury market and what buyers need to look for to ensure their investments hold value for decades to come. The market has shown resilience despite global economic fluctuations, proving that real estate remains a top tier asset class for capital preservation and growth.</p>
 
-                    <h2 id="understanding-roi">1. Understanding ROI vs. Yield</h2>
-                    <p>Many investors confuse rental yield with ROI. While yield tells you the annual return generated by the asset itself, ROI measures the efficiency of your investment considering your financing costs, taxes, and maintenance. In a volatile market, focusing solely on high-yield properties in declining neighborhoods can be a trap. Instead, aim for a balanced approach where positive cash flow supports the holding costs while the underlying asset appreciates.</p>
+                    <h2 id="sustainability">1. Sustainability as the New Standard</h2>
+                    <p>Gone are the days when eco-friendly meant a compromise on style. In 2026, sustainability is the ultimate luxury. Buyers are looking for homes with LEED certification, solar integration, and passive design that reduces the carbon footprint without sacrificing comfort. Energy independence is no longer just a perk; it's a primary demand from discerning buyers.</p>
+
+                    <div class="read-also-box">
+                        <span class="read-also-label">Read Also:</span>
+                        <a href="blog-detail2.html" class="read-also-link">Maximizing ROI: A Guide for Property Investors in 2026</a>
+                    </div>
 
                     <blockquote class="blockquote-custom">
-                        "In real estate, you make your money when you buy, not when you sell. Thorough due diligence is the foundation of a high-ROI portfolio."
-                        <div class="blockquote-footer">— Sarah Martinez, Senior Investment Advisor</div>
+                        "True luxury in 2026 is no longer just about golden taps and marble floors; it's about the seamless integration of health, technology, and environmental responsibility."
+                        <div class="blockquote-footer">— James Sterling, Chief Analyst at EstateVista</div>
                     </blockquote>
 
-                    <h2 id="location">2. Location Analysis: Emerging Markets</h2>
-                    <p>The golden rule of "Location, Location, Location" has evolved. It is no longer just about the city center. The highest appreciation often occurs in "Path of Progress" neighborhoods—areas adjacent to prime districts that are undergoing infrastructure improvements. Look for indicators such as planned transit extensions, new commercial developments, and a demographic shift towards younger professionals.</p>
+                    <p>Materials like reclaimed wood, low-VOC paints, and energy-efficient glass are now standard expectations in the top-tier market. It's not just about saving the planet; it's about the quality of the air you breathe inside your home. Biophilic design elements that bring the outdoors in are becoming standard in high-end developments.</p>
 
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                         alt="Property Renovation Concept" class="secondary-img">
+                    <h2 id="wellness">2. Wellness-Centric Architecture</h2>
+                    <p>Following the global health shifts of the last decade, the home has become a sanctuary. We are seeing a massive spike in demand for properties that feature dedicated wellness spaces. This goes beyond a simple home gym; we are talking about full-scale spa facilities, cryotherapy chambers, and yoga studios integrated directly into the home.</p>
+                    
+                    <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Wellness Spa in Luxury Home" class="secondary-img">
 
-                    <h2 id="value-add">3. The "Value-Add" Strategy</h2>
-                    <p>Buying a turnkey property commands a premium price, which eats into your ROI. The most successful investors in 2026 are using the BRRRR method (Buy, Rehab, Rent, Refinance, Repeat). Simple renovations can yield massive returns. Updating kitchens with energy-efficient appliances, installing smart home security systems, and modernizing flooring can increase rental income by 20-30% in competitive markets.</p>
+                    <p>Think meditation gardens, circadian lighting systems that adjust to your sleep cycle, and advanced water filtration systems. Real estate developers are now consulting with health experts to design spaces that actively lower stress levels and promote longevity. The home is now seen as a tool for health optimization.</p>
 
-                    <h2 id="tenant">4. Tenant Retention & Management</h2>
-                    <p>Vacancy is the silent killer of ROI. A property that sits empty for one month a year effectively reduces your annual return by over 8%. Prioritizing tenant satisfaction through responsive property management and offering long-term lease incentives is far cheaper than finding new tenants. Happy tenants pay on time and take better care of your asset.</p>
+                    <h2 id="suburban">3. The Suburban Renaissance</h2>
+                    <p>While city penthouses remain desirable, there is a clear trend toward the suburbs. However, this isn't the suburbia of the past. Luxury buyers are seeking "commuter estates"—large properties with ample land, privacy, and high-speed connectivity, located within an hour of major metropolitan hubs. Space is the new currency.</p>
+
+                    <h2 id="tech">4. Smart Homes 2.0</h2>
+                    <p>Smart home technology has matured. It's no longer about flashy gadgets, but about intuitive systems. In 2026, AI-driven home management systems can predict heating needs, manage security autonomously, and even order groceries based on your consumption patterns. The technology is invisible but omnipresent.</p>
 
                     <h2 id="conclusion">Conclusion</h2>
-                    <p>Maximizing ROI is not about luck; it is about data-driven decisions and active management. By focusing on emerging locations, adding strategic value through renovation, and minimizing vacancy, investors can thrive even when the broader market is uncertain. Stay informed, stay calculated, and your portfolio will grow.</p>
+                    <p>The luxury real estate market in 2026 is dynamic and exciting. For investors and homebuyers alike, the focus should remain on quality, location, and the adaptability of the property to future technologies and environmental standards. Those who adapt to these trends will see significant returns on their investments.</p>
                 </div>
 
                 <div class="author-bio-box">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
                          alt="Sarah Martinez" class="author-bio-img">
                     <div class="author-bio-content">
                         <h4>Sarah Martinez</h4>
-                        <span class="author-role">Senior Investment Advisor</span>
+                        <span class="author-role">Senior Market Analyst</span>
                         <p class="author-bio-text">Sarah is a veteran real estate analyst with over 15 years of experience in the luxury market. She specializes in emerging trends and sustainable property development.</p>
-                        <span class="publish-date">Posted on January 03, 2026</span>
+                        <span class="publish-date">Posted on January 05, 2026</span>
                     </div>
                 </div>
 
                 <div class="share-section">
-                    <span class="share-title">Share this guide:</span>
+                    <span class="share-title">Share this article:</span>
                     <div class="share-icons">
                         <a href="#" class="share-btn bg-fb"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="share-btn bg-tw"><i class="fab fa-twitter"></i></a>
@@ -634,11 +699,11 @@
             <div class="related-grid">
                 
                 <div class="related-card">
-                    <a href="blog-detail.html">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="related-img" alt="Luxury Real Estate">
+                    <a href="blog-detail2.html">
+                        <img src="img/rumah 1.webp" class="related-img" alt="Investment">
                         <div class="related-body">
-                            <h3 class="related-title">The Future of Luxury Real Estate: Trends to Watch in 2026</h3>
-                            <span class="related-date">Jan 05, 2026</span>
+                            <h3 class="related-title">Maximizing ROI: A Guide for Property Investors</h3>
+                            <span class="related-date">Jan 03, 2026</span>
                         </div>
                     </a>
                 </div>
@@ -667,67 +732,62 @@
         </div>
     </section>
 
+    <div class="floating-buttons">
+        <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services." class="float-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
     <footer>
-        <div class="container-custom">
-            <div class="footer-content">
-                
-                <div class="footer-widget footer-brand">
-                    <h2>EstateVista</h2>
-                    <p>Where dreams meet reality.</p>
-                    <div class="social-links">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>EstateVista</h4>
+                    <p>Where dreams meet reality. Your trusted partner in finding the perfect place to call home.</p>
+                    <div style="margin-top: 15px;">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
-                <div class="footer-widget footer-links">
-                    <h3>Quick Links</h3>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="properti.html">Properties</a></li>
                         <li><a href="service.html">Services</a></li>
-                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-widget footer-links">
-                    <h3>Our Services</h3>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#">otomagz</a></li>
-                        <li><a href="#">baturafting</a></li>
-                        <li><a href="#">souvenir</a></li>
-                        <li><a href="#">serbatau</a></li>
+                        <li><a href="#">Property Search</a></li>
+                        <li><a href="#">Property Valuation</a></li>
+                        <li><a href="#">Property Rental</a></li>
+                        <li><a href="#">Investment Advisory</a></li>
                     </ul>
                 </div>
-
-                <div class="footer-widget footer-contact">
-                    <h3>Contact Us</h3>
-                    <ul class="contact-info list-unstyled">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>108 Adam Street, New York, NY 535022</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+1 5589 55488 55</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@estatevista.com</span>
-                        </li>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 108 Adam Street, New York, NY</li>
+                        <li><i class="fas fa-phone"></i> +1 5509 55488 55</li>
+                        <li><i class="fas fa-envelope"></i> info@estatevista.com</li>
                     </ul>
                 </div>
-
             </div>
-
             <div class="copyright">
-                <p>&copy; 2026 EstateVista. All Rights Reserved.</p>
+                &copy; 2026 EstateVista. All Rights Reserved.
             </div>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         function toggleTOC() {
@@ -742,9 +802,25 @@
                 icon.classList.add("rotate");
             }
         }
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        // Logic Scroll to Top
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
 
 </body>
 </html>

@@ -168,28 +168,6 @@
             white-space: nowrap;
         }
 
-        @media (max-width: 768px) {
-            .custom-navbar {
-                flex-direction: column;
-                gap: 12px;
-                padding: 12px 20px;
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .nav-and-contact {
-                flex-direction: column;
-                gap: 12px;
-                align-items: center;
-            }
-
-            .custom-navbar .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-        }
-
         /* --- BREADCRUMB --- */
         .breadcrumb-section {
             background-color: var(--white);
@@ -460,6 +438,54 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* --- FLOATING BUTTONS CSS --- */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .float-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, opacity 0.3s;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px);
+            color: #fff;
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+        }
+
+        .scroll-top-btn {
+            background-color: var(--primary-navy);
+            opacity: 0; /* Hidden by default */
+            visibility: hidden;
+        }
+
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
             .property-grid {
                 grid-template-columns: 1fr;
@@ -471,6 +497,33 @@
 
             .property-title {
                 font-size: 28px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .custom-navbar {
+                flex-direction: column;
+                gap: 12px;
+                padding: 12px 20px;
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .nav-and-contact {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+
+            .custom-navbar .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -667,10 +720,19 @@
                 <p>Your trusted partner in luxury real estate.</p>
             </div>
             <div class="copyright">
-                &copy; 2026 EstateVista. All Rights Reserved.
+                © 2026 EstateVista. All Rights Reserved.
             </div>
         </div>
     </footer>
+
+    <div class="floating-buttons">
+        <a href="https://wa.me/6281234567890?text=Halo%20Jennifer,%20saya%20tertarik%20dengan%20properti%20Luxury%20Modern%20Villa%20ini." class="float-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
 
     <script>
         // --- Fungsi Share Button ---
@@ -710,6 +772,24 @@
 
             const waURL = `https://wa.me/${agentNumber}?text=${text}`;
             window.open(waURL, '_blank');
+        }
+
+        // --- Logic Scroll to Top ---
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
         }
     </script>
 

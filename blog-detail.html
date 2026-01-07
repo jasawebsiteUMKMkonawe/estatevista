@@ -9,15 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <style>
         /* --- CSS VARIABLES --- */
         :root {
-            /* Variabel asli blog-detail */
             --primary-navy: #1a2b49;
             --accent-gold: #d4af37;
             --accent-gold-hover: #b5952f;
@@ -26,17 +23,11 @@
             --bg-light: #f9f9f9;
             --white: #ffffff;
             --border-color: #e0e0e0;
-
-            /* Variabel tambahan dari index.html untuk Navbar */
             --primary: #1A365D;
             --secondary: #D4AF37;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Lato', sans-serif;
@@ -46,415 +37,175 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding-top: 80px; /* Padding agar konten tidak tertutup navbar fixed */
+            padding-top: 80px;
         }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-navy);
-        }
+        h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: var(--primary-navy); }
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+        ul { list-style: none; padding-left: 0; }
+        img { max-width: 100%; display: block; }
 
-        a {
-            text-decoration: none;
-            transition: 0.3s;
-            color: inherit;
-        }
+        /* Navbar */
+        .navbar { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .navbar-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.8rem; color: var(--primary); }
+        .navbar-nav .nav-link { color: var(--text-dark); font-weight: 600; font-size: 16px; }
+        .navbar-nav .nav-link:hover { color: var(--secondary); }
+        .text-primary { color: var(--primary) !important; }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
+        /* Content Styles */
+        .container-custom { max-width: 90%; margin: 0 auto; padding: 0 20px; }
+        .article-header { padding: 60px 0 40px; text-align: center; margin: 0 auto; }
+        .article-category { color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; margin-bottom: 15px; display: block; }
+        .article-title { font-size: 48px; line-height: 1.2; margin-bottom: 20px; }
+        .content-layout { width: 100%; margin-bottom: 60px; }
+        .article-featured-img { width: 100%; height: 600px; object-fit: cover; border-radius: 8px; margin-bottom: 40px; }
+        .secondary-img { width: 100%; height: 500px; object-fit: cover; border-radius: 8px; margin: 50px 0; }
+        .article-content { background: var(--white); padding: 60px; border-radius: 8px; box-shadow: 0 5px 25px rgba(0,0,0,0.05); }
+        .article-text p { margin-bottom: 25px; font-size: 19px; line-height: 1.9; color: #444; }
+        .article-text h2 { font-size: 32px; margin-top: 50px; margin-bottom: 25px; }
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* --- NAVBAR STYLES --- */
-        .navbar {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary);
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--text-dark);
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: var(--secondary);
-        }
-
-        .text-primary {
-            color: var(--primary) !important;
-        }
-
-        /* --- CONTAINER UTAMA --- */
-        .container-custom {
-            max-width: 90%; 
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- ARTICLE HEADER --- */
-        .article-header {
-            padding: 60px 0 40px;
-            text-align: center;
-            margin: 0 auto;
-        }
-
-        .article-category {
-            color: var(--accent-gold);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .article-title {
-            font-size: 48px;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        /* --- CONTENT LAYOUT --- */
-        .content-layout {
-            width: 100%;
-            margin-bottom: 60px;
-        }
-
-        /* --- ARTICLE ELEMENTS --- */
-        /* Default Desktop Styles */
-        .article-featured-img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-
-        .secondary-img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin: 50px 0;
-        }
-
-        .article-content {
-            background: var(--white);
-            padding: 60px;
-            border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-        }
-
-        .article-text p {
-            margin-bottom: 25px;
-            font-size: 19px; 
-            line-height: 1.9;
-            color: #444;
-        }
-
-        .article-text h2 {
-            font-size: 32px;
-            margin-top: 50px;
-            margin-bottom: 25px;
-        }
-
-        /* --- COLLAPSIBLE TABLE OF CONTENTS --- */
-        .toc-box {
-            background-color: #f4f6f8;
-            padding: 25px 40px;
-            border-radius: 8px;
-            margin-bottom: 50px;
-            border-left: 5px solid var(--primary-navy);
-        }
-
-        .toc-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .toc-title {
-            font-weight: 700;
-            font-size: 20px;
-            font-family: 'Playfair Display', serif;
-            margin: 0;
-        }
-
-        .toc-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .toc-icon.rotate {
-            transform: rotate(180deg);
-        }
-
-        .toc-list {
-            margin-top: 20px;
-            display: block;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .toc-list.hidden {
-            display: none;
-        }
-
-        .toc-list li {
-            margin-bottom: 12px;
-            border-bottom: 1px dashed #ddd;
-            padding-bottom: 8px;
-        }
-        
-        .toc-list li:last-child {
-            border-bottom: none;
-        }
-
-        .toc-list a {
-            color: var(--primary-navy);
-            font-size: 16px;
-        }
-
-        .toc-list a:hover {
-            color: var(--accent-gold);
-            padding-left: 5px;
-        }
-
-        /* --- QUOTE BLOCK --- */
-        .blockquote-custom {
-            margin: 60px 0;
-            padding: 50px;
-            background-color: #fafafa;
-            border-left: 6px solid var(--accent-gold);
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 28px;
-            color: var(--primary-navy);
-            position: relative;
-        }
-
-        .blockquote-custom::before {
-            content: '\201C'; 
-            font-size: 80px;
-            color: #e0e0e0;
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            z-index: 0;
-        }
-
-        .blockquote-footer {
-            margin-top: 20px;
-            font-size: 16px;
-            font-family: 'Lato', sans-serif;
-            font-style: normal;
-            font-weight: 700;
-            color: var(--text-light);
-            text-align: right;
-        }
-
-        /* --- AUTHOR PROFILE SECTION --- */
-        .author-bio-box {
-            margin-top: 80px;
-            margin-bottom: 40px;
-            padding: 40px;
+        /* --- BACA JUGA (READ ALSO) STYLE --- */
+        .read-also-box {
+            margin: 35px 0;
+            padding: 20px 25px;
             background-color: #f8f9fa;
-            border-radius: 8px;
+            border-left: 5px solid var(--accent-gold);
+            border-radius: 0 8px 8px 0;
             display: flex;
             align-items: center;
-            gap: 30px;
-            border: 1px solid #eee;
+            gap: 10px;
         }
 
-        .author-bio-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--white);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .author-bio-content h4 {
-            margin-bottom: 5px;
-            font-size: 22px;
-        }
-
-        .author-role {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-gold);
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .author-bio-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .publish-date {
-            font-size: 14px;
-            color: #999;
-            font-style: italic;
-        }
-
-        /* --- SHARE BUTTONS --- */
-        .share-section {
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .share-title {
-            font-size: 18px;
+        .read-also-label {
             font-weight: 700;
             color: var(--primary-navy);
+            text-transform: uppercase;
+            font-size: 14px;
+            white-space: nowrap;
         }
 
-        .share-icons {
+        .read-also-link {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--primary);
+            text-decoration: underline;
+            text-decoration-color: rgba(26, 43, 73, 0.3);
+            transition: 0.3s;
+        }
+
+        .read-also-link:hover {
+            color: var(--accent-gold);
+            text-decoration-color: var(--accent-gold);
+        }
+
+        /* TOC */
+        .toc-box { background-color: #f4f6f8; padding: 25px 40px; border-radius: 8px; margin-bottom: 50px; border-left: 5px solid var(--primary-navy); }
+        .toc-header { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .toc-title { font-weight: 700; font-size: 20px; font-family: 'Playfair Display', serif; margin: 0; }
+        .toc-icon { transition: transform 0.3s ease; }
+        .toc-icon.rotate { transform: rotate(180deg); }
+        .toc-list { margin-top: 20px; display: block; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .toc-list.hidden { display: none; }
+        .toc-list li { margin-bottom: 12px; border-bottom: 1px dashed #ddd; padding-bottom: 8px; }
+        .toc-list li:last-child { border-bottom: none; }
+        .toc-list a { color: var(--primary-navy); font-size: 16px; }
+        .toc-list a:hover { color: var(--accent-gold); padding-left: 5px; }
+
+        /* Blockquote */
+        .blockquote-custom { margin: 60px 0; padding: 50px; background-color: #fafafa; border-left: 6px solid var(--accent-gold); font-family: 'Playfair Display', serif; font-style: italic; font-size: 28px; color: var(--primary-navy); position: relative; }
+        .blockquote-custom::before { content: '\201C'; font-size: 80px; color: #e0e0e0; position: absolute; top: -20px; left: 20px; z-index: 0; }
+        .blockquote-footer { margin-top: 20px; font-size: 16px; font-family: 'Lato', sans-serif; font-style: normal; font-weight: 700; color: var(--text-light); text-align: right; }
+
+        /* Author & Share */
+        .author-bio-box { margin-top: 80px; margin-bottom: 40px; padding: 40px; background-color: #f8f9fa; border-radius: 8px; display: flex; align-items: center; gap: 30px; border: 1px solid #eee; }
+        .author-bio-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .author-bio-content h4 { margin-bottom: 5px; font-size: 22px; }
+        .author-role { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-gold); font-weight: 700; margin-bottom: 15px; display: block; }
+        .author-bio-text { font-size: 16px; color: #666; margin-bottom: 10px; }
+        .publish-date { font-size: 14px; color: #999; font-style: italic; }
+        .share-section { padding-top: 30px; border-top: 1px solid #eee; display: flex; align-items: center; justify-content: space-between; }
+        .share-title { font-size: 18px; font-weight: 700; color: var(--primary-navy); }
+        .share-icons { display: flex; gap: 15px; }
+        .share-btn { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: white; font-size: 18px; transition: transform 0.2s; }
+        .share-btn:hover { transform: translateY(-3px); }
+        .bg-fb { background-color: #3b5998; } .bg-tw { background-color: #1da1f2; } .bg-in { background-color: #0077b5; } .bg-wa { background-color: #25d366; }
+
+        /* Related Posts */
+        .related-posts { background-color: #fff; padding: 80px 0; border-top: 1px solid #eee; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 36px; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .related-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .related-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .related-img { width: 100%; height: 250px; object-fit: cover; }
+        .related-body { padding: 25px; }
+        .related-title { font-size: 20px; margin-bottom: 10px; line-height: 1.4; }
+        .related-date { font-size: 13px; color: #999; }
+
+        /* Footer */
+        footer { background-color: #152238; color: #b0b0b0; padding-top: 20px; font-size: 15px; }
+        .footer-content { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; margin-bottom: 60px; }
+        .footer-widget h3 { color: var(--white); font-size: 20px; margin-bottom: 30px; font-weight: 700; }
+        .footer-brand h2 { color: var(--white); font-size: 32px; margin-bottom: 15px; }
+        .footer-brand p { margin-bottom: 25px; color: #a4b0c5; font-size: 16px; }
+        .social-links { display: flex; gap: 15px; }
+        .social-links a { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1); color: var(--white); border-radius: 50%; transition: 0.3s; }
+        .social-links a:hover { background-color: var(--accent-gold); }
+        .footer-links ul { padding: 0; } .footer-links li { margin-bottom: 15px; }
+        .footer-links a { color: #b0b0b0; transition: 0.3s; }
+        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
+        .contact-info li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+        .contact-info i { color: #7b8ba5; margin-top: 5px; }
+        .copyright { text-align: center; padding: 30px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #7b8ba5; }
+
+        /* --- FLOATING BUTTONS CSS --- */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
             display: flex;
+            flex-direction: column;
             gap: 15px;
+            z-index: 9999;
         }
 
-        .share-btn {
+        .float-btn {
             width: 50px;
             height: 50px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 50%;
-            color: white;
-            font-size: 18px;
-            transition: transform 0.2s;
+            color: #fff;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, opacity 0.3s;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
         }
 
-        .share-btn:hover { transform: translateY(-3px); }
-        .bg-fb { background-color: #3b5998; }
-        .bg-tw { background-color: #1da1f2; }
-        .bg-in { background-color: #0077b5; }
-        .bg-wa { background-color: #25d366; }
-
-        /* --- RELATED POSTS SECTION --- */
-        .related-posts {
-            background-color: #fff;
-            padding: 80px 0;
-            border-top: 1px solid #eee;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 36px;
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .related-card {
-            background: var(--white);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        .related-card:hover {
+        .float-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            color: #fff;
         }
 
-        .related-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
+        .whatsapp-btn {
+            background-color: #25d366;
         }
 
-        .related-body {
-            padding: 25px;
+        .scroll-top-btn {
+            background-color: var(--primary);
+            opacity: 0; /* Hidden by default */
+            visibility: hidden;
         }
 
-        .related-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-            line-height: 1.4;
+        .scroll-top-btn.show {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .related-date {
-            font-size: 13px;
-            color: #999;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #152238;
-            color: #b0b0b0;
-            padding-top: 20px;
-            font-size: 15px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-widget h3 {
-            color: var(--white);
-            font-size: 20px;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .footer-brand h2 { color: var(--white); font-size: 32px; margin-bottom: 15px; }
-        .footer-brand p { margin-bottom: 25px; color: #a4b0c5; font-size: 16px; }
-
-        .social-links { display: flex; gap: 15px; }
-        .social-links a {
-            display: flex; align-items: center; justify-content: center;
-            width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white); border-radius: 50%; transition: 0.3s;
-        }
-        .social-links a:hover { background-color: var(--accent-gold); }
-
-        .footer-links ul { padding: 0; }
-        .footer-links li { margin-bottom: 15px; }
-        .footer-links a { color: #b0b0b0; transition: 0.3s; }
-        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
-
-        .contact-info li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
-        .contact-info i { color: #7b8ba5; margin-top: 5px; }
-
-        .copyright {
-            text-align: center; padding: 30px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1); color: #7b8ba5;
-        }
-
-        /* --- RESPONSIVE MEDIA QUERIES (UPDATED) --- */
-        
-        /* Tablet & Mobile Header/Footer Adjustment */
+        /* Responsive */
         @media (max-width: 991px) {
             .article-title { font-size: 36px; }
             .related-grid { grid-template-columns: repeat(2, 1fr); }
@@ -462,89 +213,35 @@
             .container-custom { max-width: 95%; } 
         }
 
-        /* Specific Mobile Styling */
         @media (max-width: 768px) {
-            .container-custom {
-                max-width: 100%;
-                padding: 0 15px;
-            }
-
-            /* Header */
-            .article-header {
-                padding: 40px 0 20px;
-            }
-            .article-title {
-                font-size: 28px; /* Judul lebih pas di mobile */
-            }
-
-            /* Content Layout */
-            .article-content {
-                padding: 30px 20px; /* Padding dikurangi agar tidak terlalu sempit */
-            }
-
-            /* --- GAMBAR TETAP LANDSCAPE --- */
-            /* Menggunakan aspect-ratio agar proporsi tetap terjaga (tidak gepeng/tinggi) */
-            .article-featured-img, 
-            .secondary-img {
-                height: auto !important; /* Reset tinggi statis */
-                aspect-ratio: 16/9;      /* Memaksa rasio landscape */
-                object-fit: cover;
-                margin-bottom: 20px;
-            }
-            .secondary-img {
-                margin: 30px 0;
-            }
-
-            /* --- QUOTE BOX TETAP PROPOSIONAL --- */
-            .blockquote-custom {
-                padding: 30px 20px; /* Padding dikurangi */
-                margin: 30px 0;
-                font-size: 20px; /* Font diperkecil sedikit */
-                border-left-width: 4px;
-            }
-            .blockquote-custom::before {
-                font-size: 60px; /* Ikon kutip diperkecil */
-                top: -15px;
-                left: 10px;
-            }
-
-            /* Text Readability */
-            .article-text p {
-                font-size: 17px;
-            }
-            .article-text h2 {
-                font-size: 24px;
-                margin-top: 30px;
-            }
-
-            /* Author Box Mobile */
-            .author-bio-box {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px;
-                margin-top: 40px;
-            }
-            .author-bio-img {
-                width: 100px;
-                height: 100px;
-            }
-
-            /* Share Section */
-            .share-section {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
-            .share-icons {
-                width: 100%;
-                justify-content: space-between;
-            }
-
-            /* Related & Footer Columns to 1 */
+            .container-custom { max-width: 100%; padding: 0 15px; }
+            .article-header { padding: 40px 0 20px; }
+            .article-title { font-size: 28px; }
+            .article-content { padding: 30px 20px; }
+            .article-featured-img, .secondary-img { height: auto !important; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 20px; }
+            .secondary-img { margin: 30px 0; }
+            .blockquote-custom { padding: 30px 20px; margin: 30px 0; font-size: 20px; border-left-width: 4px; }
+            .blockquote-custom::before { font-size: 60px; top: -15px; left: 10px; }
+            .article-text p { font-size: 17px; }
+            .article-text h2 { font-size: 24px; margin-top: 30px; }
+            .author-bio-box { flex-direction: column; text-align: center; padding: 25px; margin-top: 40px; }
+            .author-bio-img { width: 100px; height: 100px; }
+            .share-section { flex-direction: column; gap: 15px; align-items: flex-start; }
+            .share-icons { width: 100%; justify-content: space-between; }
             .related-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; gap: 30px; }
-        }
+            
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
 
+            .read-also-box {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
     </style>
 </head>
 
@@ -574,19 +271,16 @@
     </nav>
 
     <div class="container-custom">
-        
         <div class="article-header">
             <span class="article-category">Market Analysis</span>
             <h1 class="article-title">The Future of Luxury Real Estate: Trends to Watch in 2026</h1>
         </div>
 
         <div class="content-layout">
-
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
                  alt="Luxury Real Estate" class="article-featured-img">
 
             <article class="article-content">
-                
                 <div class="toc-box">
                     <div class="toc-header" onclick="toggleTOC()">
                         <div class="toc-title">Table of Contents</div>
@@ -604,33 +298,38 @@
 
                 <div class="article-text">
                     <p id="intro">As we step into a new year, the landscape of high-end property is shifting. The definition of luxury is evolving from simple opulence to a more sophisticated blend of technology, sustainability, and personal well-being. From sustainable smart homes to the resurgence of suburban estates, high-net-worth individuals are prioritizing different assets in 2026. The shift isn't just about what the home looks like, but how it functions as a complete ecosystem for living.</p>
-                    
                     <p>In this analysis, we explore the key drivers changing the luxury market and what buyers need to look for to ensure their investments hold value for decades to come. The market has shown resilience despite global economic fluctuations, proving that real estate remains a top tier asset class for capital preservation and growth.</p>
-
+                    
                     <h2 id="sustainability">1. Sustainability as the New Standard</h2>
                     <p>Gone are the days when eco-friendly meant a compromise on style. In 2026, sustainability is the ultimate luxury. Buyers are looking for homes with LEED certification, solar integration, and passive design that reduces the carbon footprint without sacrificing comfort. Energy independence is no longer just a perk; it's a primary demand from discerning buyers.</p>
+                    
+                    <div class="read-also-box">
+                        <span class="read-also-label">Baca Juga:</span>
+                        <a href="blog-detail2.html" class="read-also-link">Maximizing ROI: A Guide for Property Investors</a>
+                    </div>
 
                     <blockquote class="blockquote-custom">
                         "True luxury in 2026 is no longer just about golden taps and marble floors; it's about the seamless integration of health, technology, and environmental responsibility."
                         <div class="blockquote-footer">— James Sterling, Chief Analyst at EstateVista</div>
                     </blockquote>
-
                     <p>Materials like reclaimed wood, low-VOC paints, and energy-efficient glass are now standard expectations in the top-tier market. It's not just about saving the planet; it's about the quality of the air you breathe inside your home. Biophilic design elements that bring the outdoors in are becoming standard in high-end developments.</p>
-
+                    
                     <h2 id="wellness">2. Wellness-Centric Architecture</h2>
                     <p>Following the global health shifts of the last decade, the home has become a sanctuary. We are seeing a massive spike in demand for properties that feature dedicated wellness spaces. This goes beyond a simple home gym; we are talking about full-scale spa facilities, cryotherapy chambers, and yoga studios integrated directly into the home.</p>
-                    
-                    <img src="img/rumah 3.webp" 
-                         alt="Wellness Spa in Luxury Home" class="secondary-img">
-
+                    <img src="img/rumah 3.webp" alt="Wellness Spa in Luxury Home" class="secondary-img">
                     <p>Think meditation gardens, circadian lighting systems that adjust to your sleep cycle, and advanced water filtration systems. Real estate developers are now consulting with health experts to design spaces that actively lower stress levels and promote longevity. The home is now seen as a tool for health optimization.</p>
-
+                    
                     <h2 id="suburban">3. The Suburban Renaissance</h2>
                     <p>While city penthouses remain desirable, there is a clear trend toward the suburbs. However, this isn't the suburbia of the past. Luxury buyers are seeking "commuter estates"—large properties with ample land, privacy, and high-speed connectivity, located within an hour of major metropolitan hubs. Space is the new currency.</p>
+                    
+                    <div class="read-also-box">
+                        <span class="read-also-label">Baca Juga:</span>
+                        <a href="blog-detail3.html" class="read-also-link">Minimalist Interiors: Less is More in Modern Villas</a>
+                    </div>
 
                     <h2 id="tech">4. Smart Homes 2.0</h2>
                     <p>Smart home technology has matured. It's no longer about flashy gadgets, but about intuitive systems. In 2026, AI-driven home management systems can predict heating needs, manage security autonomously, and even order groceries based on your consumption patterns. The technology is invisible but omnipresent.</p>
-
+                    
                     <h2 id="conclusion">Conclusion</h2>
                     <p>The luxury real estate market in 2026 is dynamic and exciting. For investors and homebuyers alike, the focus should remain on quality, location, and the adaptability of the property to future technologies and environmental standards. Those who adapt to these trends will see significant returns on their investments.</p>
                 </div>
@@ -655,9 +354,7 @@
                         <a href="#" class="share-btn bg-wa"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
-
             </article>
-
         </div>
     </div>
 
@@ -665,7 +362,6 @@
         <div class="container-custom">
             <h2 class="section-title">Related Articles</h2>
             <div class="related-grid">
-                
                 <div class="related-card">
                     <a href="blog-detail2.html">
                         <img src="img/rumah 1.webp" class="related-img" alt="Investment">
@@ -675,7 +371,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="related-card">
                     <a href="blog-detail3.html">
                         <img src="img/rumah 3.webp" class="related-img" alt="Design">
@@ -685,7 +380,6 @@
                         </div>
                     </a>
                 </div>
-
                 <div class="related-card">
                     <a href="blog-detail5.html">
                         <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="related-img" alt="Lifestyle">
@@ -695,7 +389,6 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
@@ -703,7 +396,6 @@
     <footer>
         <div class="container-custom">
             <div class="footer-content">
-                
                 <div class="footer-widget footer-brand">
                     <h2>EstateVista</h2>
                     <p>Where dreams meet reality.</p>
@@ -714,7 +406,6 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-
                 <div class="footer-widget footer-links">
                     <h3>Quick Links</h3>
                     <ul>
@@ -725,7 +416,6 @@
                         <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-widget footer-links">
                     <h3>Our Services</h3>
                     <ul>
@@ -735,7 +425,6 @@
                         <li><a href="#">serbatau</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-widget footer-contact">
                     <h3>Contact Us</h3>
                     <ul class="contact-info list-unstyled">
@@ -753,16 +442,26 @@
                         </li>
                     </ul>
                 </div>
-
             </div>
-
             <div class="copyright">
                 <p>&copy; 2026 EstateVista. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <div class="floating-buttons">
+        <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services." class="float-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
+        // TOC Toggle Logic (Existing)
         function toggleTOC() {
             var list = document.getElementById("tocList");
             var icon = document.getElementById("tocIcon");
@@ -775,9 +474,25 @@
                 icon.classList.add("rotate");
             }
         }
-    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        // Logic Scroll to Top (New)
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollTopBtn.classList.add("show");
+            } else {
+                scrollTopBtn.classList.remove("show");
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    </script>
 
 </body>
 </html>
