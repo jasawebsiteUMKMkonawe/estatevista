@@ -99,7 +99,7 @@
 
         .btn-custom {
             display: inline-block;
-            padding: 10px 25px; /* Sedikit diperkecil */
+            padding: 10px 25px;
             background-color: var(--secondary);
             color: var(--white);
             font-weight: 600;
@@ -114,25 +114,30 @@
             color: var(--white);
         }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-            padding: 10px 25px; /* Sedikit diperkecil */
-            font-weight: 600;
-            border-radius: 4px;
+        /* Updated btn-cta style for floating section */
+        .btn-cta {
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 700;
+            padding: 12px 35px;
+            font-size: 1rem;
+            border-radius: 30px;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
         }
 
-        .btn-outline:hover {
-            background-color: var(--white);
+        .btn-cta:hover {
+            background-color: #fff;
             color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
         }
 
         .text-center {
             text-align: center;
         }
 
-        /* PERUBAHAN DI SINI: Padding diperkecil dari 80px ke 50px */
         .section-padding {
             padding: 50px 0;
         }
@@ -142,7 +147,7 @@
             background: linear-gradient(rgba(26, 43, 73, 0.7), rgba(26, 43, 73, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            height: 200px; /* Tetap sama */
+            height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -171,7 +176,7 @@
 
         .intro h2 {
             font-size: 32px;
-            margin-bottom: 15px; /* Diperkecil */
+            margin-bottom: 15px;
         }
 
         .intro p {
@@ -183,13 +188,13 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px; /* Gap diperkecil sedikit */
-            margin-top: 40px; /* Diperkecil dari 50px */
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .service-card {
             background: var(--white);
-            padding: 30px 25px; /* Padding card diperkecil sedikit */
+            padding: 30px 25px;
             border: 1px solid #eeeeee;
             border-radius: 8px;
             text-align: center;
@@ -203,7 +208,7 @@
         }
 
         .icon-box {
-            width: 70px; /* Diperkecil sedikit */
+            width: 70px;
             height: 70px;
             background-color: #f4f7fa;
             border-radius: 50%;
@@ -247,7 +252,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 40px; /* Gap diperkecil */
+            gap: 40px;
         }
 
         .feature-text {
@@ -261,7 +266,7 @@
         }
 
         .feature-list li {
-            margin-bottom: 10px; /* Diperkecil */
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             color: var(--text-dark);
@@ -283,31 +288,53 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
-        /* --- CTA SECTION --- */
-        .cta-section {
-            background-color: var(--primary);
-            color: var(--white);
+        /* --- FLOATING CTA SECTION (NEW STYLE) --- */
+        .floating-cta-wrapper {
+            padding: 50px 20px; /* Jarak atas bawah wrapper */
+            background-color: var(--light-bg); /* Background wrapper sama dengan section sebelumnya jika mau menyatu, atau putih */
+        }
+
+        .floating-cta {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            
+            padding: 60px 40px;
             text-align: center;
-        }
-
-        .cta-section h2 {
             color: var(--white);
-            margin-bottom: 10px;
-            font-size: 28px;
+            
+            border-radius: 20px; /* Rounded corners */
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Efek bayangan melayang */
+            
+            max-width: 1200px;
+            margin: 0 auto; /* Tengah */
+            position: relative;
+            z-index: 10;
         }
 
-        .cta-section p {
-            opacity: 0.8;
-            margin-bottom: 25px;
-            font-size: 18px;
+        .floating-cta h2 {
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .floating-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* --- FOOTER --- */
         footer {
             background-color: #152238;
             color: #ccc;
-            padding: 30px 0 20px; /* Padding footer diperkecil */
+            padding: 60px 0 20px; /* Padding atas ditambah sedikit */
             font-size: 14px;
+            margin-top: -30px; /* Opsional: footer masuk sedikit di bawah CTA */
         }
 
         .footer-grid {
@@ -351,10 +378,16 @@
                 flex-direction: column;
             }
             
-            /* Pada mobile, section padding bisa lebih kecil lagi jika perlu */
             .section-padding {
                 padding: 40px 0;
             }
+
+            .floating-cta {
+                padding: 40px 20px;
+                border-radius: 15px;
+            }
+            .floating-cta h2 { font-size: 1.5rem; }
+            .floating-cta-wrapper { padding: 40px 15px; }
         }
     </style>
 </head>
@@ -377,7 +410,7 @@
             </ul>
             <div class="ms-lg-3 mt-2 mt-lg-0">
               <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-                Contact
+                <i class="fas fa-phone me-1"></i> +1 5589 55488 55
               </a>
             </div>
           </div>
@@ -483,13 +516,13 @@
         </div>
     </section>
 
-    <section class="section-padding cta-section">
-        <div class="container">
+    <div class="floating-cta-wrapper">
+        <div class="floating-cta">
             <h2>Ready to Find Your Dream Property?</h2>
             <p>Let our experts guide you through every step — from search to closing.</p>
-            <button class="btn-outline">Schedule a Free Consultation</button>
+            <button class="btn-cta">Schedule a Free Consultation</button>
         </div>
-    </section>
+    </div>
 
     <footer>
         <div class="container">
