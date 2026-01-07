@@ -5,13 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us — EstateVista</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
   <style>
@@ -77,7 +74,7 @@
     /* Breadcrumb */
     .breadcrumb {
       background-color: transparent;
-      padding: 1rem 0;
+      padding: 0.5rem 0;
     }
 
     .breadcrumb-item a {
@@ -88,13 +85,10 @@
       color: var(--text-dark);
     }
 
-    /* Breadcrumb */
-.breadcrumb-container {
-  padding: 10px 0;
-  margin-bottom: 5px; /* lebih rapat dari default mt-4 */
-}
-
-
+    .breadcrumb-container {
+      padding: 5px 0;
+      margin-bottom: 0;
+    }
 
     /* Hero Section */
     .hero-about {
@@ -102,44 +96,45 @@
       background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 100px 0;
+      padding: 60px 0;
       text-align: center;
     }
 
     .hero-about h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
     }
 
     .hero-about p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 600px;
       margin: 0 auto;
     }
  
     /* Our Story */
     .our-story {
-      padding: 10px 0;
+      padding: 40px 0;
     }
 
     .story-title {
       color: var(--secondary);
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 2px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .story-content p {
-      line-height: 1.8;
+      line-height: 1.6;
+      margin-bottom: 1rem;
     }
 
     .btn-gold {
       background-color: var(--secondary);
       color: var(--primary);
       font-weight: 700;
-      padding: 10px 25px;
+      padding: 8px 25px;
       border-radius: 30px;
       border: none;
     }
@@ -152,36 +147,37 @@
     /* Stats Section */
     .stats-section {
       background-color: var(--white);
-      padding: 60px 0;
+      padding: 30px 0;
       text-align: center;
     }
 
     .stat-box {
-      padding: 20px;
+      padding: 10px;
     }
 
     .stat-number {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--secondary);
     }
 
     .stat-label {
       color: var(--text-light);
+      font-size: 0.9rem;
     }
 
     /* Team Section */
     .team-section {
-      padding: 80px 0;
+      padding: 50px 0;
       background-color: var(--light-bg);
     }
 
     .section-title {
       color: var(--secondary);
-      font-size: 1rem;
+      font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 2px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .team-card {
@@ -199,28 +195,29 @@
 
     .team-photo {
       width: 100%;
-      height: 250px;
+      height: 220px;
       object-fit: cover;
     }
 
     .team-info {
-      padding: 20px;
+      padding: 15px;
     }
 
     .team-name {
       font-weight: 700;
       color: var(--primary);
+      font-size: 1.1rem;
     }
 
     .team-role {
       color: var(--text-light);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .team-contact {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-light);
-      margin-top: 10px;
+      margin-top: 5px;
     }
 
     .team-contact i {
@@ -230,12 +227,12 @@
 
     /* Why Choose Us */
     .why-choose-us {
-      padding: 80px 0;
+      padding: 50px 0;
     }
 
     .why-box {
       background: var(--white);
-      padding: 30px;
+      padding: 25px;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       height: 100%;
@@ -245,27 +242,102 @@
     }
 
     .why-icon {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: var(--secondary);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .why-title {
       color: var(--primary);
       font-weight: 700;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    
+    .why-box p {
+        font-size: 0.95rem;
+        margin-bottom: 0;
+    }
+
+    /* --- FLOATING CTA SECTION (UPDATED) --- */
+    .floating-cta-wrapper {
+      padding: 0 20px 40px 20px; /* Jarak Kiri, Kanan, Bawah */
+      background-color: var(--light-bg); /* Background halaman di belakang CTA */
+    }
+
+    .floating-cta {
+      background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      
+      padding: 60px 40px;
+      text-align: center;
+      color: var(--white);
+      
+      border-radius: 20px; /* Rounded corners */
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15); /* Efek bayangan melayang */
+      
+      max-width: 1200px;
+      margin: 0 auto; /* Tengah */
+      position: relative;
+      z-index: 10;
+    }
+
+    .floating-cta h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .floating-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-cta {
+      background-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+      padding: 12px 35px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-cta:hover {
+      background-color: #fff;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
     }
 
     /* Footer */
     .footer {
       background-color: var(--primary);
       color: var(--white);
-      padding: 60px 0 20px;
+      padding: 60px 0 20px; /* Padding atas ditambah sedikit karena ada CTA di atasnya */
+      margin-top: -30px; /* Opsional: Jika ingin footer 'masuk' sedikit di bawah CTA, atau biarkan 0 */
+    }
+
+    .footer h4, .footer h6 {
+        margin-bottom: 1rem;
     }
 
     .footer a {
       color: var(--white);
       text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
     }
 
     .footer a:hover {
@@ -274,15 +346,16 @@
 
     .social-icon {
       display: inline-block;
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       background: rgba(255,255,255,0.1);
       border-radius: 50%;
       text-align: center;
-      line-height: 36px;
-      margin-right: 8px;
+      line-height: 32px;
+      margin-right: 5px;
       color: var(--white);
       transition: background 0.3s;
+      font-size: 0.9rem;
     }
 
     .social-icon:hover {
@@ -292,26 +365,29 @@
 
     .copyright {
       border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 20px;
-      margin-top: 40px;
+      padding-top: 15px;
+      margin-top: 20px;
       color: rgba(255,255,255,0.7);
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero-about h1 {
-        font-size: 2.2rem;
+      .hero-about { padding: 50px 0; }
+      .hero-about h1 { font-size: 1.8rem; }
+      .team-photo { height: 200px; }
+      
+      .floating-cta {
+        padding: 40px 20px;
+        border-radius: 15px;
       }
-      .team-photo {
-        height: 200px;
-      }
+      .floating-cta h2 { font-size: 1.5rem; }
+      .floating-cta-wrapper { padding: 0 15px 30px 15px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
       <a class="navbar-brand" href="index.html">EstateVista</a>
@@ -328,14 +404,13 @@
         </ul>
         <div class="ms-lg-3 mt-2 mt-lg-0">
           <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-            <i class="fas fa-phone me-1"></i> Contact
+           Contact
           </a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero-about">
     <div class="container">
       <h1>Turning Dreams into Reality</h1>
@@ -343,17 +418,15 @@
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-<div class="container breadcrumb-container">
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">About</li>
-    </ol>
-  </nav>
-</div>
+  <div class="container breadcrumb-container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">About</li>
+      </ol>
+    </nav>
+  </div>
 
-  <!-- Our Story -->
   <section class="our-story">
     <div class="container">
       <div class="row align-items-center">
@@ -364,7 +437,7 @@
             <p>As a reminder of our client-first approach, we founded EstateVista with the mission to redefine real estate experiences. Over 20 years, we’ve cultivated deep relationships, developed systems, and refined every detail to ensure your journey from search to closing is seamless, joyful, and successful.</p>
             <p>We are not just agents — we are advisors, partners, and advocates who care deeply about your dreams becoming reality.</p>
           </div>
-          <a href="properties.html" class="btn btn-gold mt-3">Find Your Dream Home</a>
+          <a href="properti.html" class="btn btn-gold mt-2">Find Your Dream Home</a>
         </div>
         <div class="col-lg-6">
           <img src="img/rumah 1.webp" class="img-fluid rounded" alt="Team handshake">
@@ -373,7 +446,6 @@
     </div>
   </section>
 
-  <!-- Stats Section -->
   <section class="stats-section">
     <div class="container">
       <div class="row">
@@ -405,92 +477,14 @@
     </div>
   </section>
 
-  <!-- Meet Our Team -->
-  <section class="team-section">
-    <div class="container">
-      <div class="text-center mb-5">
-        <div class="section-title">MEET OUR TEAM</div>
-        <h2>The Experts Behind EstateVista</h2>
-      </div>
-      <div class="row">
-        <!-- Team Member 1 -->
-        <div class="col-md-3 col-sm-6 mb-4">
-          <div class="team-card">
-            <img src="img/sarah.webp" class="team-photo" alt="Sarah Miller">
-            <div class="team-info">
-              <h5 class="team-name">Sarah Miller</h5>
-              <div class="team-role">CEO & Founder</div>
-              <div class="team-contact">
-                <i class="fas fa-envelope"></i> sarah.miller@estatevista.com
-              </div>
-              <div class="team-contact">
-                <i class="fas fa-phone"></i> +1 569-999-554855
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Team Member 2 -->
-        <div class="col-md-3 col-sm-6 mb-4">
-          <div class="team-card">
-            <img src="img/michael.webp" class="team-photo" alt="David Anderson">
-            <div class="team-info">
-              <h5 class="team-name">David Anderson</h5>
-              <div class="team-role">Operations Manager</div>
-              <div class="team-contact">
-                <i class="fas fa-envelope"></i> david.anderson@estatevista.com
-              </div>
-              <div class="team-contact">
-                <i class="fas fa-phone"></i> +1 5899 554855
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Team Member 3 -->
-        <div class="col-md-3 col-sm-6 mb-4">
-          <div class="team-card">
-            <img src="img/emma.webp" class="team-photo" alt="Emma Johnson">
-            <div class="team-info">
-              <h5 class="team-name">Emma Johnson</h5>
-              <div class="team-role">Senior Agent</div>
-              <div class="team-contact">
-                <i class="fas fa-envelope"></i> emma.johnson@estatevista.com
-              </div>
-              <div class="team-contact">
-                <i class="fas fa-phone"></i> +1 5899 534855
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Team Member 4 -->
-        <div class="col-md-3 col-sm-6 mb-4">
-          <div class="team-card">
-            <img src="img/james.webp" class="team-photo" alt="James Wilson">
-            <div class="team-info">
-              <h5 class="team-name">James Wilson</h5>
-              <div class="team-role">Property Specialist</div>
-              <div class="team-contact">
-                <i class="fas fa-envelope"></i> james.wilson@estatevista.com
-              </div>
-              <div class="team-contact">
-                <i class="fas fa-phone"></i> +1 5699 554855
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Choose Us -->
   <section class="why-choose-us">
     <div class="container">
-      <div class="text-center mb-5">
+      <div class="text-center mb-4">
         <h2>Why Choose EstateVista?</h2>
         <p class="text-muted">We give you a caring people of our services.</p>
       </div>
       <div class="row">
-        <!-- Why 1 -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-3">
           <div class="why-box">
             <div class="why-icon">
               <i class="fas fa-check-circle"></i>
@@ -499,8 +493,7 @@
             <p>Two decades of expertise with passionate professionals dedicated to your success. We’ve guided thousands of clients through their most important financial decisions.</p>
           </div>
         </div>
-        <!-- Why 2 -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-3">
           <div class="why-box">
             <div class="why-icon">
               <i class="fas fa-users"></i>
@@ -509,8 +502,7 @@
             <p>Your goals come first. From personalized service to tailored solutions, we listen, adapt, and deliver results that exceed expectations.</p>
           </div>
         </div>
-        <!-- Why 3 -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-3">
           <div class="why-box">
             <div class="why-icon">
               <i class="fas fa-chart-line"></i>
@@ -523,7 +515,85 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <section class="team-section">
+    <div class="container">
+      <div class="text-center mb-4">
+        <div class="section-title">MEET OUR TEAM</div>
+        <h2>The Experts Behind EstateVista</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="team-card">
+            <img src="img/sarah.webp" class="team-photo" alt="Sarah Miller">
+            <div class="team-info">
+              <h5 class="team-name">Sarah Miller</h5>
+              <div class="team-role">CEO & Founder</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> sarah.m@ev.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 569-999-554
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="team-card">
+            <img src="img/michael.webp" class="team-photo" alt="David Anderson">
+            <div class="team-info">
+              <h5 class="team-name">David Anderson</h5>
+              <div class="team-role">Operations Mgr</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> david.a@ev.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 5899 554855
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="team-card">
+            <img src="img/emma.webp" class="team-photo" alt="Emma Johnson">
+            <div class="team-info">
+              <h5 class="team-name">Emma Johnson</h5>
+              <div class="team-role">Senior Agent</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> emma.j@ev.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 5899 534855
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 mb-3">
+          <div class="team-card">
+            <img src="img/james.webp" class="team-photo" alt="James Wilson">
+            <div class="team-info">
+              <h5 class="team-name">James Wilson</h5>
+              <div class="team-role">Specialist</div>
+              <div class="team-contact">
+                <i class="fas fa-envelope"></i> james.w@ev.com
+              </div>
+              <div class="team-contact">
+                <i class="fas fa-phone"></i> +1 5699 554855
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="floating-cta-wrapper">
+    <div class="floating-cta">
+      <h2>Ready to Find Your Dream Home?</h2>
+      <p>Let our experienced team guide you through every step of your real estate journey. Contact us today for a free consultation.</p>
+      <a href="contact.html" class="btn btn-cta">Contact Us Now</a>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -559,7 +629,7 @@
         <div class="col-lg-3 col-md-4 mb-4">
           <h6 class="text-white">Contact Us</h6>
           <p class="text-white-50">
-            <i class="fas fa-map-marker-alt me-2"></i> 108 Adam Street, New York, NY 535022
+            <i class="fas fa-map-marker-alt me-2"></i> 108 Adam Street, NY
           </p>
           <p class="text-white-50">
             <i class="fas fa-phone me-2"></i> +1 5589 55488 55
@@ -575,7 +645,6 @@
     </div>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -17,7 +17,6 @@
     <style>
         /* --- CSS VARIABLES & RESET --- */
         :root {
-            /* Variabel Warna dari Index.html */
             --primary: #1A365D;
             --secondary: #D4AF37;
             --accent: #2ECC71;
@@ -26,7 +25,6 @@
             --text-light: #718096;
             --white: #FFFFFF;
 
-            /* Variabel Lama (untuk kompatibilitas konten service yang ada) */
             --primary-navy: #1a2b49; 
             --accent-gold: #d4af37;
             --accent-gold-hover: #b5952f;
@@ -43,7 +41,7 @@
             color: var(--text-dark);
             line-height: 1.6;
             background-color: var(--white);
-            padding-top: 80px; /* Padding agar konten tidak tertutup navbar fixed */
+            padding-top: 80px;
         }
 
         h1, h2, h3, h4 {
@@ -61,7 +59,7 @@
             padding-left: 0;
         }
 
-        /* --- NAVBAR STYLES (Sama dengan Index) --- */
+        /* --- NAVBAR STYLES --- */
         .navbar {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -99,9 +97,9 @@
             padding: 0 20px;
         }
 
-        .btn-custom { /* Ganti nama class btn biasa agar tidak bentrok dengan bootstrap */
+        .btn-custom {
             display: inline-block;
-            padding: 12px 30px;
+            padding: 10px 25px; /* Sedikit diperkecil */
             background-color: var(--secondary);
             color: var(--white);
             font-weight: 600;
@@ -120,7 +118,7 @@
             background-color: transparent;
             border: 2px solid var(--white);
             color: var(--white);
-            padding: 12px 30px;
+            padding: 10px 25px; /* Sedikit diperkecil */
             font-weight: 600;
             border-radius: 4px;
         }
@@ -134,8 +132,9 @@
             text-align: center;
         }
 
+        /* PERUBAHAN DI SINI: Padding diperkecil dari 80px ke 50px */
         .section-padding {
-            padding: 80px 0;
+            padding: 50px 0;
         }
 
         /* --- HERO SECTION --- */
@@ -143,7 +142,7 @@
             background: linear-gradient(rgba(26, 43, 73, 0.7), rgba(26, 43, 73, 0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            height: 350px;
+            height: 200px; /* Tetap sama */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -171,8 +170,8 @@
         }
 
         .intro h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 15px; /* Diperkecil */
         }
 
         .intro p {
@@ -184,13 +183,13 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 25px; /* Gap diperkecil sedikit */
+            margin-top: 40px; /* Diperkecil dari 50px */
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 30px;
+            padding: 30px 25px; /* Padding card diperkecil sedikit */
             border: 1px solid #eeeeee;
             border-radius: 8px;
             text-align: center;
@@ -204,16 +203,16 @@
         }
 
         .icon-box {
-            width: 80px;
-            height: 80px;
+            width: 70px; /* Diperkecil sedikit */
+            height: 70px;
             background-color: #f4f7fa;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
+            margin: 0 auto 20px;
             color: var(--primary);
-            font-size: 32px;
+            font-size: 28px;
             transition: 0.3s;
         }
 
@@ -223,14 +222,14 @@
         }
 
         .service-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 20px;
+            margin-bottom: 10px;
         }
 
         .service-card p {
             color: var(--text-light);
             font-size: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .service-link {
@@ -248,7 +247,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 50px;
+            gap: 40px; /* Gap diperkecil */
         }
 
         .feature-text {
@@ -257,12 +256,12 @@
         }
 
         .feature-text h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 15px;
         }
 
         .feature-list li {
-            margin-bottom: 15px;
+            margin-bottom: 10px; /* Diperkecil */
             display: flex;
             align-items: center;
             color: var(--text-dark);
@@ -293,12 +292,13 @@
 
         .cta-section h2 {
             color: var(--white);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+            font-size: 28px;
         }
 
         .cta-section p {
             opacity: 0.8;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: 18px;
         }
 
@@ -306,25 +306,25 @@
         footer {
             background-color: #152238;
             color: #ccc;
-            padding: 60px 0 20px;
+            padding: 30px 0 20px; /* Padding footer diperkecil */
             font-size: 14px;
         }
 
         .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 30px;
+            margin-bottom: 30px;
         }
 
         .footer-col h4 {
             color: var(--white);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 18px;
         }
 
         .footer-col ul li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-col a {
@@ -337,7 +337,7 @@
 
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+            padding-top: 15px;
             text-align: center;
         }
 
@@ -349,6 +349,11 @@
 
             .feature-wrapper {
                 flex-direction: column;
+            }
+            
+            /* Pada mobile, section padding bisa lebih kecil lagi jika perlu */
+            .section-padding {
+                padding: 40px 0;
             }
         }
     </style>
@@ -367,11 +372,12 @@
               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
               <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
               <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
-              <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li> <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+              <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
+              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
             </ul>
             <div class="ms-lg-3 mt-2 mt-lg-0">
               <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-                <i class="fas fa-phone me-1"></i> Contact
+                Contact
               </a>
             </div>
           </div>
@@ -401,7 +407,7 @@
                     <h3>Property Search</h3>
                     <p>Access exclusive listings and off-market properties. We use advanced filters to find your perfect
                         match tailored to your lifestyle.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="property-search.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -411,7 +417,7 @@
                     <h3>Property Valuation</h3>
                     <p>Get accurate market analysis and comparative reports. We help you understand the true value of
                         your property in today's market.</p>
-                    <a href="#" class="service-link">Get Evaluation <i class="fas fa-arrow-right"></i></a>
+                    <a href="property-valuation.html" class="service-link">Get Evaluation <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -421,7 +427,7 @@
                     <h3>Property Management</h3>
                     <p>Hassle-free rental management. From tenant matching to lease agreements and maintenance, we
                         handle it all.</p>
-                    <a href="#" class="service-link">View Packages <i class="fas fa-arrow-right"></i></a>
+                    <a href="property-management.html" class="service-link">View Packages <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -431,7 +437,7 @@
                     <h3>Investment Advisory</h3>
                     <p>Strategic portfolio planning and risk assessment. Maximize your ROI with our data-driven
                         investment insights.</p>
-                    <a href="#" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="investment-advisory.html" class="service-link">Consult Now <i class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="service-card">
                     <div class="icon-box">
@@ -440,7 +446,7 @@
                     <h3>Legal Assistance</h3>
                     <p>Navigate complex real estate laws with ease. We partner with top legal experts to ensure smooth
                         transactions.</p>
-                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    <a href="legal-asistance.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
                 <div class="service-card">
@@ -450,7 +456,7 @@
                     <h3>Home Staging</h3>
                     <p>Present your home in the best light. Our staging experts help increase property appeal and sell
                         faster.</p>
-                    <a href="#" class="service-link">View Gallery <i class="fas fa-arrow-right"></i></a>
+                    <a href="home-staging.html" class="service-link">View Gallery <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -533,6 +539,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
-
-
 </html>

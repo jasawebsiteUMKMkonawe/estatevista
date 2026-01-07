@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Staging - EstateVista</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #1A365D;
+            --secondary: #D4AF37;
+            --accent: #2ECC71;
+            --light-bg: #F8F9FA;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --white: #FFFFFF;
+            --bg-taupe: #EBE5DE;
+            --spacing-section: 60px;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.7;
+            padding-top: 80px;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+
+        a { text-decoration: none; transition: 0.3s; color: inherit; }
+        ul { list-style: none; padding-left: 0; }
+        img { max-width: 100%; display: block; }
+
+        /* --- NAVBAR --- */
+        .navbar { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .navbar-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.8rem; color: var(--primary); }
+        .navbar-nav .nav-link { color: var(--text-dark); font-weight: 600; }
+        .navbar-nav .nav-link:hover { color: var(--secondary); }
+        .text-primary { color: var(--primary) !important; }
+
+        /* --- PAGE HERO --- */
+        .page-hero {
+            height: 200px;
+            /* Gambar interior desain yang cantik */
+            background: linear-gradient(rgba(26, 54, 93, 0.6), rgba(26, 54, 93, 0.6)), url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .page-hero h1 { font-size: 3.5rem; color: var(--white); margin-bottom: 15px; }
+        .page-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+
+        /* Breadcrumb Overlay */
+        .breadcrumb-wrapper {
+            background-color: var(--light-bg);
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .breadcrumb { margin: 0; font-size: 0.9rem; }
+        .breadcrumb-item a { color: var(--text-light); }
+        .breadcrumb-item.active { color: var(--primary); font-weight: 700; }
+
+        /* --- CONTENT LAYOUT --- */
+        .section-padding { padding: var(--spacing-section) 0; }
+        
+        .service-img-main {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .content-block h2 { font-size: 2rem; margin-bottom: 20px; }
+        .content-block p { margin-bottom: 20px; color: var(--text-light); font-size: 1.05rem; }
+        .content-block h3 { font-size: 1.5rem; margin-top: 30px; margin-bottom: 15px; }
+
+        /* Key Features List */
+        .features-list { margin-top: 20px; }
+        .features-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        .features-list i {
+            color: var(--secondary);
+            margin-right: 15px;
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        /* Process Steps */
+        .process-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .process-item {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+        .process-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e0e0e0;
+            line-height: 1;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        .process-item h4 { font-size: 1.2rem; margin-bottom: 10px; }
+        .process-item p { font-size: 0.9rem; margin-bottom: 0; }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            background: var(--white);
+            border: 1px solid #eee;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .widget-title { font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid var(--secondary); padding-bottom: 10px; display: inline-block; }
+
+        /* Contact Form inside Sidebar */
+        .sidebar-form .form-control {
+            background-color: var(--light-bg);
+            border: 1px solid #eee;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        .btn-submit {
+            background-color: var(--primary);
+            color: var(--white);
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background-color: var(--secondary); }
+
+        /* Quick Links */
+        .service-links li { border-bottom: 1px solid #eee; }
+        .service-links a {
+            display: block;
+            padding: 12px 0;
+            color: var(--text-light);
+            font-weight: 600;
+            display: flex; justify-content: space-between;
+        }
+        .service-links a:hover, .service-links a.active { color: var(--primary); padding-left: 5px; }
+        .service-links a.active { color: var(--secondary); }
+
+        /* --- FOOTER --- */
+        footer { background-color: #152238; color: #b0b0b0; padding: 50px 0 20px; font-size: 15px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 30px; }
+        .footer-col h4 { color: var(--white); margin-bottom: 20px; }
+        .footer-col a { color: #b0b0b0; }
+        .footer-col a:hover { color: var(--secondary); }
+        .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; text-align: center; }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .page-hero { height: 300px; }
+            .sidebar { position: static; margin-top: 50px; }
+            .process-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EstateVista</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+                <div class="ms-lg-3 mt-2 mt-lg-0">
+                    <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
+                     Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Home Staging</h1>
+            <p>Elevate your property's appeal and accelerate your sale.</p>
+        </div>
+    </section>
+
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="service.html">Services</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Home Staging</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-8">
+                    <div class="content-block">
+                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Home Staging Living Room" class="service-img-main">
+                        
+                        <h2>Sell Faster, Sell Higher</h2>
+                        <p>First impressions are everything in real estate. Within seconds of walking into a home (or viewing it online), buyers make an emotional connection—or they move on. Home staging is the art of preparing your property to appeal to the widest range of potential buyers.</p>
+                        
+                        <p>At EstateVista, our expert stagers curate furniture, artwork, and lighting to highlight your home's best features and distract from its imperfections. Statistics show that staged homes sell 73% faster and often for above the asking price compared to non-staged homes.</p>
+
+                        <h3>The Benefits of Staging</h3>
+                        <ul class="features-list">
+                            <li>
+                                <i class="fas fa-camera"></i>
+                                <div>
+                                    <strong>Photography Ready</strong><br>
+                                    Staged homes look significantly better in photos, which is crucial since 90% of buyers start their search online.
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-magic"></i>
+                                <div>
+                                    <strong>Space Optimization</strong><br>
+                                    We arrange furniture to make rooms feel larger, improving the flow and functionality of the layout.
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <strong>Emotional Connection</strong><br>
+                                    Buyers need to envision themselves living there. We create a warm, inviting atmosphere that empty rooms lack.
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-check-circle"></i>
+                                <div>
+                                    <strong>Depersonalization</strong><br>
+                                    We help remove personal items so buyers focus on the architecture and potential, not your personal photos.
+                                </div>
+                            </li>
+                        </ul>
+
+                        <h3>Our Design Process</h3>
+                        <div class="process-row">
+                            <div class="process-item">
+                                <div class="process-number">01</div>
+                                <h4>Consultation</h4>
+                                <p>We visit your property to assess needs, measure spaces, and determine the target buyer demographic.</p>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-number">02</div>
+                                <h4>Proposal</h4>
+                                <p>You receive a custom quote and mood board outlining the style (Modern, Classic, Minimalist).</p>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-number">03</div>
+                                <h4>Installation</h4>
+                                <p>Our team delivers, assembles, and styles everything in 1-2 days, ready for photos.</p>
+                            </div>
+                            <div class="process-item">
+                                <div class="process-number">04</div>
+                                <h4>De-Staging</h4>
+                                <p>Once the property is sold, we efficiently remove all items so the new owners can move in.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <aside class="sidebar">
+                        
+                        <div class="sidebar-widget">
+                            <h4 class="widget-title">Other Services</h4>
+                            <ul class="service-links">
+                                <li><a href="service-property-search.html">Property Search <i class="fas fa-chevron-right"></i></a></li>
+                                <li><a href="service-property-valuation.html">Property Valuation <i class="fas fa-chevron-right"></i></a></li>
+                                <li><a href="service-property-management.html">Property Management <i class="fas fa-chevron-right"></i></a></li>
+                                <li><a href="service-investment-advisory.html">Investment Advisory <i class="fas fa-chevron-right"></i></a></li>
+                                <li><a href="service-home-staging.html" class="active">Home Staging <i class="fas fa-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <h4 class="widget-title">Request Staging Quote</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 20px;">
+                                Transform your space today. Let us know about your property.
+                            </p>
+                            <form class="sidebar-form" id="stagingForm">
+                                <input type="text" id="stageName" class="form-control" placeholder="Your Name" required>
+                                <input type="text" id="stagePhone" class="form-control" placeholder="Phone Number" required>
+                                <input type="text" id="stageAddress" class="form-control" placeholder="Property Address" required>
+                                
+                                <select class="form-control" id="stageType">
+                                    <option value="">Current Status</option>
+                                    <option value="Vacant Home">Vacant (Empty)</option>
+                                    <option value="Occupied Home">Occupied (Lived In)</option>
+                                    <option value="Virtual Staging">Virtual Staging Only</option>
+                                </select>
+
+                                <textarea class="form-control" id="stageMsg" rows="2" placeholder="Any specific style or room focus?" required></textarea>
+                                <button type="submit" class="btn-submit">Get Free Quote</button>
+                            </form>
+                        </div>
+
+                        <div class="sidebar-widget" style="background-color: var(--primary); color: white;">
+                            <h4 class="widget-title" style="border-color: rgba(255,255,255,0.2);">Gallery</h4>
+                            <p style="opacity: 0.8;">Want to see our past transformations?</p>
+                            <div style="font-size: 1.2rem; font-weight: 700; margin-top: 10px; cursor: pointer;">
+                                <i class="fas fa-images me-2"></i> View Portfolio
+                            </div>
+                        </div>
+
+                    </aside>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>EstateVista</h4>
+                    <p>Where dreams meet reality. Your trusted partner in finding the perfect place to call home.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="properti.html">Properties</a></li>
+                        <li><a href="service.html">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Property Search</a></li>
+                        <li><a href="#">Property Valuation</a></li>
+                        <li><a href="#">Property Rental</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 108 Adam Street, NY</li>
+                        <li><i class="fas fa-phone"></i> +1 5509 55488 55</li>
+                        <li><i class="fas fa-envelope"></i> info@estatevista.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 EstateVista. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // FUNGSI PENGIRIMAN WA KHUSUS STAGING
+        document.getElementById('stagingForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Mencegah reload halaman
+
+            // Ambil nilai dari input
+            const name = document.getElementById('stageName').value;
+            const phone = document.getElementById('stagePhone').value;
+            const address = document.getElementById('stageAddress').value;
+            const type = document.getElementById('stageType').value;
+            const msg = document.getElementById('stageMsg').value;
+
+            // Nomor Tujuan
+            const waNumber = "6281234567890"; 
+
+            // Format Pesan Khusus Staging
+            const message = `Halo EstateVista, saya tertarik dengan layanan *Home Staging*.
+
+Nama: ${name}
+No. HP: ${phone}
+Alamat Properti: ${address}
+Kondisi Rumah: ${type}
+Catatan Tambahan: ${msg}
+
+Mohon info paket dan estimasi harga. Terima kasih.`;
+
+            // Buat URL WhatsApp
+            const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+
+            // Buka di tab baru
+            window.open(url, '_blank');
+        });
+    </script>
+
+</body>
+</html>

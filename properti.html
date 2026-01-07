@@ -93,13 +93,13 @@
       color: var(--white);
     }
 
-    /* Hero Section */
+    /* Hero Section - UPDATED PADDING */
     .hero-about {
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 100px 0;
+      padding: 110px 0; /* Dikurangi dari 100px agar lebih rapat */
       text-align: center;
     }
 
@@ -218,11 +218,38 @@
       font-size: 0.9rem;
     }
 
+    /* Footer */
     .footer {
       background-color: var(--primary);
       color: var(--white);
-      padding: 60px 0 20px;
-      margin-top: 60px;
+      padding: 20px 0 20px;
+    }
+
+    .footer a {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: var(--secondary);
+    }
+
+    .social-icon {
+      display: inline-block;
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 36px;
+      margin-right: 8px;
+      color: var(--white);
+      transition: background 0.3s;
+    }
+
+    .social-icon:hover {
+      background: var(--secondary);
+      color: var(--primary);
     }
 
     .copyright {
@@ -231,6 +258,12 @@
       margin-top: 40px;
       color: rgba(255,255,255,0.7);
       font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero-about { padding: 50px 0; }
+      .property-card { margin-bottom: 20px; }
+      .search-bar { padding: 15px; }
     }
 
     /* Kelas untuk pagination & filter */
@@ -245,11 +278,6 @@
     .property-item.page-1 { order: 1; }
     .property-item.page-2 { order: 2; }
     .property-item.page-3 { order: 3; }
-
-    @media (max-width: 768px) {
-      .property-card { margin-bottom: 20px; }
-      .search-bar { padding: 15px; }
-    }
   </style>
 </head>
 <body>
@@ -270,7 +298,7 @@
         </ul>
         <div class="ms-lg-3 mt-2 mt-lg-0">
           <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-            <i class="fas fa-phone me-1"></i> Contact
+            Contact
           </a>
         </div>
       </div>
@@ -284,7 +312,7 @@
     </div>
   </section>
 
-  <div class="container mt-5 pt-4">
+  <div class="container mt-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -698,7 +726,46 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="copyright text-center text-white-50">&copy; 2026 EstateVista. All Rights Reserved.</div>
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h4 class="text-white">EstateVista</h4>
+          <p class="text-white-50">Where dreams meet reality.</p>
+          <div>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h6 class="text-white">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="properti.html">Properties</a></li>
+            <li><a href="service.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h6 class="text-white">Our Services</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">otomagz</a></li>
+            <li><a href="#">baturafting</a></li>
+            <li><a href="#">souvenir</a></li>
+            <li><a href="#">serbatau</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h6 class="text-white">Contact Us</h6>
+          <p class="text-white-50"><i class="fas fa-map-marker-alt me-2"></i> 108 Adam Street, New York, NY 535022</p>
+          <p class="text-white-50"><i class="fas fa-phone me-2"></i> +1 5589 55488 55</p>
+          <p class="text-white-50"><i class="fas fa-envelope me-2"></i> info@estatevista.com</p>
+        </div>
+      </div>
+      <div class="copyright text-center text-white-50">
+        &copy; 2026 EstateVista. All Rights Reserved.
+      </div>
     </div>
   </footer>
 
@@ -835,4 +902,4 @@
     });
   </script>
 </body>
-</html>
+</html>     
