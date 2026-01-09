@@ -4,20 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Future of Luxury Real Estate 2026 - EstateVista</title>
+
+    <title>Maximizing ROI: A Guide for Property Investors - EstateVista</title>
+    <meta name="description"
+        content="Learn expert strategies to increase rental yield and capital appreciation in volatile real estate markets. A comprehensive guide for 2026 investors.">
+    <meta name="author" content="Sarah Martinez">
+    <meta name="keywords"
+        content="Real Estate ROI, Rental Yield, Property Investment, Capital Appreciation, Property Management">
+
+    <meta property="og:title" content="Maximizing ROI: A Guide for Property Investors">
+    <meta property="og:description"
+        content="Strategies to increase rental yield and capital appreciation in volatile markets.">
+    <meta property="og:image" content="img/rumah 1.webp">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.estatevista-three.vercel.app/blog-detail2.html">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maximizing ROI: A Guide for Property Investors">
+    <meta name="twitter:description" content="Expert strategies for maximizing property returns in 2026.">
+    <meta name="twitter:image" content="img/rumah 1.webp">
+
+    <link rel="icon" type="image/png" href="img/logo2.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
+    <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Maximizing ROI: A Guide for Property Investors",
+      "image": "img/rumah 1.webp",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Martinez"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstateVista",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "img/logo.png"
+        }
+      },
+      "datePublished": "2026-01-03",
+      "description": "Comprehensive guide on maximizing real estate ROI through strategic location selection, renovation, and tenant management."
+    }
+    </script>
 
     <style>
         /* --- CSS VARIABLES --- */
         :root {
-            /* Variabel asli blog-detail */
             --primary-navy: #1a2b49;
             --accent-gold: #d4af37;
             --accent-gold-hover: #b5952f;
@@ -26,8 +72,6 @@
             --bg-light: #f9f9f9;
             --white: #ffffff;
             --border-color: #e0e0e0;
-
-            /* Variabel tambahan dari index.html untuk Navbar */
             --primary: #1A365D;
             --secondary: #D4AF37;
         }
@@ -42,14 +86,18 @@
             font-family: 'Lato', sans-serif;
             color: var(--text-dark);
             background-color: var(--bg-light);
-            line-height: 1.6;
+            line-height: 1.8;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            padding-top: 80px; /* Padding agar konten tidak tertutup navbar fixed */
+            padding-top: 80px;
         }
 
-        h1, h2, h3, h4, h5 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'Playfair Display', serif;
             color: var(--primary-navy);
         }
@@ -70,10 +118,10 @@
             display: block;
         }
 
-        /* --- NAVBAR STYLES --- */
+        /* Navbar */
         .navbar {
             background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
 
         .navbar-brand {
@@ -81,6 +129,11 @@
             font-weight: 700;
             font-size: 1.8rem;
             color: var(--primary);
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+            width: auto;
         }
 
         .navbar-nav .nav-link {
@@ -97,14 +150,13 @@
             color: var(--primary) !important;
         }
 
-        /* --- CONTAINER UTAMA --- */
+        /* Content Styles */
         .container-custom {
-            max-width: 90%; 
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        /* --- ARTICLE HEADER --- */
         .article-header {
             padding: 60px 0 40px;
             text-align: center;
@@ -127,75 +179,114 @@
             margin-bottom: 20px;
         }
 
-        /* --- CONTENT LAYOUT --- */
-        .content-layout {
-            width: 100%;
-            margin-bottom: 60px;
-        }
-
-        /* --- ARTICLE ELEMENTS --- */
-        .article-featured-img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 8px;
+        /* Image with Caption Style */
+        figure {
             margin-bottom: 40px;
         }
 
-        .secondary-img {
+        .article-featured-img {
             width: 100%;
             height: 500px;
             object-fit: cover;
             border-radius: 8px;
+        }
+
+        .secondary-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        figcaption {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Promo GIF Container (Centered) */
+        .promo-gif-container {
             margin: 50px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .promo-gif-img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--accent-gold);
+            transition: transform 0.3s;
+        }
+
+        .promo-gif-img:hover {
+            transform: scale(1.02);
         }
 
         .article-content {
             background: var(--white);
             padding: 60px;
             border-radius: 8px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
         }
 
         .article-text p {
             margin-bottom: 25px;
-            font-size: 19px; 
+            font-size: 19px;
             line-height: 1.9;
             color: #444;
         }
 
+        /* Headers inside article */
         .article-text h2 {
             font-size: 32px;
             margin-top: 50px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            scroll-margin-top: 100px;
         }
 
-        /* --- READ ALSO (BACA JUGA) --- */
+        .article-text h3 {
+            font-size: 24px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            scroll-margin-top: 100px;
+        }
+
+        /* Read Also Box */
         .read-also-box {
-            margin: 40px 0;
+            margin: 35px 0;
             padding: 20px 25px;
-            background-color: #f0f4f8; /* Background lembut */
+            background-color: #fffbf0;
             border-left: 5px solid var(--accent-gold);
+            border-radius: 4px;
             display: flex;
-            align-items: center;
-            gap: 15px;
-            border-radius: 0 4px 4px 0;
+            flex-direction: column;
+            gap: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
         }
 
         .read-also-label {
             font-weight: 700;
             color: var(--primary-navy);
             text-transform: uppercase;
-            font-size: 14px;
-            white-space: nowrap;
+            font-size: 12px;
+            letter-spacing: 1px;
         }
 
         .read-also-link {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-style: italic;
-            color: var(--primary);
             font-size: 18px;
+            color: var(--primary);
             text-decoration: underline;
             text-decoration-color: rgba(26, 54, 93, 0.3);
             transition: 0.3s;
@@ -206,13 +297,13 @@
             text-decoration-color: var(--accent-gold);
         }
 
-        /* --- COLLAPSIBLE TABLE OF CONTENTS --- */
+        /* TOC Dynamic */
         .toc-box {
-            background-color: #f4f6f8;
-            padding: 25px 40px;
+            background-color: #f8f9fa;
+            padding: 30px;
             border-radius: 8px;
             margin-bottom: 50px;
-            border-left: 5px solid var(--primary-navy);
+            border: 1px solid #e0e0e0;
         }
 
         .toc-header {
@@ -225,8 +316,8 @@
         .toc-title {
             font-weight: 700;
             font-size: 20px;
-            font-family: 'Playfair Display', serif;
             margin: 0;
+            font-family: 'Playfair Display', serif;
         }
 
         .toc-icon {
@@ -239,9 +330,8 @@
 
         .toc-list {
             margin-top: 20px;
+            padding-left: 20px;
             display: block;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
         }
 
         .toc-list.hidden {
@@ -249,40 +339,42 @@
         }
 
         .toc-list li {
-            margin-bottom: 12px;
-            border-bottom: 1px dashed #ddd;
-            padding-bottom: 8px;
-        }
-        
-        .toc-list li:last-child {
-            border-bottom: none;
+            margin-bottom: 10px;
+            list-style-type: decimal;
+            color: var(--accent-gold);
         }
 
         .toc-list a {
-            color: var(--primary-navy);
+            color: var(--text-dark);
             font-size: 16px;
+            font-weight: 500;
         }
 
         .toc-list a:hover {
-            color: var(--accent-gold);
-            padding-left: 5px;
+            color: var(--primary);
+            text-decoration: underline;
         }
 
-        /* --- QUOTE BLOCK --- */
+        .toc-sub-item {
+            margin-left: 20px;
+            list-style-type: circle;
+        }
+
+        /* Blockquote */
         .blockquote-custom {
-            margin: 60px 0;
-            padding: 50px;
+            margin: 50px 0;
+            padding: 40px;
             background-color: #fafafa;
-            border-left: 6px solid var(--accent-gold);
+            border-left: 5px solid var(--accent-gold);
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 28px;
+            font-size: 24px;
             color: var(--primary-navy);
             position: relative;
         }
 
         .blockquote-custom::before {
-            content: '\201C'; 
+            content: '\201C';
             font-size: 80px;
             color: #e0e0e0;
             position: absolute;
@@ -292,8 +384,8 @@
         }
 
         .blockquote-footer {
-            margin-top: 20px;
-            font-size: 16px;
+            margin-top: 15px;
+            font-size: 14px;
             font-family: 'Lato', sans-serif;
             font-style: normal;
             font-weight: 700;
@@ -301,26 +393,91 @@
             text-align: right;
         }
 
-        /* --- AUTHOR PROFILE SECTION --- */
-        .author-bio-box {
-            margin-top: 80px;
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 60px;
             margin-bottom: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 15px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-gold);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Conclusion Box */
+        .conclusion-box {
+            background: var(--primary);
+            color: white;
             padding: 40px;
+            border-radius: 8px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .conclusion-box h2 {
+            color: var(--accent-gold);
+            margin-top: 0;
+        }
+
+        .conclusion-box p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+
+        /* Author & Share */
+        .author-bio-box {
+            margin-top: 60px;
+            padding: 30px;
             background-color: #f8f9fa;
             border-radius: 8px;
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
             border: 1px solid #eee;
         }
 
         .author-bio-img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--white);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 3px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .author-bio-content h4 {
@@ -334,29 +491,20 @@
             letter-spacing: 1px;
             color: var(--accent-gold);
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             display: block;
         }
 
-        .author-bio-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 10px;
-        }
-
-        .publish-date {
-            font-size: 14px;
-            color: #999;
-            font-style: italic;
-        }
-
-        /* --- SHARE BUTTONS --- */
+        /* Share Section */
         .share-section {
-            padding-top: 30px;
+            margin-top: 40px;
+            padding-top: 25px;
             border-top: 1px solid #eee;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .share-title {
@@ -367,28 +515,46 @@
 
         .share-icons {
             display: flex;
-            gap: 15px;
+            gap: 10px;
         }
 
         .share-btn {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
             color: white;
             font-size: 18px;
-            transition: transform 0.2s;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
         }
 
-        .share-btn:hover { transform: translateY(-3px); }
-        .bg-fb { background-color: #3b5998; }
-        .bg-tw { background-color: #1da1f2; }
-        .bg-in { background-color: #0077b5; }
-        .bg-wa { background-color: #25d366; }
+        .share-btn:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
 
-        /* --- RELATED POSTS SECTION --- */
+        .bg-fb {
+            background-color: #3b5998;
+        }
+
+        .bg-tw {
+            background-color: #1da1f2;
+        }
+
+        .bg-li {
+            background-color: #0077b5;
+        }
+
+        .bg-wa {
+            background-color: #25d366;
+        }
+
+        /* Related Posts */
         .related-posts {
             background-color: #fff;
             padding: 80px 0;
@@ -404,20 +570,23 @@
         .related-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+            gap: 30px;
         }
 
         .related-card {
             background: var(--white);
+            border: 1px solid #eee;
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             transition: 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .related-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .related-img {
@@ -428,20 +597,86 @@
 
         .related-body {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .related-title {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 10px;
+            font-weight: 700;
             line-height: 1.4;
         }
 
-        .related-date {
-            font-size: 13px;
-            color: #999;
+        .related-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
-        /* --- FLOATING BUTTONS CSS --- */
+        .btn-read-more {
+            margin-top: auto;
+            padding: 8px 0;
+            text-align: center;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .btn-read-more:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #152238;
+            color: #ccc;
+            padding: 50px 0 20px;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-widget h3 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #7b8ba5;
+        }
+
+        /* Floating Buttons */
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -461,16 +696,10 @@
             justify-content: center;
             color: #fff;
             font-size: 24px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, opacity 0.3s;
-            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
             border: none;
             cursor: pointer;
-        }
-
-        .float-btn:hover {
-            transform: translateY(-5px);
-            color: #fff;
         }
 
         .whatsapp-btn {
@@ -488,89 +717,128 @@
             visibility: visible;
         }
 
-        /* --- FOOTER --- */
-        footer {
-            background-color: #152238;
-            color: #b0b0b0;
-            padding-top: 20px;
-            font-size: 15px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .footer-widget h3 {
-            color: var(--white);
-            font-size: 20px;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .footer-brand h2 { color: var(--white); font-size: 32px; margin-bottom: 15px; }
-        .footer-brand p { margin-bottom: 25px; color: #a4b0c5; font-size: 16px; }
-
-        .social-links { display: flex; gap: 15px; }
-        .social-links a {
-            display: flex; align-items: center; justify-content: center;
-            width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white); border-radius: 50%; transition: 0.3s;
-        }
-        .social-links a:hover { background-color: var(--accent-gold); }
-
-        .footer-links ul { padding: 0; }
-        .footer-links li { margin-bottom: 15px; }
-        .footer-links a { color: #b0b0b0; transition: 0.3s; }
-        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
-
-        .contact-info li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
-        .contact-info i { color: #7b8ba5; margin-top: 5px; }
-
-        .copyright {
-            text-align: center; padding: 30px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1); color: #7b8ba5;
-        }
-
-        /* --- RESPONSIVE --- */
+        /* Responsive */
         @media (max-width: 991px) {
-            .article-title { font-size: 36px; }
-            .related-grid { grid-template-columns: repeat(2, 1fr); }
-            .footer-content { grid-template-columns: repeat(2, 1fr); }
-            .container-custom { max-width: 95%; } 
+            .article-title {
+                font-size: 36px;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container-custom {
+                max-width: 95%;
+            }
         }
 
         @media (max-width: 768px) {
-            .container-custom { max-width: 100%; padding: 0 15px; }
-            .article-header { padding: 40px 0 20px; }
-            .article-title { font-size: 28px; }
-            .article-content { padding: 30px 20px; }
-
-            /* Read Also di Mobile */
-            .read-also-box { flex-direction: column; align-items: flex-start; gap: 5px; }
-
-            .article-featured-img, .secondary-img {
-                height: auto !important; aspect-ratio: 16/9; object-fit: cover; margin-bottom: 20px;
+            .container-custom {
+                max-width: 100%;
+                padding: 0 25px;
             }
-            .secondary-img { margin: 30px 0; }
 
-            .blockquote-custom { padding: 30px 20px; margin: 30px 0; font-size: 20px; border-left-width: 4px; }
-            .blockquote-custom::before { font-size: 60px; top: -15px; left: 10px; }
+            .article-header {
+                padding: 40px 0 20px;
+            }
 
-            .article-text p { font-size: 17px; }
-            .article-text h2 { font-size: 24px; margin-top: 30px; }
+            .article-title {
+                font-size: 28px;
+            }
 
-            .author-bio-box { flex-direction: column; text-align: center; padding: 25px; margin-top: 40px; }
-            .author-bio-img { width: 100px; height: 100px; }
+            .article-content {
+                padding: 30px 20px;
+            }
 
-            .share-section { flex-direction: column; gap: 15px; align-items: flex-start; }
-            .share-icons { width: 100%; justify-content: space-between; }
+            .article-featured-img,
+            .secondary-img {
+                height: auto !important;
+                aspect-ratio: 16/9;
+                object-fit: cover;
+                margin-bottom: 20px;
+            }
 
-            .related-grid { grid-template-columns: 1fr; }
-            .footer-content { grid-template-columns: 1fr; gap: 30px; }
-            .floating-buttons { bottom: 20px; right: 20px; }
+            .secondary-img {
+                margin: 30px 0;
+            }
+
+            .blockquote-custom {
+                padding: 30px 20px;
+                margin: 30px 0;
+                font-size: 20px;
+                border-left-width: 4px;
+            }
+
+            .blockquote-custom::before {
+                font-size: 60px;
+                top: -15px;
+                left: 10px;
+            }
+
+            .article-text p {
+                font-size: 17px;
+            }
+
+            .article-text h2 {
+                font-size: 24px;
+                margin-top: 30px;
+            }
+
+            .author-bio-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px;
+                margin-top: 40px;
+            }
+
+            .author-bio-img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .share-section {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .share-icons {
+                width: auto;
+                justify-content: center;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
@@ -579,206 +847,246 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="index.html">EstateVista</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
-              <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-              <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-            </ul>
-            <div class="ms-lg-3 mt-2 mt-lg-0">
-              <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-                Contact
-              </a>
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="EstateVista Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                </ul>
+                <div class="ms-lg-3 mt-2 mt-lg-0">
+                    <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">Contact</a>
+                </div>
             </div>
-          </div>
         </div>
     </nav>
 
     <div class="container-custom">
-        
         <div class="article-header">
-            <span class="article-category">Market Analysis</span>
-            <h1 class="article-title">The Future of Luxury Real Estate: Trends to Watch in 2026</h1>
+            <span class="article-category">Investment</span>
+            <h1 class="article-title">Maximizing ROI: A Guide for Property Investors</h1>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">
+                By <span style="font-weight: 700; color: var(--primary);">Sarah Martinez</span> | Jan 03, 2026
+            </div>
         </div>
 
-        <div class="content-layout">
+        <article class="article-content">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                    alt="Financial charts overlaid on property blueprints" class="article-featured-img"
+                    fetchpriority="high">
+                <figcaption>Strategic analysis is the cornerstone of high-yield property investment.</figcaption>
+            </figure>
 
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                 alt="Luxury Real Estate" class="article-featured-img">
+            <div class="toc-box">
+                <div class="toc-header" onclick="toggleTOC()">
+                    <div class="toc-title">Table of Contents</div>
+                    <i class="fas fa-chevron-down toc-icon" id="tocIcon"></i>
+                </div>
+                <ul class="toc-list" id="tocList"></ul>
+            </div>
 
-            <article class="article-content">
-                
-                <div class="toc-box">
-                    <div class="toc-header" onclick="toggleTOC()">
-                        <div class="toc-title">Table of Contents</div>
-                        <i class="fas fa-chevron-down toc-icon" id="tocIcon"></i>
-                    </div>
-                    <ul class="toc-list" id="tocList">
-                        <li><a href="#intro">Introduction</a></li>
-                        <li><a href="#sustainability">1. Sustainability as the New Standard</a></li>
-                        <li><a href="#wellness">2. Wellness-Centric Architecture</a></li>
-                        <li><a href="#suburban">3. The Suburban Renaissance</a></li>
-                        <li><a href="#tech">4. Smart Homes 2.0</a></li>
-                        <li><a href="#conclusion">Conclusion</a></li>
-                    </ul>
+            <div class="article-text" id="articleBody">
+                <p>Strategies to increase rental yield and capital appreciation in volatile markets are more crucial now
+                    than ever. The real estate landscape of 2026 presents both unique challenges and unprecedented
+                    opportunities for the savvy investor. Whether you are a seasoned portfolio manager or buying your
+                    first investment property, understanding how to squeeze every percentage point of Return on
+                    Investment (ROI) is the key to building long-term wealth.</p>
+
+                <h2>1. Understanding ROI vs. Yield</h2>
+                <p>Many investors confuse rental yield with ROI. While yield tells you the annual return generated by
+                    the asset itself, ROI measures the efficiency of your investment considering your financing costs,
+                    taxes, and maintenance. In a volatile market, focusing solely on high-yield properties in declining
+                    neighborhoods can be a trap. Instead, aim for a balanced approach where positive cash flow supports
+                    the holding costs while the underlying asset appreciates.</p>
+
+                <div class="read-also-box">
+                    <span class="read-also-label">Read Also:</span>
+                    <a href="blog-detail.html" class="read-also-link">The Future of Luxury Real Estate: Trends to Watch
+                        in 2026</a>
                 </div>
 
-                <div class="article-text">
-                    <p id="intro">As we step into a new year, the landscape of high-end property is shifting. The definition of luxury is evolving from simple opulence to a more sophisticated blend of technology, sustainability, and personal well-being. From sustainable smart homes to the resurgence of suburban estates, high-net-worth individuals are prioritizing different assets in 2026. The shift isn't just about what the home looks like, but how it functions as a complete ecosystem for living.</p>
-                    
-                    <p>In this analysis, we explore the key drivers changing the luxury market and what buyers need to look for to ensure their investments hold value for decades to come. The market has shown resilience despite global economic fluctuations, proving that real estate remains a top tier asset class for capital preservation and growth.</p>
+                <blockquote class="blockquote-custom">
+                    "In real estate, you make your money when you buy, not when you sell. Thorough due diligence is the
+                    foundation of a high-ROI portfolio."
+                    <div class="blockquote-footer">— James Sterling, Chief Analyst at EstateVista</div>
+                </blockquote>
 
-                    <h2 id="sustainability">1. Sustainability as the New Standard</h2>
-                    <p>Gone are the days when eco-friendly meant a compromise on style. In 2026, sustainability is the ultimate luxury. Buyers are looking for homes with LEED certification, solar integration, and passive design that reduces the carbon footprint without sacrificing comfort. Energy independence is no longer just a perk; it's a primary demand from discerning buyers.</p>
+                <h2>2. Location Analysis: Emerging Markets</h2>
+                <p>The golden rule of "Location, Location, Location" has evolved. It is no longer just about the city
+                    center. The highest appreciation often occurs in "Path of Progress" neighborhoods—areas adjacent to
+                    prime districts that are undergoing infrastructure improvements. Look for indicators such as planned
+                    transit extensions, new commercial developments, and a demographic shift towards younger
+                    professionals.</p>
 
-                    <div class="read-also-box">
-                        <span class="read-also-label">Read Also:</span>
-                        <a href="blog-detail2.html" class="read-also-link">Maximizing ROI: A Guide for Property Investors in 2026</a>
-                    </div>
+                <h2>3. The "Value-Add" Strategy</h2>
+                <p>Buying a turnkey property commands a premium price, which eats into your ROI. The most successful
+                    investors in 2026 are using the BRRRR method (Buy, Rehab, Rent, Refinance, Repeat). Simple
+                    renovations can yield massive returns.</p>
 
-                    <blockquote class="blockquote-custom">
-                        "True luxury in 2026 is no longer just about golden taps and marble floors; it's about the seamless integration of health, technology, and environmental responsibility."
-                        <div class="blockquote-footer">— James Sterling, Chief Analyst at EstateVista</div>
-                    </blockquote>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                        alt="Property Renovation Concept" class="secondary-img" loading="lazy">
+                    <figcaption>Strategic renovations can increase rental income by 20-30%.</figcaption>
+                </figure>
 
-                    <p>Materials like reclaimed wood, low-VOC paints, and energy-efficient glass are now standard expectations in the top-tier market. It's not just about saving the planet; it's about the quality of the air you breathe inside your home. Biophilic design elements that bring the outdoors in are becoming standard in high-end developments.</p>
+                <p>Updating kitchens with energy-efficient appliances, installing smart home security systems, and
+                    modernizing flooring are proven ways to increase rental income by 20-30% in competitive markets.</p>
 
-                    <h2 id="wellness">2. Wellness-Centric Architecture</h2>
-                    <p>Following the global health shifts of the last decade, the home has become a sanctuary. We are seeing a massive spike in demand for properties that feature dedicated wellness spaces. This goes beyond a simple home gym; we are talking about full-scale spa facilities, cryotherapy chambers, and yoga studios integrated directly into the home.</p>
-                    
-                    <img src="https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                         alt="Wellness Spa in Luxury Home" class="secondary-img">
+                <figure class="promo-gif-container">
+                    <a href="service.html">
+                        <img src="https://media.giphy.com/media/l0HlHfrbYyCl2S6wE/giphy.gif"
+                            alt="Investment Consultation Promotion" class="promo-gif-img" loading="lazy">
+                    </a>
+                    <figcaption style="font-weight: 700; color: var(--primary);">Unlock Hidden Value: Get a Free
+                        Property Assessment</figcaption>
+                </figure>
 
-                    <p>Think meditation gardens, circadian lighting systems that adjust to your sleep cycle, and advanced water filtration systems. Real estate developers are now consulting with health experts to design spaces that actively lower stress levels and promote longevity. The home is now seen as a tool for health optimization.</p>
+                <h2>4. Tenant Retention & Management</h2>
+                <p>Vacancy is the silent killer of ROI. A property that sits empty for one month a year effectively
+                    reduces your annual return by over 8%. Prioritizing tenant satisfaction through responsive property
+                    management and offering long-term lease incentives is far cheaper than finding new tenants. Happy
+                    tenants pay on time and take better care of your asset.</p>
 
-                    <h2 id="suburban">3. The Suburban Renaissance</h2>
-                    <p>While city penthouses remain desirable, there is a clear trend toward the suburbs. However, this isn't the suburbia of the past. Luxury buyers are seeking "commuter estates"—large properties with ample land, privacy, and high-speed connectivity, located within an hour of major metropolitan hubs. Space is the new currency.</p>
-
-                    <h2 id="tech">4. Smart Homes 2.0</h2>
-                    <p>Smart home technology has matured. It's no longer about flashy gadgets, but about intuitive systems. In 2026, AI-driven home management systems can predict heating needs, manage security autonomously, and even order groceries based on your consumption patterns. The technology is invisible but omnipresent.</p>
-
-                    <h2 id="conclusion">Conclusion</h2>
-                    <p>The luxury real estate market in 2026 is dynamic and exciting. For investors and homebuyers alike, the focus should remain on quality, location, and the adaptability of the property to future technologies and environmental standards. Those who adapt to these trends will see significant returns on their investments.</p>
+                <div class="read-also-box">
+                    <span class="read-also-label">Read Also:</span>
+                    <a href="blog-detail3.html" class="read-also-link">Minimalist Interiors: Attracting High-Value
+                        Tenants</a>
                 </div>
 
-                <div class="author-bio-box">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" 
-                         alt="Sarah Martinez" class="author-bio-img">
-                    <div class="author-bio-content">
-                        <h4>Sarah Martinez</h4>
-                        <span class="author-role">Senior Market Analyst</span>
-                        <p class="author-bio-text">Sarah is a veteran real estate analyst with over 15 years of experience in the luxury market. She specializes in emerging trends and sustainable property development.</p>
-                        <span class="publish-date">Posted on January 05, 2026</span>
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <div class="faq-question">How do I calculate ROI correctly? <i class="fas fa-plus faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">ROI = (Annual Net Profit / Total Capital Invested) x 100. Ensure you
+                            include all expenses like taxes, insurance, and maintenance.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Is flipping better than renting in 2026? <i
+                                class="fas fa-plus faq-icon"></i></div>
+                        <div class="faq-answer">It depends on your risk tolerance. Flipping offers quick cash but higher
+                            tax liability, while renting builds long-term wealth and tax benefits.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">What renovations add the most value? <i
+                                class="fas fa-plus faq-icon"></i></div>
+                        <div class="faq-answer">Kitchens and bathrooms offer the highest return. Energy-efficient
+                            upgrades are also increasingly valued by tenants.</div>
                     </div>
                 </div>
 
-                <div class="share-section">
-                    <span class="share-title">Share this article:</span>
-                    <div class="share-icons">
-                        <a href="#" class="share-btn bg-fb"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="share-btn bg-tw"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="share-btn bg-in"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="share-btn bg-wa"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                <div class="conclusion-box">
+                    <h2>Conclusion</h2>
+                    <p>Maximizing ROI is not about luck; it is about data-driven decisions and active management. By
+                        focusing on emerging locations, adding strategic value through renovation, and minimizing
+                        vacancy, investors can thrive even when the broader market is uncertain. Stay informed, stay
+                        calculated, and your portfolio will grow.</p>
                 </div>
+            </div>
 
-            </article>
+            <div class="author-bio-box">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                    alt="Sarah Martinez" class="author-bio-img" loading="lazy">
+                <div class="author-bio-content">
+                    <h4 style="margin:0;">Sarah Martinez</h4>
+                    <span style="font-size:13px; color:var(--accent-gold); font-weight:700;">SENIOR INVESTMENT
+                        ADVISOR</span>
+                    <p style="font-size:15px; margin-top:10px; color:#555;">Sarah is a veteran real estate analyst with
+                        over 15 years of experience in the luxury market. She specializes in emerging trends and
+                        sustainable property development.</p>
+                </div>
+            </div>
 
-        </div>
+            <div class="share-section">
+                <span style="font-weight:700;">Share this guide:</span>
+                <div class="share-icons">
+                    <a href="#" onclick="shareTo('fb')" class="share-btn bg-fb" aria-label="Share to Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="#" onclick="shareTo('tw')" class="share-btn bg-tw" aria-label="Share to Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" onclick="shareTo('li')" class="share-btn bg-li" aria-label="Share to LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="#" onclick="shareTo('wa')" class="share-btn bg-wa" aria-label="Share to WhatsApp"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </article>
     </div>
 
     <section class="related-posts">
         <div class="container-custom">
             <h2 class="section-title">Related Articles</h2>
             <div class="related-grid">
-                
                 <div class="related-card">
-                    <a href="blog-detail2.html">
-                        <img src="img/rumah 1.webp" class="related-img" alt="Investment">
-                        <div class="related-body">
-                            <h3 class="related-title">Maximizing ROI: A Guide for Property Investors</h3>
-                            <span class="related-date">Jan 03, 2026</span>
-                        </div>
-                    </a>
+                    <img src="img/rumah 1.webp" class="related-img" alt="Luxury Real Estate Trends" loading="lazy">
+                    <div class="related-body">
+                        <h3 class="related-title">The Future of Luxury Real Estate 2026</h3>
+                        <p class="related-desc">Discover the emerging trends in sustainability and smart home
+                            technology.</p>
+                        <a href="blog-detail.html" class="btn-read-more">Read More &rarr;</a>
+                    </div>
                 </div>
-
                 <div class="related-card">
-                    <a href="blog-detail3.html">
-                        <img src="img/rumah 3.webp" class="related-img" alt="Design">
-                        <div class="related-body">
-                            <h3 class="related-title">Minimalist Interiors: Less is More in Modern Villas</h3>
-                            <span class="related-date">Dec 28, 2025</span>
-                        </div>
-                    </a>
+                    <img src="img/rumah 3.webp" class="related-img" alt="Interior Design" loading="lazy">
+                    <div class="related-body">
+                        <h3 class="related-title">Minimalist Interiors: Less is More</h3>
+                        <p class="related-desc">Discover how decluttering and open spaces are redefining luxury living
+                            environments.</p>
+                        <a href="blog-detail3.html" class="btn-read-more">Read More &rarr;</a>
+                    </div>
                 </div>
-
                 <div class="related-card">
-                    <a href="blog-detail5.html">
-                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="related-img" alt="Lifestyle">
-                        <div class="related-body">
-                            <h3 class="related-title">Top 5 Neighborhoods for Families in 2026</h3>
-                            <span class="related-date">Dec 15, 2025</span>
-                        </div>
-                    </a>
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                        class="related-img" alt="Top Neighborhoods" loading="lazy">
+                    <div class="related-body">
+                        <h3 class="related-title">Top 5 Neighborhoods for Families</h3>
+                        <p class="related-desc">Explore the safest, greenest, and most school-friendly communities
+                            trending right now.</p>
+                        <a href="blog-detail5.html" class="btn-read-more">Read More &rarr;</a>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <div class="floating-buttons">
-        <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services." class="float-btn whatsapp-btn" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-        <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
-            <i class="fas fa-chevron-up"></i>
-        </button>
-    </div>
-
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>EstateVista</h4>
-                    <p>Where dreams meet reality. Your trusted partner in finding the perfect place to call home.</p>
-                    <div style="margin-top: 15px;">
+            <div class="footer-content">
+                <div class="footer-widget">
+                    <h3>EstateVista</h3>
+                    <p>Where dreams meet reality.</p>
+                    <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
+                <div class="footer-widget">
+                    <h3>Quick Links</h3>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="properti.html">Properties</a></li>
-                        <li><a href="service.html">Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Our Services</h4>
+                <div class="footer-widget">
+                    <h3>Services</h3>
                     <ul>
                         <li><a href="#">Property Search</a></li>
-                        <li><a href="#">Property Valuation</a></li>
-                        <li><a href="#">Property Rental</a></li>
-                        <li><a href="#">Investment Advisory</a></li>
+                        <li><a href="#">Valuation</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i> 108 Adam Street, New York, NY</li>
-                        <li><i class="fas fa-phone"></i> +1 5509 55488 55</li>
-                        <li><i class="fas fa-envelope"></i> info@estatevista.com</li>
-                    </ul>
+                <div class="footer-widget">
+                    <h3>Contact</h3>
+                    <p>108 Adam Street, NY<br>info@estatevista.com</p>
                 </div>
             </div>
             <div class="copyright">
@@ -787,40 +1095,89 @@
         </div>
     </footer>
 
+    <div class="floating-buttons">
+        <a href="https://wa.me/155895548855" class="float-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // 1. TOC Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const articleBody = document.getElementById('articleBody');
+            const tocList = document.getElementById('tocList');
+            const headers = articleBody.querySelectorAll('h2, h3');
+
+            headers.forEach((header, index) => {
+                if (!header.id) {
+                    header.id = 'section-' + index;
+                }
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = '#' + header.id;
+                a.textContent = header.textContent;
+                if (header.tagName === 'H3') {
+                    li.classList.add('toc-sub-item');
+                }
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+        });
+
         function toggleTOC() {
             var list = document.getElementById("tocList");
             var icon = document.getElementById("tocIcon");
-            
-            if (list.style.display === "none") {
-                list.style.display = "block";
+            if (list.classList.contains("hidden")) {
+                list.classList.remove("hidden");
                 icon.classList.remove("rotate");
             } else {
-                list.style.display = "none";
+                list.classList.add("hidden");
                 icon.classList.add("rotate");
             }
         }
 
-        // Logic Scroll to Top
-        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        // 2. FAQ Accordion Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
 
-        window.onscroll = function() {
+        // 3. Share Button Logic
+        function shareTo(platform) {
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            let shareUrl = '';
+
+            switch (platform) {
+                case 'fb': shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`; break;
+                case 'tw': shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`; break;
+                case 'li': shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}`; break;
+                case 'wa': shareUrl = `https://api.whatsapp.com/send?text=${title} ${url}`; break;
+            }
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        }
+
+        // 4. Scroll to Top Logic
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        window.onscroll = function () {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 scrollTopBtn.classList.add("show");
             } else {
                 scrollTopBtn.classList.remove("show");
             }
         };
-
         function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
 
 </body>
+
 </html>

@@ -4,15 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Magnificent Estate with Ocean Views - EstateVista</title>
+    <meta name="description" content="Luxury 5-bedroom estate in Malibu with panoramic ocean views, infinity pool, and smart home system. Scheduled a tour today.">
+    <meta name="keywords" content="Luxury Home Malibu, Estate for Sale, Ocean View Property, EstateVista">
+    <link rel="canonical" href="https://www.estatevista.com/properties/magnificent-estate">
 
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <meta property="og:type" content="place">
+    <meta property="og:title" content="Magnificent Estate with Ocean Views - $4,850,000">
+    <meta property="og:description" content="Experience luxury living in this stunning contemporary estate featuring panoramic ocean views in Malibu.">
+    <meta property="og:image" content="img/rumah 1.webp">
+    <meta property="og:url" content="https://www.estatevista.com/properties/magnificent-estate">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SingleFamilyResidence",
+      "name": "Magnificent Estate with Ocean Views",
+      "image": "img/rumah 1.webp",
+      "description": "Stunning contemporary estate featuring panoramic ocean views, infinity pool, and smart home system.",
+      "numberOfRooms": 5,
+      "occupancy": {
+        "@type": "QuantitativeValue",
+        "unitCode": "ROM",
+        "value": 5
+      },
+      "floorSize": {
+        "@type": "QuantitativeValue",
+        "value": 4200,
+        "unitCode": "FTK"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4751 Malibu Road",
+        "addressLocality": "Malibu",
+        "addressRegion": "CA",
+        "postalCode": "90265",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 34.0259,
+        "longitude": -118.7798
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "4850000",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.estatevista.com/properties/magnificent-estate"
+      }
+    }
+    </script>
 
     <style>
         /* --- CSS VARIABLES (ESTATE VISTA THEME) --- */
@@ -27,11 +79,7 @@
             --border-color: #e0e0e0;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Lato', sans-serif;
@@ -40,520 +88,129 @@
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-navy);
-        }
-
-        a {
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
+        h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: var(--primary-navy); }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
 
         /* --- UTILITIES --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            text-align: center;
-            border: none;
-            transition: 0.3s;
-            font-family: 'Lato', sans-serif;
-            text-decoration: none; /* Penting untuk tag <a> */
+            display: inline-block; padding: 12px 25px; border-radius: 4px;
+            font-weight: 600; cursor: pointer; text-align: center; border: none;
+            transition: 0.3s; font-family: 'Lato', sans-serif; text-decoration: none;
         }
 
-        .btn-primary {
-            background-color: var(--primary-navy);
-            color: var(--white);
-        }
+        .btn-primary { background-color: var(--primary-navy); color: var(--white); }
+        .btn-primary:hover { background-color: #2c4a7c; }
 
-        .btn-primary:hover {
-            background-color: #2c4a7c;
-        }
+        .btn-gold { background-color: var(--accent-gold); color: var(--white); }
+        .btn-gold:hover { background-color: var(--accent-gold-hover); }
 
-        .btn-gold {
-            background-color: var(--accent-gold);
-            color: var(--white);
-        }
+        .btn-outline { background-color: transparent; border: 1px solid var(--border-color); color: var(--text-dark); }
+        .btn-outline:hover { border-color: var(--primary-navy); color: var(--primary-navy); }
 
-        .btn-gold:hover {
-            background-color: var(--accent-gold-hover);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-dark);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary-navy);
-            color: var(--primary-navy);
-        }
-
-        .section-padding {
-            padding: 50px 0;
-        }
+        .section-padding { padding: 50px 0; }
 
         /* === CUSTOM NAVBAR === */
         .custom-navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 30px;
-            background-color: var(--white);
-            border-bottom: 1px solid #e0e0e0;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 30px; background-color: var(--white); border-bottom: 1px solid #e0e0e0;
+            max-width: 1200px; margin: 0 auto;
         }
 
-        .navbar-brand {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--primary-navy);
-        }
+        .navbar-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.8rem; color: var(--primary-navy); }
 
-        .nav-and-contact {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
+        .nav-and-contact { display: flex; align-items: center; gap: 25px; }
 
-        .custom-navbar .nav-links {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
+        .custom-navbar .nav-links { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+        .custom-navbar .nav-links a { color: var(--text-dark); font-weight: 500; font-size: 15px; transition: color 0.3s; }
+        .custom-navbar .nav-links a:hover { color: var(--accent-gold); }
 
-        .custom-navbar .nav-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-
-        .custom-navbar .nav-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .custom-navbar .phone-link {
-            color: #1a365d;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            white-space: nowrap;
-        }
+        .custom-navbar .phone-link { color: #1a365d; font-weight: 600; font-size: 15px; display: flex; align-items: center; gap: 5px; white-space: nowrap; }
 
         @media (max-width: 768px) {
-            .custom-navbar {
-                flex-direction: column;
-                gap: 12px;
-                padding: 12px 20px;
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .nav-and-contact {
-                flex-direction: column;
-                gap: 12px;
-                align-items: center;
-            }
-
-            .custom-navbar .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
+            .custom-navbar { flex-direction: column; gap: 12px; padding: 12px 20px; max-width: 100%; margin: 0; }
+            .nav-and-contact { flex-direction: column; gap: 12px; align-items: center; }
+            .custom-navbar .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
         }
 
         /* --- BREADCRUMB --- */
-        .breadcrumb-section {
-            background-color: var(--white);
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 30px;
-        }
-
-        .breadcrumb {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .breadcrumb span {
-            color: var(--accent-gold);
-        }
+        .breadcrumb-section { background-color: var(--white); padding: 20px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
+        .breadcrumb { font-size: 14px; color: var(--text-light); }
+        .breadcrumb span { color: var(--accent-gold); }
 
         /* --- MAIN LAYOUT GRID --- */
-        .property-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-        }
+        .property-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
 
         /* --- LEFT COLUMN --- */
-        .gallery-container {
-            margin-bottom: 30px;
-        }
+        .gallery-container { margin-bottom: 30px; }
+        .main-image { width: 100%; height: 500px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        
+        .thumb-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+        .thumb-img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; cursor: pointer; opacity: 0.7; transition: 0.3s; }
+        .thumb-img:hover { opacity: 1; }
 
-        .main-image {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
+        .property-header { margin-bottom: 30px; }
+        .property-title { font-size: 36px; margin-bottom: 10px; }
+        .property-address { color: var(--text-light); font-size: 16px; margin-bottom: 20px; }
+        .property-address i { color: var(--accent-gold); margin-right: 5px; }
 
-        .thumb-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-        }
+        .price-tag { background-color: var(--primary-navy); color: var(--white); display: inline-block; padding: 10px 20px; border-radius: 4px; font-size: 24px; font-weight: 700; margin-bottom: 25px; }
+        .price-tag span { font-size: 14px; font-weight: 400; opacity: 0.8; }
 
-        .thumb-img {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 4px;
-            cursor: pointer;
-            opacity: 0.7;
-            transition: 0.3s;
-        }
+        .stats-row { display: flex; justify-content: space-between; background: var(--white); padding: 20px; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 30px; text-align: center; }
+        .stat-item i { font-size: 24px; color: var(--accent-gold); margin-bottom: 5px; display: block; }
+        .stat-item strong { display: block; font-size: 18px; color: var(--primary-navy); }
+        .stat-item span { font-size: 12px; color: var(--text-light); text-transform: uppercase; }
 
-        .thumb-img:hover {
-            opacity: 1;
-        }
+        .content-block { margin-bottom: 40px; }
+        .content-block h3 { margin-bottom: 20px; font-size: 22px; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; display: inline-block; }
 
-        .property-header {
-            margin-bottom: 30px;
-        }
+        .amenities-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .amenities-list li { display: flex; align-items: center; color: var(--text-dark); }
+        .amenities-list li i { color: var(--accent-gold); margin-right: 10px; }
 
-        .property-title {
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
+        .floor-plan-img { width: 100%; border-radius: 8px; border: 1px solid var(--border-color); }
 
-        .property-address {
-            color: var(--text-light);
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .property-address i {
-            color: var(--accent-gold);
-            margin-right: 5px;
-        }
-
-        .price-tag {
-            background-color: var(--primary-navy);
-            color: var(--white);
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
-
-        .price-tag span {
-            font-size: 14px;
-            font-weight: 400;
-            opacity: 0.8;
-        }
-
-        .stats-row {
-            display: flex;
-            justify-content: space-between;
-            background: var(--white);
-            padding: 20px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .stat-item i {
-            font-size: 24px;
-            color: var(--accent-gold);
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .stat-item strong {
-            display: block;
-            font-size: 18px;
-            color: var(--primary-navy);
-        }
-
-        .stat-item span {
-            font-size: 12px;
-            color: var(--text-light);
-            text-transform: uppercase;
-        }
-
-        .content-block {
-            margin-bottom: 40px;
-        }
-
-        .content-block h3 {
-            margin-bottom: 20px;
-            font-size: 22px;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        .amenities-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .amenities-list li {
-            display: flex;
-            align-items: center;
-            color: var(--text-dark);
-        }
-
-        .amenities-list li i {
-            color: var(--accent-gold);
-            margin-right: 10px;
-        }
-
-        .floor-plan-img {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        /* Styles untuk Google Maps */
-        .map-container {
-            position: relative;
-            padding-bottom: 56.25%; /* Rasio 16:9 */
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
+        .map-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-color); }
+        .map-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
 
         /* --- RIGHT COLUMN (SIDEBAR) --- */
-        .sidebar-widget {
-            background: var(--white);
-            padding: 30px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-        }
+        .sidebar-widget { background: var(--white); padding: 30px; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03); }
 
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+        .action-buttons { display: flex; gap: 10px; margin-bottom: 20px; }
+        .action-buttons .btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        .action-buttons .btn {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
+        .agent-card { text-align: center; }
+        .agent-img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px; border: 3px solid var(--accent-gold); }
+        .agent-name { font-size: 18px; font-weight: 700; margin-bottom: 5px; }
+        .agent-role { font-size: 14px; color: var(--text-light); margin-bottom: 10px; }
+        .rating { color: var(--accent-gold); font-size: 12px; margin-bottom: 20px; }
+        .agent-contact-btns { display: grid; gap: 10px; }
+        .btn-full { width: 100%; display: block; box-sizing: border-box; }
 
-        .agent-card {
-            text-align: center;
-        }
-
-        .agent-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 15px;
-            border: 3px solid var(--accent-gold);
-        }
-
-        .agent-name {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .agent-role {
-            font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 10px;
-        }
-
-        .rating {
-            color: var(--accent-gold);
-            font-size: 12px;
-            margin-bottom: 20px;
-        }
-
-        .agent-contact-btns {
-            display: grid;
-            gap: 10px;
-        }
-
-        /* Helper agar tombol penuh */
-        .btn-full {
-            width: 100%;
-            display: block;
-            box-sizing: border-box;
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: inherit;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: 1px solid var(--primary-navy);
-        }
+        .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-color); border-radius: 4px; font-family: inherit; }
+        .contact-form input:focus, .contact-form textarea:focus { outline: 1px solid var(--primary-navy); }
 
         /* --- FOOTER --- */
-        footer {
-            background-color: #152238;
-            color: #ccc;
-            padding: 20px 0 20px;
-            font-size: 14px;
-            margin-top: 50px;
-        }
+        footer { background-color: #152238; color: #ccc; padding: 20px 0 20px; font-size: 14px; margin-top: 50px; }
+        .copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
 
-        .copyright {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* --- FLOATING BUTTONS CSS --- */
-        .floating-buttons {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 9999;
-        }
-
-        .float-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 24px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, opacity 0.3s;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .float-btn:hover {
-            transform: translateY(-5px);
-            color: #fff;
-        }
-
-        .whatsapp-btn {
-            background-color: #25d366;
-        }
-
-        .scroll-top-btn {
-            background-color: var(--primary-navy);
-            opacity: 0; /* Hidden by default */
-            visibility: hidden;
-        }
-
-        .scroll-top-btn.show {
-            opacity: 1;
-            visibility: visible;
-        }
+        /* --- FLOATING BUTTONS --- */
+        .floating-buttons { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 9999; }
+        .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.3s ease, opacity 0.3s; text-decoration: none; border: none; cursor: pointer; }
+        .float-btn:hover { transform: translateY(-5px); color: #fff; }
+        .whatsapp-btn { background-color: #25d366; }
+        .scroll-top-btn { background-color: var(--primary-navy); opacity: 0; visibility: hidden; }
+        .scroll-top-btn.show { opacity: 1; visibility: visible; }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 900px) {
-            .property-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .main-image {
-                height: 300px;
-            }
-
-            .property-title {
-                font-size: 28px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .custom-navbar {
-                flex-direction: column;
-                gap: 12px;
-                padding: 12px 20px;
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .nav-and-contact {
-                flex-direction: column;
-                gap: 12px;
-                align-items: center;
-            }
-
-            .custom-navbar .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            .floating-buttons {
-                bottom: 20px;
-                right: 20px;
-            }
+            .property-grid { grid-template-columns: 1fr; }
+            .main-image { height: 300px; }
+            .property-title { font-size: 28px; }
         }
     </style>
 </head>
@@ -584,94 +241,97 @@
         </div>
     </div>
 
-    <div class="container section-padding">
+    <main class="container section-padding">
         <div class="property-grid">
 
             <div class="left-col">
-                <div class="gallery-container">
-                    <img src="img/rumah 1.webp" alt="Main House" class="main-image">
-                    <div class="thumb-row">
-                        <img src="img/rumah 2.webp" class="thumb-img">
-                        <img src="img/rumah 3.webp" class="thumb-img">
-                        <img src="img/rumah 4.webp" class="thumb-img">
-                        <img src="img/rumah 5.webp" class="thumb-img">
+                <article>
+                    <div class="gallery-container">
+                        <img src="img/rumah 1.webp" alt="Magnificent Estate Main View - EstateVista" class="main-image" fetchpriority="high">
+                        <div class="thumb-row">
+                            <img src="img/rumah 2.webp" alt="Interior View 1" class="thumb-img" loading="lazy">
+                            <img src="img/rumah 3.webp" alt="Interior View 2" class="thumb-img" loading="lazy">
+                            <img src="img/rumah 4.webp" alt="Exterior View" class="thumb-img" loading="lazy">
+                            <img src="img/rumah 5.webp" alt="Pool View" class="thumb-img" loading="lazy">
+                        </div>
                     </div>
-                </div>
 
-                <div class="property-header">
-                    <div class="price-tag">$4,850,000</div>
-                    <h1 class="property-title">Magnificent Estate</h1>
-                    <p class="property-address"><i class="fas fa-map-marker-alt"></i> 4751 Malibu Road, Malibu, CA 90265</p>
-                </div>
-
-                <div class="stats-row">
-                    <div class="stat-item">
-                        <i class="fas fa-bed"></i>
-                        <strong>5</strong>
-                        <span>Bedrooms</span>
+                    <div class="property-header">
+                        <div class="price-tag">$4,850,000</div>
+                        <h1 class="property-title">Magnificent Estate with Ocean Views</h1>
+                        <p class="property-address"><i class="fas fa-map-marker-alt"></i> 4751 Malibu Road, Malibu, CA 90265</p>
                     </div>
-                    <div class="stat-item">
-                        <i class="fas fa-bath"></i>
-                        <strong>4.5</strong>
-                        <span>Bathrooms</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-ruler-combined"></i>
-                        <strong>4,200</strong>
-                        <span>Sq Ft</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class="fas fa-car"></i>
-                        <strong>3</strong>
-                        <span>Garage</span>
-                    </div>
-                </div>
 
-                <div class="content-block">
-                    <h3>Property Description</h3>
-                    <p>Experience luxury living at its finest in this stunning contemporary estate featuring panoramic
-                        ocean views. Located in the exclusive Malibu coastline, this property offers a perfect blend of
-                        modern architecture and natural beauty. The open-concept living area features floor-to-ceiling
-                        windows that flood the space with natural light.</p>
-                    <br>
-                    <p>The gourmet kitchen is equipped with top-of-the-line appliances, marble countertops, and a large
-                        island perfect for entertaining. Step outside to your private oasis complete with an infinity
-                        pool, spa, and spacious deck for sunset gatherings.</p>
-                </div>
-
-                <div class="content-block">
-                    <h3>Amenities & Features</h3>
-                    <ul class="amenities-list">
-                        <li><i class="fas fa-check-circle"></i> Ocean View</li>
-                        <li><i class="fas fa-check-circle"></i> Infinity Pool</li>
-                        <li><i class="fas fa-check-circle"></i> Smart Home System</li>
-                        <li><i class="fas fa-check-circle"></i> Wine Cellar</li>
-                        <li><i class="fas fa-check-circle"></i> Home Theater</li>
-                        <li><i class="fas fa-check-circle"></i> 3-Car Garage</li>
-                        <li><i class="fas fa-check-circle"></i> Private Gym</li>
-                        <li><i class="fas fa-check-circle"></i> Gated Security</li>
-                    </ul>
-                </div>
-
-                <div class="content-block">
-                    <h3>Floor Plan</h3>
-                    <img src="img/rumah 1.webp" alt="Floor Plan" class="floor-plan-img">
-                </div>
-
-                <div class="content-block">
-                    <h3>Location</h3>
-                    <div class="map-container">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=4751+Malibu+Road,+Malibu,+CA&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="stats-row">
+                        <div class="stat-item">
+                            <i class="fas fa-bed"></i>
+                            <strong>5</strong>
+                            <span>Bedrooms</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-bath"></i>
+                            <strong>4.5</strong>
+                            <span>Bathrooms</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-ruler-combined"></i>
+                            <strong>4,200</strong>
+                            <span>Sq Ft</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-car"></i>
+                            <strong>3</strong>
+                            <span>Garage</span>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="content-block">
+                        <h3>Property Description</h3>
+                        <p>Experience luxury living at its finest in this stunning contemporary estate featuring panoramic
+                            ocean views. Located in the exclusive Malibu coastline, this property offers a perfect blend of
+                            modern architecture and natural beauty. The open-concept living area features floor-to-ceiling
+                            windows that flood the space with natural light.</p>
+                        <br>
+                        <p>The gourmet kitchen is equipped with top-of-the-line appliances, marble countertops, and a large
+                            island perfect for entertaining. Step outside to your private oasis complete with an infinity
+                            pool, spa, and spacious deck for sunset gatherings.</p>
+                    </div>
+
+                    <div class="content-block">
+                        <h3>Amenities & Features</h3>
+                        <ul class="amenities-list">
+                            <li><i class="fas fa-check-circle"></i> Ocean View</li>
+                            <li><i class="fas fa-check-circle"></i> Infinity Pool</li>
+                            <li><i class="fas fa-check-circle"></i> Smart Home System</li>
+                            <li><i class="fas fa-check-circle"></i> Wine Cellar</li>
+                            <li><i class="fas fa-check-circle"></i> Home Theater</li>
+                            <li><i class="fas fa-check-circle"></i> 3-Car Garage</li>
+                            <li><i class="fas fa-check-circle"></i> Private Gym</li>
+                            <li><i class="fas fa-check-circle"></i> Gated Security</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-block">
+                        <h3>Floor Plan</h3>
+                        <img src="img/rumah 1.webp" alt="Property Floor Plan" class="floor-plan-img" loading="lazy">
+                    </div>
+
+                    <div class="content-block">
+                        <h3>Location</h3>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.204593467347!2d-118.782000!3d34.025900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAxJzMzLjIiTiAxMTjCsDQ2JzQ3LjMiVw!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Property Location Map">
+                            </iframe>
+                        </div>
+                    </div>
+                </article>
             </div>
 
-            <div class="right-col">
+            <aside class="right-col">
 
                 <div class="sidebar-widget">
                     <div class="action-buttons">
@@ -679,14 +339,14 @@
                             <i class="far fa-calendar-alt"></i> Schedule Tour
                         </a>
 
-                        <button class="btn btn-outline" onclick="shareProperty()">
+                        <button class="btn btn-outline" onclick="shareProperty()" aria-label="Share Property">
                             <i class="fas fa-share-alt"></i>
                         </button>
                     </div>
                 </div>
 
                 <div class="sidebar-widget agent-card">
-                    <img src="img/sarah.webp" alt="Agent" class="agent-img">
+                    <img src="img/sarah.webp" alt="Sarah Martinez - Real Estate Agent" class="agent-img" loading="lazy">
                     <div class="agent-name">Sarah Martinez</div>
                     <div class="agent-role">Senior Luxury Agent</div>
                     <div class="rating">
@@ -708,16 +368,16 @@
                 <div class="sidebar-widget" id="inquiry-form">
                     <h4 style="margin-bottom: 20px;">Request Information</h4>
                     <form class="contact-form" onsubmit="sendToWhatsApp(event)">
-                        <input type="text" id="inputName" placeholder="Your Name" required>
-                        <input type="email" id="inputEmail" placeholder="Your Email" required>
-                        <input type="tel" id="inputPhone" placeholder="Phone Number" required>
-                        <select id="inputInterest">
+                        <input type="text" id="inputName" placeholder="Your Name" required aria-label="Your Name">
+                        <input type="email" id="inputEmail" placeholder="Your Email" required aria-label="Your Email">
+                        <input type="tel" id="inputPhone" placeholder="Phone Number" required aria-label="Phone Number">
+                        <select id="inputInterest" aria-label="Interest">
                             <option value="General Inquiry">I'm interested in...</option>
                             <option value="Scheduling a viewing">Scheduling a viewing</option>
                             <option value="Price details">Price details</option>
                             <option value="More photos">More photos</option>
                         </select>
-                        <textarea id="inputMessage" rows="4" placeholder="Hello, I am interested in Magnificent Estate..."></textarea>
+                        <textarea id="inputMessage" rows="4" placeholder="Hello, I am interested in Magnificent Estate..." aria-label="Message"></textarea>
                         
                         <button type="submit" class="btn btn-gold" style="width: 100%;">
                             <i class="fab fa-whatsapp" style="margin-right:5px;"></i> Send Request via WA
@@ -742,9 +402,9 @@
                     </div>
                 </div>
 
-            </div>
+            </aside>
         </div>
-    </div>
+    </main>
 
     <footer>
         <div class="container">
@@ -759,10 +419,10 @@
     </footer>
 
     <div class="floating-buttons">
-        <a href="https://wa.me/155895548855?text=Hello%20Sarah,%20I'm%20interested%20in%20the%20Magnificent%20Estate." class="float-btn whatsapp-btn" target="_blank">
+        <a href="https://wa.me/155895548855?text=Hello%20Sarah,%20I'm%20interested%20in%20the%20Magnificent%20Estate." class="float-btn whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
+        <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()" aria-label="Scroll to Top">
             <i class="fas fa-chevron-up"></i>
         </button>
     </div>
@@ -795,7 +455,7 @@
             const interest = document.getElementById('inputInterest').value;
             const message = document.getElementById('inputMessage').value;
 
-            // Nomor Agent (Ganti dengan nomor asli, format internasional tanpa +)
+            // Nomor Agent
             const agentNumber = "155895548855"; 
 
             // Format Pesan
@@ -831,4 +491,5 @@
     </script>
 
 </body>
+
 </html>

@@ -3,13 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EstateVista — Premium Real Estate</title>
+  
+  <title>EstateVista — Premium Real Estate Services & Properties</title>
+  <meta name="description" content="EstateVista offers premium real estate services including property search, valuation, management, and investment advisory. Find your dream home tailored to your lifestyle.">
+  <meta name="keywords" content="Real Estate, Luxury Homes, Property Investment, House for Sale, Estate Agent, EstateVista">
+  <meta name="author" content="EstateVista">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://estatevista-three.vercel.app/" />
 
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://estatevista-three.vercel.app/">
+  <meta property="og:title" content="EstateVista — Premium Real Estate">
+  <meta property="og:description" content="Find your dream home with EstateVista. We provide expert property search, valuation, and investment advisory services.">
+  <meta property="og:image" content="img/rumah 4.webp">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://estatevista-three.vercel.app/">
+  <meta property="twitter:title" content="EstateVista — Premium Real Estate">
+  <meta property="twitter:description" content="Find your dream home with EstateVista. We provide expert property search, valuation, and investment advisory services.">
+  <meta property="twitter:image" content="img/rumah 4.webp">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/logo2.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#1A365D">
+
+  <link rel="preload" as="image" href="img/rumah 4.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "EstateVista",
+    "image": "img/logo.png",
+    "description": "Premium real estate agency specializing in luxury homes, property valuation, and investment advisory.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "108 Adam Street",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "535022",
+      "addressCountry": "US"
+    },
+    "telephone": "+155895548855",
+    "email": "info@estatevista.com",
+    "url": "https://estatevista-three.vercel.app/",
+    "priceRange": "$$$"
+  }
+  </script>
 
   <style>
     :root {
@@ -38,11 +87,17 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
+    /* Navbar Brand untuk Gambar */
     .navbar-brand {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      color: var(--primary);
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      max-height: 50px;
+      width: auto;
+      display: block;
     }
 
     .navbar-nav .nav-link {
@@ -307,7 +362,7 @@
 
     .scroll-top-btn {
       background-color: var(--primary);
-      opacity: 0; /* Hidden by default */
+      opacity: 0;
       visibility: hidden;
     }
 
@@ -329,8 +384,11 @@
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">EstateVista</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <a class="navbar-brand" href="index.html" aria-label="EstateVista Home">
+        <img src="img/logo.png" alt="EstateVista Logo" width="150" height="50">
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -361,7 +419,7 @@
             <form class="row g-3" action="properti.html" method="GET">
               
               <div class="col-md-5">
-                <select name="type" class="form-select">
+                <select name="type" class="form-select" aria-label="Select Property Type">
                   <option value="" selected>Type</option>
                   <option value="HOUSE">House</option>
                   <option value="VILLA">Villa</option>
@@ -373,7 +431,7 @@
               </div>
 
               <div class="col-md-5">
-                <select name="price" class="form-select">
+                <select name="price" class="form-select" aria-label="Select Price Range">
                   <option value="" selected>Max Budget</option>
                   <option value="0-500000">Up to $500K</option>
                   <option value="500001-1000000">Up to $1M</option>
@@ -395,7 +453,7 @@
   <section class="ad-banner-section py-4">
     <div class="container">
       <div class="position-relative rounded overflow-hidden shadow-sm">
-        <img src="img/rumah 5.webp" alt="The Armont Residences" class="img-fluid w-100" style="max-height: 400px; object-fit: cover;">
+        <img src="img/rumah 5.webp" alt="The Armont Residences - Exclusive Preview" class="img-fluid w-100" style="max-height: 400px; object-fit: cover;" loading="lazy" width="1200" height="400">
       </div>
     </div>
   </section>
@@ -440,7 +498,7 @@
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="position-relative">
-              <img src="img/rumah 1.webp" class="property-img" alt="Luxury Home">
+              <img src="img/rumah 1.webp" class="property-img" alt="Luxury Magnificent Estate in Malibu" loading="lazy" width="400" height="250">
               <span class="property-badge">PREMIUM</span>
             </div>
             <div class="property-body">
@@ -462,7 +520,7 @@
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="position-relative">
-              <img src="img/rumah 2.webp" class="property-img" alt="Modern Condo">
+              <img src="img/rumah 2.webp" class="property-img" alt="Modern Downtown Condo in Seattle" loading="lazy" width="400" height="250">
               <span class="property-badge">NEW</span>
             </div>
             <div class="property-body">
@@ -476,7 +534,7 @@
                 <span><i class="fas fa-bath me-1"></i> 2 Baths</span>
                 <span><i class="fas fa-ruler-combined me-1"></i> 2,100 sqft</span>
               </div>
-              <a href="detail1.html" class="btn btn-primary w-100">View Details</a>
+              <a href="detail2.html" class="btn btn-primary w-100">View Details</a>
             </div>
           </div>
         </div>
@@ -484,7 +542,7 @@
         <div class="col-md-4 mb-4">
           <div class="property-card">
             <div class="position-relative">
-              <img src="img/rumah 3.webp" class="property-img" alt="Architectural Home">
+              <img src="img/rumah 3.webp" class="property-img" alt="Modern Architectural Home in Phoenix" loading="lazy" width="400" height="250">
             </div>
             <div class="property-body">
               <div class="property-price">$1,375,000</div>
@@ -497,7 +555,7 @@
                 <span><i class="fas fa-bath me-1"></i> 3 Baths</span>
                 <span><i class="fas fa-ruler-combined me-1"></i> 2,800 sqft</span>
               </div>
-              <a href="detail1.html" class="btn btn-primary w-100">View Details</a>
+              <a href="detail3.html" class="btn btn-primary w-100">View Details</a>
             </div>
           </div>
         </div>
@@ -563,6 +621,7 @@
         class="btn btn-secondary btn-lg"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp"
       >
         Schedule a Free Consultation
       </a>
@@ -594,7 +653,7 @@
           <div class="testimonial-card">
             <p class="testimonial-text">“Working with EstateVista made buying our first home seamless. Their local market knowledge exceeded expectations.”</p>
             <div class="d-flex align-items-center mt-3">
-              <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="50" alt="Client">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client Sarah Martinez" loading="lazy">
               <div>
                 <strong>Sarah Martinez</strong><br>
                 <small class="text-muted">First-time Homebuyer</small>
@@ -609,7 +668,7 @@
           <div class="testimonial-card">
             <p class="testimonial-text">“Sold my property in just 7 days at 10% above asking price. Their marketing strategy is unmatched.”</p>
             <div class="d-flex align-items-center mt-3">
-              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="50" alt="Client">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="50" height="50" alt="Client James Wilson" loading="lazy">
               <div>
                 <strong>James Wilson</strong><br>
                 <small class="text-muted">Property Investor</small>
@@ -631,10 +690,10 @@
           <h4 class="text-white">EstateVista</h4>
           <p class="text-white-50">Where dreams meet reality.</p>
           <div>
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
         <div class="col-lg-2 col-md-4 mb-4">
@@ -644,16 +703,16 @@
             <li><a href="about.html">About</a></li>
             <li><a href="properti.html">Properties</a></li>
             <li><a href="service.html">Services</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-4 mb-4">
           <h6 class="text-white">Our Services</h6>
           <ul class="list-unstyled">
-            <li><a href="#">otomagz</a></li>
-            <li><a href="#">baturafting</a></li>
-            <li><a href="#">souvenir</a></li>
-            <li><a href="#">serbatau</a></li>
+            <li><a href="#">Property Search</a></li>
+            <li><a href="#">Property Valuation</a></li>
+            <li><a href="#">Property Rental</a></li>
+            <li><a href="#">Investment Advisory</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-4 mb-4">
@@ -670,10 +729,10 @@
   </footer>
 
   <div class="floating-buttons">
-    <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services." class="float-btn whatsapp-btn" target="_blank">
+    <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services." class="float-btn whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
+    <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()" aria-label="Scroll to Top">
         <i class="fas fa-chevron-up"></i>
     </button>
   </div>
@@ -685,7 +744,6 @@
     const scrollTopBtn = document.getElementById("scrollTopBtn");
 
     window.onscroll = function() {
-        // Tampilkan tombol jika scroll lebih dari 300px
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             scrollTopBtn.classList.add("show");
         } else {

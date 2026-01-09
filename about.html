@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us — EstateVista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <title>About Us — EstateVista | Trusted Real Estate Partner</title>
+  <meta name="description"
+    content="Learn about EstateVista, a premier real estate agency with over 20 years of experience. Meet our expert team dedicated to turning your dream home into reality.">
+  <meta name="keywords"
+    content="EstateVista, About Us, Real Estate Agency, Property Agents, Home Buying, Real Estate Experts">
+  <meta name="author" content="EstateVista">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.estatevista-three.vercel.app/about.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.estatevista-three.vercel.app/about.html">
+  <meta property="og:title" content="About Us — EstateVista">
+  <meta property="og:description"
+    content="Dedicated to providing exceptional real estate experiences. Meet the team behind EstateVista.">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.estatevista-three.vercel.app/about.html">
+  <meta property="twitter:title" content="About Us — EstateVista">
+  <meta property="twitter:description"
+    content="Dedicated to providing exceptional real estate experiences. Meet the team behind EstateVista.">
+  <meta property="twitter:image"
+    content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/logo2.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/logo2.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1a365d">
+  <meta name="msapplication-TileColor" content="#1a365d">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
+
+  <link rel="preload" as="image"
+    href="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "EstateVista",
+    "image": "https://www.estatevista-three.vercel.app/logo.png",
+    "url": "https://www.estatevista-three.vercel.app",
+    "telephone": "+155895548855",
+    "email": "info@estatevista.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "108 Adam Street",
+      "addressLocality": "New York",
+      "addressRegion": "NY",
+      "postalCode": "10001",
+      "addressCountry": "US"
+    },
+    "description": "EstateVista is a premier real estate agency with over 20 years of experience in helping clients find their dream homes.",
+    "foundingDate": "2006",
+    "priceRange": "$$$"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.estatevista-three.vercel.app/index.html"
+    },{
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Us",
+      "item": "https://www.estatevista-three.vercel.app/about.html"
+    }]
+  }
+  </script>
 
   <style>
     :root {
@@ -26,14 +109,19 @@
       background-color: var(--light-bg);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-family: 'Playfair Display', serif;
     }
 
     /* Navbar */
     .navbar {
       background-color: var(--white);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
 
     .navbar-brand {
@@ -53,9 +141,22 @@
     }
 
     /* Buttons */
-    .btn-primary { background-color: var(--primary); border-color: var(--primary); }
-    .btn-secondary { background-color: var(--secondary); border-color: var(--secondary); color: var(--primary); font-weight: 700; }
-    .btn-secondary:hover { background-color: #c19f2e; color: var(--primary); }
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .btn-secondary:hover {
+      background-color: #c19f2e;
+      color: var(--primary);
+    }
 
     .btn-gold {
       background-color: var(--secondary);
@@ -65,144 +166,379 @@
       border-radius: 30px;
       border: none;
     }
-    .btn-gold:hover { background-color: #c19f2e; color: var(--primary); }
+
+    .btn-gold:hover {
+      background-color: #c19f2e;
+      color: var(--primary);
+    }
 
     /* Breadcrumb */
-    .breadcrumb { background-color: transparent; padding: 0.5rem 0; }
-    .breadcrumb-item a { color: var(--text-light); }
-    .breadcrumb-item.active { color: var(--text-dark); }
-    .breadcrumb-container { padding: 5px 0; margin-bottom: 0; }
+    .breadcrumb {
+      background-color: transparent;
+      padding: 0.5rem 0;
+    }
+
+    .breadcrumb-item a {
+      color: var(--text-light);
+    }
+
+    .breadcrumb-item.active {
+      color: var(--text-dark);
+    }
+
+    .breadcrumb-container {
+      padding: 5px 0;
+      margin-bottom: 0;
+    }
 
     /* Hero Section */
     .hero-about {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 60px 0;
+      height: 200px;
+      padding: 80px;
       text-align: center;
     }
 
-    .hero-about h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .hero-about p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
- 
+    .hero-about h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-about p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
     /* Our Story */
-    .our-story { padding: 40px 0; }
-    .story-title { color: var(--secondary); font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 0.5rem; }
-    .story-content p { line-height: 1.6; margin-bottom: 1rem; }
+    .our-story {
+      padding: 40px 0;
+    }
+
+    .story-title {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .story-content p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
 
     /* Stats Section */
-    .stats-section { background-color: var(--white); padding: 30px 0; text-align: center; }
-    .stat-box { padding: 10px; }
-    .stat-number { font-size: 2rem; font-weight: 700; color: var(--secondary); }
-    .stat-label { color: var(--text-light); font-size: 0.9rem; }
+    .stats-section {
+      background-color: var(--white);
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    .stat-box {
+      padding: 10px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .stat-label {
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
 
     /* Team Section */
-    .team-section { padding: 50px 0; background-color: var(--light-bg); }
-    .section-title { color: var(--secondary); font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 0.5rem; }
-    .team-card { background: var(--white); border: none; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.3s; }
-    .team-card:hover { transform: translateY(-5px); }
-    .team-photo { width: 100%; height: 220px; object-fit: cover; }
-    .team-info { padding: 15px; }
-    .team-name { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
-    .team-role { color: var(--text-light); font-size: 0.85rem; }
-    .team-contact { font-size: 0.8rem; color: var(--text-light); margin-top: 5px; }
-    .team-contact i { color: var(--secondary); margin-right: 5px; }
+    .team-section {
+      padding: 50px 0;
+      background-color: var(--light-bg);
+    }
+
+    .section-title {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .team-info {
+      padding: 15px;
+    }
+
+    .team-name {
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    .team-role {
+      color: var(--text-light);
+      font-size: 0.85rem;
+    }
+
+    .team-contact {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 5px;
+    }
+
+    .team-contact i {
+      color: var(--secondary);
+      margin-right: 5px;
+    }
 
     /* Why Choose Us */
-    .why-choose-us { padding: 50px 0; }
-    .why-box { background: var(--white); padding: 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
-    .why-icon { font-size: 2rem; color: var(--secondary); margin-bottom: 15px; }
-    .why-title { color: var(--primary); font-weight: 700; margin-bottom: 10px; font-size: 1.1rem; }
-    .why-box p { font-size: 0.95rem; margin-bottom: 0; }
+    .why-choose-us {
+      padding: 50px 0;
+    }
+
+    .why-box {
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .why-icon {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 15px;
+    }
+
+    .why-title {
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .why-box p {
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
 
     /* Floating CTA */
-    .floating-cta-wrapper { padding: 0 20px 40px 20px; background-color: var(--light-bg); }
+    .floating-cta-wrapper {
+      padding: 0 20px 40px 20px;
+      background-color: var(--light-bg);
+    }
+
     .floating-cta {
       background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-size: cover; background-position: center; padding: 60px 40px; text-align: center; color: var(--white);
-      border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.15); max-width: 1200px; margin: 0 auto; position: relative; z-index: 10;
+      background-size: cover;
+      background-position: center;
+      padding: 60px 40px;
+      text-align: center;
+      color: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 10;
     }
-    .floating-cta h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
-    .floating-cta p { font-size: 1.1rem; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.9); max-width: 700px; margin-left: auto; margin-right: auto; }
+
+    .floating-cta h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .floating-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .btn-cta {
-      background-color: var(--secondary); color: var(--primary); font-weight: 700; padding: 12px 35px; font-size: 1rem;
-      border-radius: 30px; border: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+      background-color: var(--secondary);
+      color: var(--primary);
+      font-weight: 700;
+      padding: 12px 35px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
     }
-    .btn-cta:hover { background-color: #fff; color: var(--primary); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); }
+
+    .btn-cta:hover {
+      background-color: #fff;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3);
+    }
 
     /* Footer */
-    .footer { background-color: var(--primary); color: var(--white); padding: 60px 0 20px; margin-top: -30px; }
-    .footer h4, .footer h6 { margin-bottom: 1rem; }
-    .footer a { color: var(--white); text-decoration: none; font-size: 0.9rem; }
-    .footer p { font-size: 0.9rem; margin-bottom: 0.5rem; }
-    .footer a:hover { color: var(--secondary); }
-    .social-icon { display: inline-block; width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 50%; text-align: center; line-height: 32px; margin-right: 5px; color: var(--white); transition: background 0.3s; font-size: 0.9rem; }
-    .social-icon:hover { background: var(--secondary); color: var(--primary); }
-    .copyright { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; margin-top: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+    .footer {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 60px 0 20px;
+      margin-top: -30px;
+    }
+
+    .footer h4,
+    .footer h6 {
+      margin-bottom: 1rem;
+    }
+
+    .footer a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer a:hover {
+      color: var(--secondary);
+    }
+
+    .social-icon {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      margin-right: 5px;
+      color: var(--white);
+      transition: background 0.3s;
+      font-size: 0.9rem;
+    }
+
+    .social-icon:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 15px;
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.85rem;
+    }
 
     /* --- FLOATING BUTTONS CSS --- */
     .floating-buttons {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        z-index: 9999;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
     }
 
     .float-btn {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-size: 24px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        transition: transform 0.3s ease, opacity 0.3s;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, opacity 0.3s;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
     }
 
     .float-btn:hover {
-        transform: translateY(-5px);
-        color: #fff;
+      transform: translateY(-5px);
+      color: #fff;
     }
 
     .whatsapp-btn {
-        background-color: #25d366;
+      background-color: #25d366;
     }
 
     .scroll-top-btn {
-        background-color: var(--primary);
-        opacity: 0; /* Hidden by default */
-        visibility: hidden;
+      background-color: var(--primary);
+      opacity: 0;
+      /* Hidden by default */
+      visibility: hidden;
     }
 
     .scroll-top-btn.show {
-        opacity: 1;
-        visibility: visible;
+      opacity: 1;
+      visibility: visible;
     }
 
     @media (max-width: 768px) {
-      .hero-about { padding: 50px 0; }
-      .hero-about h1 { font-size: 1.8rem; }
-      .team-photo { height: 200px; }
-      .floating-cta { padding: 40px 20px; border-radius: 15px; }
-      .floating-cta h2 { font-size: 1.5rem; }
-      .floating-cta-wrapper { padding: 0 15px 30px 15px; }
-      
+      .hero-about {
+        padding: 70px 0;
+      }
+
+      .hero-about h1 {
+        font-size: 1.8rem;
+      }
+
+      .team-photo {
+        height: 200px;
+      }
+
+      .floating-cta {
+        padding: 40px 20px;
+        border-radius: 15px;
+      }
+
+      .floating-cta h2 {
+        font-size: 1.5rem;
+      }
+
+      .floating-cta-wrapper {
+        padding: 0 15px 30px 15px;
+      }
+
       .floating-buttons {
-          bottom: 20px;
-          right: 20px;
+        bottom: 20px;
+        right: 20px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -221,7 +557,7 @@
         </ul>
         <div class="ms-lg-3 mt-2 mt-lg-0">
           <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-           Contact
+            Contact
           </a>
         </div>
       </div>
@@ -251,13 +587,17 @@
           <div class="story-title">OUR STORY</div>
           <h2>Building a Legacy of Trust</h2>
           <div class="story-content">
-            <p>As a reminder of our client-first approach, we founded EstateVista with the mission to redefine real estate experiences. Over 20 years, we’ve cultivated deep relationships, developed systems, and refined every detail to ensure your journey from search to closing is seamless, joyful, and successful.</p>
-            <p>We are not just agents — we are advisors, partners, and advocates who care deeply about your dreams becoming reality.</p>
+            <p>As a reminder of our client-first approach, we founded EstateVista with the mission to redefine real
+              estate experiences. Over 20 years, we’ve cultivated deep relationships, developed systems, and refined
+              every detail to ensure your journey from search to closing is seamless, joyful, and successful.</p>
+            <p>We are not just agents — we are advisors, partners, and advocates who care deeply about your dreams
+              becoming reality.</p>
           </div>
           <a href="properti.html" class="btn btn-gold mt-2">Find Your Dream Home</a>
         </div>
         <div class="col-lg-6">
-          <img src="img/rumah 1.webp" class="img-fluid rounded" alt="Team handshake">
+          <img src="img/rumah 1.webp" class="img-fluid rounded" alt="Team handshake" width="600" height="400"
+            loading="lazy">
         </div>
       </div>
     </div>
@@ -307,7 +647,8 @@
               <i class="fas fa-check-circle"></i>
             </div>
             <h4 class="why-title">Experienced & Trusted</h4>
-            <p>Two decades of expertise with passionate professionals dedicated to your success. We’ve guided thousands of clients through their most important financial decisions.</p>
+            <p>Two decades of expertise with passionate professionals dedicated to your success. We’ve guided thousands
+              of clients through their most important financial decisions.</p>
           </div>
         </div>
         <div class="col-md-4 mb-3">
@@ -316,7 +657,8 @@
               <i class="fas fa-users"></i>
             </div>
             <h4 class="why-title">Client-Centric Approach</h4>
-            <p>Your goals come first. From personalized service to tailored solutions, we listen, adapt, and deliver results that exceed expectations.</p>
+            <p>Your goals come first. From personalized service to tailored solutions, we listen, adapt, and deliver
+              results that exceed expectations.</p>
           </div>
         </div>
         <div class="col-md-4 mb-3">
@@ -325,7 +667,8 @@
               <i class="fas fa-chart-line"></i>
             </div>
             <h4 class="why-title">Comprehensive Services</h4>
-            <p>From property search to valuation, rental, and investment advisory — we offer end-to-end solutions for all types of buyers, sellers, and investors.</p>
+            <p>From property search to valuation, rental, and investment advisory — we offer end-to-end solutions for
+              all types of buyers, sellers, and investors.</p>
           </div>
         </div>
       </div>
@@ -341,7 +684,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 mb-3">
           <div class="team-card">
-            <img src="img/sarah.webp" class="team-photo" alt="Sarah Miller">
+            <img src="img/sarah.webp" class="team-photo" alt="Sarah Miller" width="300" height="300" loading="lazy">
             <div class="team-info">
               <h5 class="team-name">Sarah Miller</h5>
               <div class="team-role">CEO & Founder</div>
@@ -356,7 +699,7 @@
         </div>
         <div class="col-md-3 col-sm-6 mb-3">
           <div class="team-card">
-            <img src="img/michael.webp" class="team-photo" alt="David Anderson">
+            <img src="img/michael.webp" class="team-photo" alt="David Anderson" width="300" height="300" loading="lazy">
             <div class="team-info">
               <h5 class="team-name">David Anderson</h5>
               <div class="team-role">Operations Mgr</div>
@@ -371,7 +714,7 @@
         </div>
         <div class="col-md-3 col-sm-6 mb-3">
           <div class="team-card">
-            <img src="img/emma.webp" class="team-photo" alt="Emma Johnson">
+            <img src="img/emma.webp" class="team-photo" alt="Emma Johnson" width="300" height="300" loading="lazy">
             <div class="team-info">
               <h5 class="team-name">Emma Johnson</h5>
               <div class="team-role">Senior Agent</div>
@@ -386,7 +729,7 @@
         </div>
         <div class="col-md-3 col-sm-6 mb-3">
           <div class="team-card">
-            <img src="img/james.webp" class="team-photo" alt="James Wilson">
+            <img src="img/james.webp" class="team-photo" alt="James Wilson" width="300" height="300" loading="lazy">
             <div class="team-info">
               <h5 class="team-name">James Wilson</h5>
               <div class="team-role">Specialist</div>
@@ -406,7 +749,8 @@
   <div class="floating-cta-wrapper">
     <div class="floating-cta">
       <h2>Ready to Find Your Dream Home?</h2>
-      <p>Let our experienced team guide you through every step of your real estate journey. Contact us today for a free consultation.</p>
+      <p>Let our experienced team guide you through every step of your real estate journey. Contact us today for a free
+        consultation.</p>
       <a href="contact.html" class="btn btn-cta">Contact Us Now</a>
     </div>
   </div>
@@ -463,35 +807,37 @@
   </footer>
 
   <div class="floating-buttons">
-    <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services." class="float-btn whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services."
+      class="float-btn whatsapp-btn" target="_blank">
+      <i class="fab fa-whatsapp"></i>
     </a>
     <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
-        <i class="fas fa-chevron-up"></i>
+      <i class="fas fa-chevron-up"></i>
     </button>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+
   <script>
     // Logic Scroll to Top
     const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-    window.onscroll = function() {
-        // Tampilkan tombol jika scroll lebih dari 300px
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            scrollTopBtn.classList.add("show");
-        } else {
-            scrollTopBtn.classList.remove("show");
-        }
+    window.onscroll = function () {
+      // Tampilkan tombol jika scroll lebih dari 300px
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
     };
 
     function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
   </script>
 </body>
+
 </html>

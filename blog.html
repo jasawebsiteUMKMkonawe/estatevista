@@ -4,18 +4,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News & Insights - EstateVista</title>
+
+    <title>News & Insights - EstateVista | Luxury Real Estate Trends</title>
+    <meta name="description"
+        content="Stay ahead with EstateVista's latest insights on luxury real estate trends, investment strategies, and modern living designs in 2026.">
+    <meta name="keywords"
+        content="Luxury Real Estate Blog, Property Investment Insights, Home Design Trends 2026, EstateVista News">
+    <link rel="canonical" href="https://www.estatevista-three.vercel.app/blog.html">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo2.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="News & Insights - EstateVista">
+    <meta property="og:description" content="Expert advice for buyers, sellers, and investors in the luxury market.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+    <meta property="og:url" content="https://www.estatevista-three.vercel.app/blog.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "EstateVista News & Insights",
+      "url": "https://www.estatevista-three.vercel.app/blog.html",
+      "description": "Expert advice for buyers, sellers, and investors in the luxury market.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "EstateVista",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.estatevista-three.vercel.app/logo.png"
+        }
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "The Future of Luxury Real Estate: Trends to Watch in 2026",
+          "url": "https://www.estatevista-three.vercel.app/blog-detail.html",
+          "datePublished": "2026-01-05"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Maximizing ROI: A Guide for Property Investors",
+          "url": "https://www.estatevista-three.vercel.app/blog-detail2.html",
+          "datePublished": "2026-01-03"
+        }
+      ]
+    }
+    </script>
 
     <style>
         /* --- CSS VARIABLES --- */
         :root {
-            --var: #1A365D;
+            /* Variabel Warna dari Index.html */
+            --primary: #1A365D;
             --secondary: #D4AF37;
             --accent: #2ECC71;
             --light-bg: #F8F9FA;
@@ -24,15 +76,17 @@
             --white: #ffffff;
             --border-color: #e0e0e0;
             --link-blue: #0d6efd;
-            
-            /* Compat */
-            --primary: #1A365D;
+
             --primary-navy: #1a2b49;
             --accent-gold: #d4af37;
             --accent-gold-hover: #b5952f;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Lato', sans-serif;
@@ -42,97 +96,493 @@
             padding-top: 80px;
         }
 
-        h1, h2, h3, h4, h5 { font-family: 'Playfair Display', serif; color: var(--primary); }
-        a { text-decoration: none; transition: 0.3s; color: inherit; }
-        ul { list-style: none; padding-left: 0; }
-        img { max-width: 100%; display: block; }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
 
-        /* Navbar */
-        .navbar { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .navbar-brand { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.8rem; color: var(--primary); }
-        .navbar-nav .nav-link { color: var(--text-dark); font-weight: 600; font-size: 16px; }
-        .navbar-nav .nav-link:hover { color: var(--secondary); }
-        .text-primary { color: var(--primary) !important; }
+        a {
+            text-decoration: none;
+            transition: 0.3s;
+            color: inherit;
+        }
 
-        /* Utilities */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .btn { display: inline-block; padding: 10px 20px; border-radius: 4px; font-weight: 600; cursor: pointer; text-align: center; border: none; transition: 0.3s; font-size: 14px; }
-        .btn-primary { background-color: var(--primary); color: var(--white); }
-        .btn-primary:hover { background-color: #2c4a7c; }
-        .btn-gold { background-color: var(--accent-gold); color: var(--white); }
-        .btn-gold:hover { background-color: var(--accent-gold-hover); }
-        .btn-outline { border: 1px solid #ddd; background: transparent; color: var(--text-light); }
-        .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
-        .section-padding { padding: 60px 0; }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
 
-        /* Hero */
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- NAVBAR STYLES --- */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--secondary);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #2c4a7c;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid #ddd;
+            background: transparent;
+            color: var(--text-light);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .section-padding {
+            padding: 60px 0;
+        }
+
+        /* --- HERO SECTION --- */
         .blog-hero {
             background: linear-gradient(rgba(26, 43, 73, 0.8), rgba(26, 43, 73, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover; background-position: center; height: 200px; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
         }
-        .blog-hero h1 { color: var(--white); font-size: 42px; margin-bottom: 10px; }
-        .blog-hero p { font-size: 18px; font-weight: 300; opacity: 0.9; }
 
-        /* Blog Layout */
-        .blog-layout { display: grid; grid-template-columns: 2.5fr 1fr; gap: 50px; margin-top: 60px; }
-        .featured-post { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); margin-bottom: 50px; position: relative; }
-        .featured-img { width: 100%; height: 400px; object-fit: cover; }
-        .featured-content { padding: 30px; }
-        .post-meta { font-size: 12px; color: var(--text-light); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-        .post-meta span { color: var(--accent-gold); font-weight: 700; margin-right: 10px; }
-        .featured-title { font-size: 32px; margin-bottom: 15px; line-height: 1.3; }
-        .featured-excerpt { color: var(--text-light); margin-bottom: 20px; font-size: 16px; }
+        .blog-hero h1 {
+            color: var(--white);
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
 
-        .posts-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-        .blog-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid transparent; }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); border-color: var(--accent-gold); }
-        .card-img-top { width: 100%; height: 220px; object-fit: cover; }
-        .card-body { padding: 25px; }
-        .card-category { background-color: var(--primary); color: var(--white); padding: 4px 10px; font-size: 10px; border-radius: 4px; text-transform: uppercase; display: inline-block; margin-bottom: 15px; }
-        .card-category.gold { background-color: var(--accent-gold); }
-        .card-title { font-size: 20px; margin-bottom: 10px; line-height: 1.4; }
-        .card-title a:hover { color: var(--accent-gold); }
-        .card-text { font-size: 14px; color: var(--text-light); margin-bottom: 20px; line-height: 1.6; }
-        .author-box { display: flex; align-items: center; border-top: 1px solid #eee; padding-top: 15px; }
-        .author-img { width: 35px; height: 35px; border-radius: 50%; margin-right: 10px; object-fit: cover; }
-        .author-info { font-size: 12px; }
-        .author-name { font-weight: 700; color: var(--primary); display: block; }
-        .post-date { color: #999; }
+        .blog-hero p {
+            font-size: 18px;
+            font-weight: 300;
+            opacity: 0.9;
+        }
 
-        /* Sidebar */
-        .sidebar-widget { background: var(--white); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 30px; }
-        .widget-title { font-size: 20px; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
-        .widget-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 40px; height: 3px; background-color: var(--accent-gold); }
-        .search-form { display: flex; }
-        .search-form input { flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 4px 0 0 4px; outline: none; }
-        .search-form button { padding: 10px 15px; background: var(--primary); color: white; border: none; border-radius: 0 4px 4px 0; cursor: pointer; }
-        .categories-list li { border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between; font-size: 14px; }
-        .categories-list li:last-child { border-bottom: none; }
-        .categories-list a:hover { color: var(--accent-gold); padding-left: 5px; }
-        .cat-count { background: #f0f0f0; padding: 2px 8px; border-radius: 10px; font-size: 11px; color: #666; }
-        .trending-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: center; }
-        .trending-img { width: 70px; height: 70px; border-radius: 4px; object-fit: cover; }
-        .trending-info h5 { font-size: 15px; line-height: 1.3; margin-bottom: 5px; font-family: 'Lato', sans-serif; font-weight: 700; }
-        .trending-info span { font-size: 11px; color: #999; }
-        .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 50px; }
-        .page-link { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--white); border: 1px solid #ddd; color: var(--primary); border-radius: 4px; }
-        .page-link.active, .page-link:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        /* --- BLOG LAYOUT --- */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            /* Proporsi 3:1 untuk konten:sidebar */
+            gap: 40px;
+            margin-top: 60px;
+        }
 
-        /* Footer */
-        footer { background-color: #152238; color: #b0b0b0; padding-top: 20px; font-size: 14px; margin-top: 80px; }
-        .footer-content { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 50px; }
-        .footer-widget h3 { color: var(--white); font-size: 18px; margin-bottom: 25px; font-weight: 700; }
-        .footer-brand h2 { color: var(--white); font-size: 28px; margin-bottom: 10px; }
-        .footer-brand p { margin-bottom: 20px; color: #a4b0c5; }
-        .social-links { display: flex; gap: 10px; }
-        .social-links a { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background-color: rgba(255, 255, 255, 0.1); color: var(--white); border-radius: 50%; transition: 0.3s; }
-        .social-links a:hover { background-color: var(--accent-gold); color: var(--white); }
-        .footer-links ul { list-style: none; padding: 0; } .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #b0b0b0; transition: 0.3s; }
-        .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
-        .contact-info li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 15px; line-height: 1.5; }
-        .contact-info i { color: #7b8ba5; margin-top: 4px; }
-        .copyright { text-align: left; padding: 25px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #7b8ba5; display: flex; justify-content: center; }
+        /* --- LEFT COLUMN: ARTICLES --- */
+        .featured-post {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .featured-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 30px;
+        }
+
+        .post-meta {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .post-meta span {
+            color: var(--accent-gold);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+
+        .featured-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .featured-excerpt {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* Grid for Small Posts */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 Kolom sesuai kode Anda */
+            gap: 25px;
+        }
+
+        /* Semantik SEO: Gunakan 'article' bukan 'div' untuk kartu blog */
+        .blog-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: var(--accent-gold);
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 3px 8px;
+            font-size: 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+            align-self: flex-start;
+        }
+
+        .card-category.gold {
+            background-color: var(--accent-gold);
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-title a:hover {
+            color: var(--accent-gold);
+        }
+
+        .card-text {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .author-box {
+            display: flex;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            margin-top: auto;
+        }
+
+        .author-img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .author-info {
+            font-size: 11px;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .post-date {
+            color: #999;
+        }
+
+        /* --- RIGHT COLUMN: SIDEBAR --- */
+        .sidebar-widget {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-gold);
+        }
+
+        .search-form {
+            display: flex;
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-form button {
+            padding: 10px 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .trending-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .trending-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .trending-info h5 {
+            font-size: 14px;
+            line-height: 1.3;
+            margin-bottom: 5px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+
+        .trending-info span {
+            font-size: 11px;
+            color: #999;
+        }
+
+        /* --- PAGINATION --- */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .page-link {
+            width: auto;
+            min-width: 40px;
+            padding: 10px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 1px solid #ddd;
+            color: var(--primary);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .page-link.active,
+        .page-link:hover {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #152238;
+            color: #b0b0b0;
+            padding-top: 20px;
+            font-size: 14px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .footer-widget h3 {
+            color: var(--white);
+            font-size: 18px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .footer-brand h2 {
+            color: var(--white);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 20px;
+            color: #a4b0c5;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .contact-info i {
+            color: #7b8ba5;
+            margin-top: 4px;
+        }
+
+        .copyright {
+            text-align: left;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #7b8ba5;
+            display: flex;
+            justify-content: center;
+        }
 
         /* --- FLOATING BUTTONS CSS --- */
         .floating-buttons {
@@ -154,7 +604,7 @@
             justify-content: center;
             color: #fff;
             font-size: 24px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, opacity 0.3s;
             text-decoration: none;
             border: none;
@@ -172,7 +622,7 @@
 
         .scroll-top-btn {
             background-color: var(--primary);
-            opacity: 0; /* Hidden by default */
+            opacity: 0;
             visibility: hidden;
         }
 
@@ -181,9 +631,49 @@
             visibility: visible;
         }
 
-        @media (max-width: 991px) { .footer-content { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 576px) { .footer-content { grid-template-columns: 1fr; text-align: center; } .social-links { justify-content: center; } .contact-info li { justify-content: center; } }
-        @media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr; } .posts-grid { grid-template-columns: 1fr; } .featured-img { height: 250px; } .floating-buttons { bottom: 20px; right: 20px; } }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1200px) {
+
+            /* Mencegah grid terlalu sempit di layar medium */
+            .posts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .blog-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .posts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .featured-img {
+                height: 250px;
+            }
+
+            .floating-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links,
+            .contact-info li {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -191,24 +681,24 @@
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="index.html">EstateVista</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
-              <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-              <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-            </ul>
-            <div class="ms-lg-3 mt-2 mt-lg-0">
-              <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
-                 Contact
-              </a>
+            <a class="navbar-brand" href="index.html">EstateVista</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="properti.html">Properties</a></li>
+                    <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                </ul>
+                <div class="ms-lg-3 mt-2 mt-lg-0">
+                    <a href="tel:+155895548855" class="text-primary fw-bold d-none d-lg-inline">
+                        Contact
+                    </a>
+                </div>
             </div>
-          </div>
         </div>
     </nav>
 
@@ -222,16 +712,19 @@
     <div class="container">
         <div class="blog-layout">
             <div class="blog-content">
+
                 <article class="featured-post">
                     <div class="position-relative">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                            alt="Luxury Living Room" class="featured-img">
+                            alt="Luxury Living Room - EstateVista Featured Post" class="featured-img"
+                            fetchpriority="high">
                     </div>
                     <div class="featured-content">
                         <div class="post-meta">
                             <span>Market Analysis</span> / Jan 05, 2026
                         </div>
-                        <h2 class="featured-title"><a href="blog-detail.html">The Future of Luxury Real Estate: Trends to Watch in 2026</a></h2>
+                        <h2 class="featured-title"><a href="blog-detail.html">The Future of Luxury Real Estate: Trends
+                                to Watch in 2026</a></h2>
                         <p class="featured-excerpt">As we step into a new year, the landscape of high-end property is
                             shifting. From sustainable smart homes to the resurgence of suburban estates, discover what
                             high-net-worth individuals are prioritizing this year.</p>
@@ -240,77 +733,179 @@
                 </article>
 
                 <div class="posts-grid">
-                    <div class="blog-card">
-                        <img src="img/rumah 1.webp" class="card-img-top" alt="Investment">
+                    <article class="blog-card">
+                        <img src="img/rumah 1.webp" class="card-img-top" alt="Real Estate Investment Strategies"
+                            loading="lazy">
                         <div class="card-body">
                             <span class="card-category gold">Investment</span>
-                            <h3 class="card-title"><a href="blog-detail2.html">Maximizing ROI: A Guide for Property Investors</a></h3>
-                            <p class="card-text">Strategies to increase rental yield and capital appreciation in volatile markets.</p>
+                            <h3 class="card-title"><a href="blog-detail2.html">Maximizing ROI: A Guide for Investors</a>
+                            </h3>
+                            <p class="card-text">Strategies to increase rental yield and capital appreciation in
+                                volatile markets.</p>
                             <div class="author-box">
-                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="author-img">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="Sarah Martinez" loading="lazy">
                                 <div class="author-info">
                                     <span class="author-name">Sarah Martinez</span>
                                     <span class="post-date">Jan 03, 2026</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="blog-card">
-                        <img src="img/rumah 3.webp" class="card-img-top" alt="Interior Design">
+                    <article class="blog-card">
+                        <img src="img/rumah 3.webp" class="card-img-top" alt="Minimalist Interior Design"
+                            loading="lazy">
                         <div class="card-body">
                             <span class="card-category">Design</span>
-                            <h3 class="card-title"><a href="blog-detail3.html">Minimalist Interiors: Less is More in Modern Villas</a></h3>
-                            <p class="card-text">How decluttering and open spaces are redefining luxury living environments.</p>
+                            <h3 class="card-title"><a href="blog-detail3.html">Minimalist Interiors: Less is More</a>
+                            </h3>
+                            <p class="card-text">How decluttering and open spaces are redefining luxury living
+                                environments.</p>
                             <div class="author-box">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="author-img">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="David Chen" loading="lazy">
                                 <div class="author-info">
                                     <span class="author-name">David Chen</span>
                                     <span class="post-date">Dec 28, 2025</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Legal">
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Property Tax Legal Advice" loading="lazy">
                         <div class="card-body">
                             <span class="card-category">Legal</span>
-                            <h3 class="card-title"><a href="blog-detail4.html">Navigating Property Taxes: Updates for Homeowners</a></h3>
-                            <p class="card-text">Essential tax changes every property owner needs to know before filing this year.</p>
+                            <h3 class="card-title"><a href="blog-detail4.html">Navigating Property Taxes</a></h3>
+                            <p class="card-text">Essential tax changes every property owner needs to know before filing
+                                this year.</p>
                             <div class="author-box">
-                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="author-img">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="Emily Rose" loading="lazy">
                                 <div class="author-info">
                                     <span class="author-name">Emily Rose</span>
                                     <span class="post-date">Dec 20, 2025</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Lifestyle">
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Family Neighborhoods" loading="lazy">
                         <div class="card-body">
                             <span class="card-category gold">Lifestyle</span>
-                            <h3 class="card-title"><a href="blog-detail5.html">Top 5 Neighborhoods for Families in 2026</a></h3>
-                            <p class="card-text">Safe, green, and school-friendly communities that are trending right now.</p>
+                            <h3 class="card-title"><a href="blog-detail5.html">Top 5 Neighborhoods for Families</a></h3>
+                            <p class="card-text">Safe, green, and school-friendly communities that are trending right
+                                now.</p>
                             <div class="author-box">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" class="author-img">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="James Wilson" loading="lazy">
                                 <div class="author-info">
                                     <span class="author-name">James Wilson</span>
                                     <span class="post-date">Dec 15, 2025</span>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Eco Friendly Smart Homes" loading="lazy">
+                        <div class="card-body">
+                            <span class="card-category">Tech</span>
+                            <h3 class="card-title"><a href="#">Eco-Friendly Smart Homes</a></h3>
+                            <p class="card-text">Why sustainable technology is becoming the new standard in modern real
+                                estate.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="Sarah Martinez" loading="lazy">
+                                <div class="author-info">
+                                    <span class="author-name">Sarah Martinez</span>
+                                    <span class="post-date">Jan 04, 2026</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <img src="img/rumah 4.webp" class="card-img-top" alt="Selling Tips" loading="lazy">
+                        <div class="card-body">
+                            <span class="card-category">Advice</span>
+                            <h3 class="card-title"><a href="#">5 Mistakes First-Time Sellers Make</a></h3>
+                            <p class="card-text">Avoid these common pitfalls to ensure you get the best price for your
+                                property.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="David Chen" loading="lazy">
+                                <div class="author-info">
+                                    <span class="author-name">David Chen</span>
+                                    <span class="post-date">Dec 29, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Refinancing Guide" loading="lazy">
+                        <div class="card-body">
+                            <span class="card-category gold">Finance</span>
+                            <h3 class="card-title"><a href="#">Is 2026 the Right Time to Refinance?</a></h3>
+                            <p class="card-text">Analyzing market rates and economic indicators to help you decide.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="Emily Rose" loading="lazy">
+                                <div class="author-info">
+                                    <span class="author-name">Emily Rose</span>
+                                    <span class="post-date">Dec 18, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                            class="card-img-top" alt="Global Market Outlook" loading="lazy">
+                        <div class="card-body">
+                            <span class="card-category">Market</span>
+                            <h3 class="card-title"><a href="#">Global Real Estate Outlook</a></h3>
+                            <p class="card-text">What international investors are looking for in the coming year.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="James Wilson" loading="lazy">
+                                <div class="author-info">
+                                    <span class="author-name">James Wilson</span>
+                                    <span class="post-date">Dec 10, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <img src="img/rumah 5.webp" class="card-img-top" alt="Home Renovation Tips" loading="lazy">
+                        <div class="card-body">
+                            <span class="card-category gold">Renovation</span>
+                            <h3 class="card-title"><a href="#">High-Impact Home Renovations</a></h3>
+                            <p class="card-text">Upgrades that offer the best return on investment when selling.</p>
+                            <div class="author-box">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                    class="author-img" alt="Sarah Martinez" loading="lazy">
+                                <div class="author-info">
+                                    <span class="author-name">Sarah Martinez</span>
+                                    <span class="post-date">Dec 05, 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
 
                 <div class="pagination">
-                    <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
-                    <a href="#" class="page-link active">1</a>
-                    <a href="#" class="page-link">2</a>
-                    <a href="#" class="page-link">3</a>
-                    <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+                    <a href="#" class="page-link prev-btn">Previous</a>
+                    <a href="#" class="page-link next-btn">Next</a>
                 </div>
             </div>
 
@@ -318,21 +913,23 @@
                 <div class="sidebar-widget">
                     <h4 class="widget-title">Top Artikel</h4>
                     <div class="trending-item">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="trending-img">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            class="trending-img" alt="Eco Homes" loading="lazy">
                         <div class="trending-info">
                             <h5><a href="#">The Rise of Eco-Friendly Smart Homes</a></h5>
                             <span>Jan 04, 2026</span>
                         </div>
                     </div>
                     <div class="trending-item">
-                        <img src="img/rumah 4.webp" class="trending-img">
+                        <img src="img/rumah 4.webp" class="trending-img" alt="Seller Mistakes" loading="lazy">
                         <div class="trending-info">
                             <h5><a href="#">5 Mistakes First-Time Sellers Make</a></h5>
                             <span>Dec 29, 2025</span>
                         </div>
                     </div>
                     <div class="trending-item">
-                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" class="trending-img">
+                        <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
+                            class="trending-img" alt="Refinance" loading="lazy">
                         <div class="trending-info">
                             <h5><a href="#">Is 2026 the Right Time to Refinance?</a></h5>
                             <span>Dec 18, 2025</span>
@@ -400,7 +997,8 @@
     </footer>
 
     <div class="floating-buttons">
-        <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services." class="float-btn whatsapp-btn" target="_blank">
+        <a href="https://wa.me/155895548855?text=Hello%20EstateVista,%20I'm%20interested%20in%20your%20services."
+            class="float-btn whatsapp-btn" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
         <button id="scrollTopBtn" class="float-btn scroll-top-btn" onclick="scrollToTop()">
@@ -414,7 +1012,7 @@
         // Logic Scroll to Top
         const scrollTopBtn = document.getElementById("scrollTopBtn");
 
-        window.onscroll = function() {
+        window.onscroll = function () {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 scrollTopBtn.classList.add("show");
             } else {
@@ -430,4 +1028,5 @@
         }
     </script>
 </body>
+
 </html>
